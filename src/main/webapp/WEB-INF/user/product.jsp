@@ -5,10 +5,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
-<!-- Flexisel -->
-<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
-<link href="${pageContext.request.contextPath}/resources/user/css/flexisel.css" rel="stylesheet" type="text/css" media="all">
-<!-- End Flexisel -->
 
 <link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -43,11 +39,7 @@
 </head>
 <body>
 
-<%@include file="user/include/header.jsp"%>
-
-<%@include file="user/include/banner.jsp"%>
-
-
+<%@include file="include/header.jsp"%>
 
 <div class="product">
 	<div class="container">
@@ -59,34 +51,52 @@
 							<h1>Categories</h1>
 							<div class="row1 scroll-pane">
 								<div class="col col-4">
-									<!--  <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Accessories</label> -->									
-									 <a href="#" value="All Accessories">All Accessories</a>
+									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Accessories</label>
 								</div>
-								
+								<!-- <div class="col col-4">								
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>handbags</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Bracelets</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Watches</label>			
+								</div> -->
 							</div>
 						</section>
 						<section  class="sky-form">
 							<h2>Brand</h2>
 							<div class="row1 row2 scroll-pane">
 								<div class="col col-4">
-									<!-- <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Brands</label> -->
-									<a href="#" value="All Accessories">All Brand</a>
+									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Brands</label>
 								</div>
-								
+								<!-- <div class="col col-4">
+								    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>kurtas</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sonata</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Titan</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Puma</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Nike</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Fastrack</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Chanel</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Fendi</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Hilde Palladino</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Lana Marks</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Prada</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>flipkart</label>									
+								</div> -->
 							</div>
 						</section>
-						
-						<section  class="sky-form">
-							<h2>Model</h2>
-							<div class="row1 row2 scroll-pane">
-								<div class="col col-4">
-									<!-- <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Model</label> -->
-									<a href="#" value="All Accessories">All Model</a>
-								</div>
-								
-							</div>
-						</section>
-						
+						<!-- <section class="sky-form">
+							<h4>discount</h4>
+								<div class="row1 row2 scroll-pane">
+									<div class="col col-4">
+										<label class="radio"><input type="radio" name="radio" checked=""><i></i>60 % and above</label>
+										<label class="radio"><input type="radio" name="radio"><i></i>50 % and above</label>
+										<label class="radio"><input type="radio" name="radio"><i></i>40 % and above</label>
+									</div>
+									<div class="col col-4">
+										<label class="radio"><input type="radio" name="radio"><i></i>30 % and above</label>
+										<label class="radio"><input type="radio" name="radio"><i></i>20 % and above</label>
+										<label class="radio"><input type="radio" name="radio"><i></i>10 % and above</label>
+									</div>
+								</div>						
+						</section> -->
 						<section class="sky-form">
 							<h4>Colour</h4>
 								<ul class="w_nav2">
@@ -414,11 +424,7 @@
 	</div>
 </div>
 
-
-
-<%@include file="user/include/popular.jsp"%>
-
-<%@include file="user/include/footer.jsp"%>
+<%@include file="include/footer.jsp"%>
 
 </body>
 </html>

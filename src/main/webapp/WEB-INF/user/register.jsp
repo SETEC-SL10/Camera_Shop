@@ -34,31 +34,28 @@
 </head>
 <body>
 
-<%@include file="user/include/header.jsp"%>
+<%@include file="include/header.jsp"%>
 
-<div class="login">
+<div class="signin">
 	<div class="container">
-		<div class="login-main">
-			  <h1>Login</h1>
-		  <div class="col-md-6 login-left">
-			<h2>Existing User</h2>
+		<div class="signin-main">
+			<h1>Sign up</h1>
+			<h2>Informations</h2>
 			<form>
-				<input type="text" placeholder="Username" required="">
-				<input type="password" placeholder="Password" required="">
-				<input type="submit" value="Login">
+				<input type="text" placeholder="Username">
+				<input type="text" class="no-margin" placeholder="E-mail">
+				<input type="password" placeholder="Password" required=""/>
+				<input type="password" class="no-margin" placeholder="Confirm Password" required=""/>
+				<span class="checkbox1">
+				 <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>i agree terms of use and privacy</label>
+			   </span>
+				<input type="submit" value="Submit">
 			</form>
-		  </div>
-		  <div class="col-md-6 login-right">
-		  	 <h3>New User? Create an Account</h3>
-		  	 <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system. and expound the actual teachings of the great.</p>
-		     <a href="/register" class="login-btn">Create an Account </a>
-		  </div>
-		  <div class="clearfix"> </div>
 		</div>
 	</div>
 </div>
 
-<%@include file="user/include/footer.jsp"%>
+<%@include file="include/footer.jsp"%>
 
 </body>
 </html>
