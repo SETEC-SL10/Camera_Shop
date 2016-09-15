@@ -3,6 +3,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<!-- AngularJS-->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
+ <script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
 <!-- Flexisel -->
@@ -40,8 +46,9 @@
 <link href="${pageContext.request.contextPath}/resources/user/css/component.css" rel="stylesheet" type="text/css" media="all"/>
  <link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/>
 
+
 </head>
-<body>
+<body ng-app="UserApp" ng-controller="UserCtrl" ng-cloak>
 
 <%@include file="user/include/header.jsp"%>
 
@@ -412,6 +419,7 @@
 			  
 		</div>
 	</div>
+	
 </div>
 
 

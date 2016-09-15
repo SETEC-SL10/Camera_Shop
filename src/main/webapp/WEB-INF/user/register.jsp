@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
 
 <link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -32,7 +34,7 @@
 <script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script>
 <script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body ng-app="UserApp" ng-controller="UserCtrl" ng-cloak>
 
 <%@include file="include/header.jsp"%>
 

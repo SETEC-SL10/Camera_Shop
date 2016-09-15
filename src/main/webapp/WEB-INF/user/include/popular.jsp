@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     
-<div class="lady-in-on">
+<div class="lady-in-on container" >
 			<div class="buy-an">
 						<h3>Popular Product</h3>
 					</div>

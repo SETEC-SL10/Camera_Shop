@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
 
 <link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -86,7 +88,7 @@ $(window).load(function() {
 
 
 </head>
-<body>
+<body ng-app="UserApp" ng-controller="UserCtrl" ng-cloak>
 
 <%@include file="include/header.jsp"%>
 
@@ -231,7 +233,10 @@ $(window).load(function() {
 	</div>
 	</div>
 	<!---->
-	<div class="col-md-3">
+	
+	
+	
+	<!-- <div class="col-md-3">
 	  <div class="w_sidebar">
 		<section  class="sky-form">
 					<h4>catogories</h4>
@@ -300,7 +305,9 @@ $(window).load(function() {
 						</div>						
 		</section>
 	</div>
-   </div>
+   </div> -->
+   
+   
    <div class="clearfix"> </div>
 	</div>
 	</div>

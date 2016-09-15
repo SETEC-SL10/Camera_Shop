@@ -46,5 +46,37 @@ public class ViewController {
 		return "user/detail";
 	}
 	
+	@RequestMapping(value="/wishlist",method=RequestMethod.GET)
+	public String wishlist(){
+		return "user/wishlist";
+	}
+	
+	@RequestMapping(value="/cart",method=RequestMethod.GET)
+	public String cart(){
+		return "user/cart";
+	}
+	
+	@RequestMapping(value="/account",method=RequestMethod.GET)
+	public String account(){
+		return "user/account";
+	}
+	
+	@RequestMapping(value="/warranty",method=RequestMethod.GET)
+	public String warranty(){
+		return "user/warranty";
+	}
+	
+	@RequestMapping(value="/promotion",method=RequestMethod.GET)
+	public String promotion(){
+		return "user/promotion";
+	}
+	
+	@RequestMapping(value="/about",method=RequestMethod.GET)
+	public String about(){
+		return "user/about";
+	}
+	
+	
+	
 }
 

@@ -1,7 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     
-<div class="banner">
+    
+    
+    
+<div >
+			
+			<ul id="slideBanner">			
+				<li><a href="#"><img class=" " src="${pageContext.request.contextPath}/resources/user/img/Slide-01.png" alt=""></a>
+				</li>
+				<li><a href="#"><img class=" " src="${pageContext.request.contextPath}/resources/user/img/Slide-02.png" alt=""></a>
+				</li>
+				<li><a href="#"><img class=" " src="${pageContext.request.contextPath}/resources/user/img/Slide-03.png" alt=""></a>
+				</li>
+				<li><a href="#"><img class="" src="${pageContext.request.contextPath}/resources/user/img/Slide-04.png" alt=""></a>
+				</li>
+            </ul>
+            		<script type="text/javascript">
+		$(window).load(function() {
+			$("#slideBanner").flexisel({
+				visibleItems: 1,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,    		
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+		    	responsiveBreakpoints: { 
+		    		portrait: { 
+		    			changePoint:480,
+		    			visibleItems: 1
+		    		}, 
+		    		landscape: { 
+		    			changePoint:640,
+		    			visibleItems: 1
+		    		},
+		    		tablet: { 
+		    			changePoint:768,
+		    			visibleItems: 1
+		    		}
+		    	}
+		    });
+		    
+		});
+	</script> 
+	<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/jquery.flexisel.js"></script> --%>
+</div>
+    
+<%-- <div class="banner ">
 	<div class="container">
 		<div class="banner-main">
 			<div class="col-md-6 banner-left">
@@ -31,4 +76,4 @@
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-</div>
+</div> --%>
