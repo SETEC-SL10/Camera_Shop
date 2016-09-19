@@ -43,7 +43,7 @@
 		<div class="container">
 			<div class="ckeckout-top">
 			<div class=" cart-items heading">
-			 <h1>My Shopping Bag (3)</h1>
+			 <h1>My Cart (3)</h1>
 				<script>$(document).ready(function(c) {
 					$('.close1').on('click', function(c){
 						$('.cart-header').fadeOut('slow', function(c){
@@ -74,40 +74,95 @@
 					<li><span>Item</span></li>
 					<li><span>Product Name</span></li>		
 					<li><span>Unit Price</span></li>
-					<li><span>Delivery Details</span></li>
+					<li><span>Quantity</span></li>
+					<li><span>Total</span></li>
 					<li> </li>
 					<div class="clearfix"> </div>
 				</ul>
 				<ul class="cart-header simpleCart_shelfItem">
 					<div class="close1"> </div>
-						<li class="ring-in"><a href="single.html" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
+						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
 						</li>
 						<li><span>Bracelets</span></li>
 						<li><span class="item_price">$ 290.00</span></li>
-						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>				
+						<li>
+							<span>
+								<form>
+								    <input type="button" onclick="reduceValue()" value="-" id="decrease" / >
+								   <input type="text" id="numberQty" value="0" size="10" />
+								   <input type="button" onclick="increaseValue()" value="+" id="increase" / >
+								</form>
+							
+							</span>
+						</li>
+						<li><span>$400</span></li>
+						<!-- <li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li> -->				
 					<div class="clearfix"> </div>
 				</ul>
 				<ul class=" cart-header1 simpleCart_shelfItem">
 					<div class="close2"> </div>
-						<li class="ring-in"><a href="single.html" ><img src="${pageContext.request.contextPath}/resources/user/img/c2.jpg" class="img-responsive" alt=""></a>
+						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c2.jpg" class="img-responsive" alt=""></a>
 						</li>
 						<li><span>Watches</span></li>
 						<li><span class="item_price">$ 300.00</span></li>
-						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>						
+						<li>
+							<span>
+								<form>
+								    <input type="button" onclick="reduceValue()" value="-" id="decrease" / >
+								   <input type="text" id="numberQty" value="0" size="10" />
+								   <input type="button" onclick="increaseValue()" value="+" id="increase" / >
+								</form>
+							
+							</span>
+						</li>
+						<li><span>$400</span></li>
+						
+						<!-- <li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li> -->						
 						<div class="clearfix"> </div>
 				</ul>
 				<ul class="cart-header2 simpleCart_shelfItem">
 					<div class="close3"> </div>
-						<li class="ring-in"><a href="single.html" ><img src="${pageContext.request.contextPath}/resources/user/img/c3.jpg" class="img-responsive" alt=""></a>
+						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c3.jpg" class="img-responsive" alt=""></a>
 						</li>
 						<li><span>Handbag</span></li>
 						<li><span class="item_price">$ 360.00</span></li>
-						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>						
+						<li>
+							<span>
+								<form>
+								    <input type="button" onclick="reduceValue()" value="-" id="decrease" / >
+								   <input type="text" id="numberQty" value="0" size="10" />
+								   <input type="button" onclick="increaseValue()" value="+" id="increase" / >
+								</form>
+							
+							</span>
+						</li>
+						<li><span>$400</span></li>
+						<!-- <li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li> -->						
 						<div class="clearfix"> </div>
 				</ul>
 			</div>
+			
+			<div id="TotalSumarry">
+				<div class="col-md-7"></div>			 	
+			 
+			 <div class="well col-md-5">
+			 	<h4>Sub Total: <span class="alignRight">$2434</span></h4> 
+			 	<h4>Shipping: <span class="alignRight">sdfsdfwerewr</span></h4>	
+			 	<h4>Grand Total: <span class="alignRight">$2434</span></h4>	
+			 	
+			 </div>
+			 
+			 <a href="/checkout" class="alignRight btn btn-primary" > Process Checkout</a>
+			</div>
+			
+			
 			</div>  
 		 </div>
+		 
+		 
+		 
+		 
+		 
 		</div>
 	</div>
 

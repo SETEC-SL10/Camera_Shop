@@ -239,7 +239,7 @@
 		                      </div>
 							</a>
 							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
+								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean.
 							</div>
 							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to cart</a>
 							</div>

@@ -3,26 +3,26 @@
     
 <div class="lady-in-on container" id="popular">
 			<div class="buy-an">
-						<h3>Popular Product</h3>
+						<h3>Related Product</h3>
 						<br>
 					</div>
 					<ul id="flexiselDemo1">			
-				<li><a href="#"><img class="img-responsive women" src="${pageContext.request.contextPath}/resources/user/img/p1.jpg" alt=""></a>
+				<li><a href="/detail"><img class="img-responsive women" src="${pageContext.request.contextPath}/resources/user/img/p1.jpg" alt=""></a>
 				<div class="hide-in">
 				<p>Premium Denim Women's Hidden</p>
 				<span>$179.00  |  <a href="#">Buy Now </a></span>
 				</div></li>
-				<li><a href="#"><img class="img-responsive women" src="${pageContext.request.contextPath}/resources/user/img/p2.jpg" alt=""></a>
+				<li><a href="/detail"><img class="img-responsive women" src="${pageContext.request.contextPath}/resources/user/img/p2.jpg" alt=""></a>
 				<div class="hide-in">
 				<p>Premium Denim Women's Hidden</p>
 				<span>$179.00  |  <a href="#">Buy Now </a></span>
 				</div></li>
-				<li><a href="#"><img class="img-responsive women" src="${pageContext.request.contextPath}/resources/user/img/p3.jpg" alt=""></a>
+				<li><a href="/detail"><img class="img-responsive women" src="${pageContext.request.contextPath}/resources/user/img/p3.jpg" alt=""></a>
 				<div class="hide-in">
 				<p>Premium Denim Women's Hidden</p>
 				<span>$179.00  |  <a href="#">Buy Now </a></span>
 				</div></li>
-				<li><a href="#"><img class="img-responsive women" src="${pageContext.request.contextPath}/resources/user/img/p4.jpg" alt=""></a>
+				<li><a href="/detail"><img class="img-responsive women" src="${pageContext.request.contextPath}/resources/user/img/p4.jpg" alt=""></a>
 				<div class="hide-in">
 				<p>Premium Denim Women's Hidden</p>
 				<span>$179.00  |  <a href="#">Buy Now </a></span>

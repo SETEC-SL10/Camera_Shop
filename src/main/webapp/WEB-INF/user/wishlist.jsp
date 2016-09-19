@@ -43,7 +43,7 @@
 		<div class="container">
 			<div class="ckeckout-top">
 			<div class=" cart-items heading">
-			 <h1>My Shopping Bag (3)</h1>
+			 <h1>My Wishlist (3)</h1>
 				<script>$(document).ready(function(c) {
 					$('.close1').on('click', function(c){
 						$('.cart-header').fadeOut('slow', function(c){
@@ -80,7 +80,7 @@
 				</ul>
 				<ul class="cart-header simpleCart_shelfItem">
 					<div class="close1"> </div>
-						<li class="ring-in"><a href="single.html" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
+						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
 						</li>
 						<li><span>Bracelets</span></li>
 						<li><span class="item_price">$ 290.00</span></li>
@@ -89,7 +89,7 @@
 				</ul>
 				<ul class=" cart-header1 simpleCart_shelfItem">
 					<div class="close2"> </div>
-						<li class="ring-in"><a href="single.html" ><img src="${pageContext.request.contextPath}/resources/user/img/c2.jpg" class="img-responsive" alt=""></a>
+						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c2.jpg" class="img-responsive" alt=""></a>
 						</li>
 						<li><span>Watches</span></li>
 						<li><span class="item_price">$ 300.00</span></li>
@@ -98,7 +98,7 @@
 				</ul>
 				<ul class="cart-header2 simpleCart_shelfItem">
 					<div class="close3"> </div>
-						<li class="ring-in"><a href="single.html" ><img src="${pageContext.request.contextPath}/resources/user/img/c3.jpg" class="img-responsive" alt=""></a>
+						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c3.jpg" class="img-responsive" alt=""></a>
 						</li>
 						<li><span>Handbag</span></li>
 						<li><span class="item_price">$ 360.00</span></li>

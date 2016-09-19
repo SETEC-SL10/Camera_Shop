@@ -46,11 +46,20 @@
 			  <h1>Login</h1>
 		  <div class="col-md-6 login-left">
 			<h2>Existing User</h2>
-			<form>
-				<input type="text" placeholder="Username" required="">
+			<form ng-submit="login()">
+				<!-- <input type="text" placeholder="Username" required="">
 				<input type="password" placeholder="Password" required="">
+				<input type="submit" value="Login"> -->
+				
+				
+				<input type="text" placeholder="Username" required="" ng-model="newUser">
+				<input type="password" placeholder="Password" required="" ng-model="password">
 				<input type="submit" value="Login">
+				
 			</form>
+			
+			
+			
 		  </div>
 		  <div class="col-md-6 login-right">
 		  	 <h3>New User? Create an Account</h3>

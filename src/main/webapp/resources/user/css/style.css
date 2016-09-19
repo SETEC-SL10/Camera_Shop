@@ -1322,7 +1322,7 @@ span.glyphicon.glyphicon-share-alt {
 /*--single page end here--*/
 /*--start-checkout--*/
 .ckeckout{
-	padding:6em 0em;
+	*padding:6em 0em;
 }
 a.add-cart {
     text-decoration: none;
@@ -1406,7 +1406,7 @@ ul.cart-header li span.no-mar-more,ul.cart-header1 li span.no-mar-more,ul.cart-h
 	position:relative;
 }
 .cart-items {
-	padding: 0 1em;
+	*padding: 0 1em;
 }
 .cart-items.heading h1 {
     font-size: 1.5em;
@@ -3085,5 +3085,44 @@ ul.multi-column-dropdown h6 {
 	padding:5px;
 	color:white;
 }
+.aboutUs img
+{
+	margin:10px auto;
+}
 
+/* Increase & Decrease Button */
+#increase,#decrease
+{
+	width:30px;
+	height:30px;
+}
+#numberQty
+{
+	width:40px;
+	height:30px;
+	text-align:center;
+	color:blue;
+}
+.checkoutForm
+{
+	padding-bottom:20px;
+}
+.alignRight
+{
+	text-align:right;
+	float:right;
+}
+#TotalSumarry
+{
+	margin-top:10px;
+}
+#TotalSumarry a
+{
+	margin:10px auto;
+	
+}
+.checkoutDiv
+{
+	width:100%;
+}
 	

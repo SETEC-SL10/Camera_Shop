@@ -9,12 +9,15 @@ app.controller('UserCtrl',['$scope', function($scope){
            		 	{data:"Brand"},
            		 	{data:"Model"},
         		 	
-       		 	
-	               		
-	               		
-	               
 	              ];
 	$scope.type=$scope.search[0].data;
+	$scope.user="Login";
+	$scope.newUser="";
+	$scope.login = function(){	
+		
+		$scope.user=$scope.newUser;
+	}
+	
 	
 	console.log($scope.search[0].data);
 
@@ -39,6 +42,21 @@ app.controller('UserCtrl',['$scope', function($scope){
  
 	
 }]);
+
+function increaseValue()
+{
+    var value = parseInt(document.getElementById('numberQty').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value = value + 1;
+    document.getElementById('numberQty').value = value;
+}
+function reduceValue()
+{
+    var value = parseInt(document.getElementById('numberQty').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value = value - 1;
+    document.getElementById('numberQty').value = value;
+}
 
 
 

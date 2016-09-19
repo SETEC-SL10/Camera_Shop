@@ -55,11 +55,14 @@ background: url(../images/grid_view.png)no-repeat;
 .cbp-vm-image {
 	display: block;
 	margin: 0 auto;
+	*background-color:#816263;
 }
 .cbp-vm-image img {
 	display: inline-block;
 	max-width: 100%;
 	border: none;
+	max-height: 200px;
+	min-height: 200px;
 }
 .cbp-vm-title {
 	margin: 0;

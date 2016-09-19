@@ -9,7 +9,8 @@
 			<div class="container">
 				<div class="header-top-left">
 					<ul>
-						<li><a href="/login"><span class="glyphicon glyphicon-user"> </span>Login</a></li>
+						<!-- <li><a href="/login" id="login"><span class="glyphicon glyphicon-user"> </span>Login</a></li> -->
+						<li><a href="/login" id="login"><span class="glyphicon glyphicon-user"> </span>{{user}}</a></li>
 						<li><a href="/register"><span class="glyphicon glyphicon-lock"> </span>Register</a></li>	
 	
 					</ul>

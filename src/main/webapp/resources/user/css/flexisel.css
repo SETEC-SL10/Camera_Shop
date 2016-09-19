@@ -11,6 +11,12 @@
 	max-width: 100%;
 	padding: 2em 0;
 }
+#popular img {
+	max-height:150px;
+	min-height:150px;
+	padding: auto 10px;
+	
+}
 .nbs-flexisel-ul {
 	position: relative;
 	width: 9999px;
