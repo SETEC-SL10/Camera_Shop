@@ -7,6 +7,7 @@ html, body{
   font-family: 'Hind', sans-serif;
    font-size: 100%;
    background:#fff; 
+   word-wrap:break-word !important;
 }
 a {
   text-decoration: none;

@@ -175,7 +175,7 @@
 					                  </div>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">perspiciatis</p>
+										 <p class="title">{{title | strLimit : 34}}</p>
 									   </div>
 									   <div class="pricey"><span class="item_price">$259.00</span></div>
 									   <div class="clearfix"></div>
@@ -185,9 +185,11 @@
 		                      </div>
 		                    </a>
 							<div class="cbp-vm-details">
-								Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
+								{{des | strLimit : 73}} 
 							</div>
-							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to cart</a>
+							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Cart</a>
+							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Wishlist</a>
+							
 							</div>
 						</li>
 						<li>
@@ -214,7 +216,9 @@
 							<div class="cbp-vm-details">
 								Wattle seed bunya nuts spring onion okra garlic bitterleaf zucchini.
 							</div>
-							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to cart</a>
+							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Cart</a>
+							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Wishlist</a>
+							
 							</div>
 						</li>
 						<li>
@@ -241,7 +245,8 @@
 							<div class="cbp-vm-details">
 								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean.
 							</div>
-							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to cart</a>
+							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Cart</a>
+							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Wishlist</a>
 							</div>
 						</li>
 						<li>
@@ -424,7 +429,7 @@
 
 
 
-<%@include file="user/include/popular.jsp"%>
+<%-- <%@include file="user/include/popular.jsp"%> --%>
 
 <%@include file="user/include/footer.jsp"%>
 

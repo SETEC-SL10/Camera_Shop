@@ -10,6 +10,10 @@ app.controller('UserCtrl',['$scope', function($scope){
            		 	{data:"Model"},
         		 	
 	              ];
+	$scope.des="Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebeansdddddddddddddddddddddddddddddddddddddddddddddddddddddddd.";
+	$scope.title="perspiciatissdfffffffffffffffhrtttttttttttttttttttttttttttttttttttttttttttwsdwsrwerererererer";
+	//alert("perspiciatissdfffffffffffffffhrttt".length);
+	/*alert($scope.des.length);*/
 	$scope.type=$scope.search[0].data;
 	$scope.user="Login";
 	$scope.newUser="";
@@ -41,6 +45,16 @@ app.controller('UserCtrl',['$scope', function($scope){
 	}*/
  
 	
+}]);
+app.filter('strLimit', ['$filter', function($filter) {
+   return function(input, limit) {
+     if (! input) return;
+     if (input.length <= limit) {
+          return input;
+      }
+    
+      return $filter('limitTo')(input, limit) + '...';
+   };
 }]);
 
 function increaseValue()

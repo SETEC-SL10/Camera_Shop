@@ -63,6 +63,8 @@ background: url(../images/grid_view.png)no-repeat;
 	border: none;
 	max-height: 200px;
 	min-height: 200px;
+	min-width: 200px;
+    max-width: 200px;	
 }
 .cbp-vm-title {
 	margin: 0;
