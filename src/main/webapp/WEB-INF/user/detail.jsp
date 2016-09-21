@@ -64,7 +64,7 @@ $(window).load(function() {
 
 				$('#etalage').etalage({
 					thumb_image_width: 300,
-					thumb_image_height: 400,
+					thumb_image_height: 300,
 					source_image_width: 900,
 					source_image_height: 1200,
 					show_hint: true,

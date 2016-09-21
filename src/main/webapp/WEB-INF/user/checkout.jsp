@@ -141,6 +141,10 @@
             <input  maxlength="100" type="text" class="form-control" placeholder="Username or Email"  />
             <br>
             
+            <label class="control-label">Gender</label>
+            <input  maxlength="100" type="text" class="form-control" placeholder="Username or Email"  />
+            <br>
+            
              <label class="control-label">Phone</label>
             <input  maxlength="100" type="text" class="form-control" placeholder="Username or Email"  />
             <br>

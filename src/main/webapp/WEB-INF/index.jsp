@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -56,7 +57,7 @@
 <body > <!-- ng-app="UserApp" ng-controller="UserCtrl" ng-cloak -->
 
 <%@include file="user/include/header.jsp"%>
-<%@include file="user/include/banner.jsp"%>
+<%-- <%@include file="user/include/banner.jsp"%> --%>
 
 	<div class="product" ng-app="ProductApp" ng-controller="ProductController">
 		<div class="container">
@@ -197,6 +198,37 @@
 											<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addToWishlist($index)">Add to Wishlist</a>
 										</div>
 									</li>
+									
+									
+									<li>
+										<a class="cbp-vm-image" href="/detail">
+											<div class="simpleCart_shelfItem">
+												<div class="view view-first">
+													<div class="inner_content clearfix">
+														<div class="product_image">
+															<img src="${pageContext.request.contextPath}/resources/user/img/p3.jpg" class="img-responsive" alt=""/>
+															<div class="mask">
+																<div class="info">Quick View</div>
+															</div>
+															<div class="product_container">
+																<div class="cart-left">
+																	<p class="title">Similique Sunt</p>
+																</div>
+																<div class="pricey"><span class="item_price">$699.00</span></div>
+																<div class="clearfix"></div>
+															</div>		
+														</div>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="cbp-vm-details">
+										Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean.
+										</div>
+										<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Cart</a>
+										<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Wishlist</a>
+									</li>
+									
 								</ul>
 							</div>
 						</div>
@@ -215,7 +247,7 @@
 		</div>
 	</div>
 	<script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script>
-<%-- <%@include file="user/include/popular.jsp"%> --%>
+<%@include file="user/include/popular.jsp"%>
 
 <%@include file="user/include/footer.jsp"%>
 
