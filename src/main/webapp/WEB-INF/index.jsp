@@ -1,4 +1,4 @@
-<%-- 
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -46,19 +46,53 @@
 <!-- Start New Code here -->
 <link href="${pageContext.request.contextPath}/resources/user/css/component.css" rel="stylesheet" type="text/css" media="all"/>
  <link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/>
-
+<link href="${pageContext.request.contextPath}/resources/user/css/pagination.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
 
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" ng-cloak>
+<body ><!--  ng-app="UserApp" ng-controller="UserCtrl" ng-cloak-->
 
 <%@include file="user/include/header.jsp"%>
 
-<%@include file="user/include/banner.jsp"%>
 
-
-
-<div class="product">
+<div class="product" ng-app="ProductApp" ng-controller="ProductController" ng-cloak>
 	<div class="container">
+	<div class="row" style="padding-bottom:10px"> 
+				<div class="col-sm-3">
+					<!-- Trigger the modal with a button -->
+					<!-- <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Add more Camera</button> -->
+				</div> 
+				<div class="col-sm-6">
+					<div class="input-group">
+						<div class="input-group-btn search-panel">
+						    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						    	<span id="search_concept">{{btnFilter.value}}</span> <span class="caret"></span>
+						    </button>
+						    <ul class="dropdown-menu" role="menu">
+								<li class="divider"></li>
+								<li ng-repeat="search_Filter in searchFilters"> <!-- ng-repeat="search_Filter in searchFilters" -->
+								  <a myVal="{{search_Filter.id}}" style="cursor: pointer;" ng-click="searchFilterClicked($index)">{{search_Filter.value}}</a>
+								</li>
+								<li class="divider"></li>
+						    </ul>
+						    <!-- <select class="form-control" id="searchFilter" ng-model="searchFilter" ng-options="search_Filter.value for search_Filter in searchFilters">
+						    </select> -->
+						</div>
+					    <!-- <input type="hidden" name="search_param" value="all" id="search_param">          -->
+					    <input type="text" class="form-control" name="x" placeholder="Search ..." ng-model="conditionValue">
+					    <span class="input-group-btn">
+					    	<button class="btn btn-info btn-md" type="button" ng-click="searchProduct()"><span class="glyphicon glyphicon-search"></span></button>
+					    </span>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<!-- Trigger the modal with a button -->
+					<!-- <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Add more Camera</button> -->
+				</div>
+			</div>
+	
 		<div class="product-main">
 			  <div class=" product-menu-bar">
 			    	<div class="col-md-3 prdt-right">
@@ -67,20 +101,24 @@
 							<h1>Categories</h1>
 							<div class="row1 scroll-pane">
 								<div class="col col-4">
-									<!--  <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Accessories</label> -->									
-									 <a href="#" value="All Accessories">All Accessories</a>
+									<!-- <h3>All Category</h3> -->
+									<a href="#" ng-click="getAllProductFilter('category','')">All Category</a>
 								</div>
-								
+								<div class="col col-4" ng-repeat="Category in Categorys">
+									<!-- <a href="#" ng-click="getAllProductCategory(Category.category_name)">{{Category.category_name}}</a> -->
+									<a href="#" ng-click="getAllProductFilter('category',Category.category_name)">{{Category.category_name}}</a>
+								</div>					
 							</div>
 						</section>
 						<section  class="sky-form">
 							<h2>Brand</h2>
 							<div class="row1 row2 scroll-pane">
 								<div class="col col-4">
-									<!-- <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Brands</label> -->
-									<a href="#" value="All Accessories">All Brand</a>
+									<a href="#" ng-click="getAllProductFilter('brand','')">All Brand</a>
 								</div>
-								
+								<div class="col col-4" ng-repeat="Brand in Brands">
+									<a href="#" ng-click="getAllProductFilter('brand',Brand.brand_name)">{{Brand.brand_name}}</a>
+								</div>
 							</div>
 						</section>
 						
@@ -89,36 +127,20 @@
 							<div class="row1 row2 scroll-pane">
 								<div class="col col-4">
 									<!-- <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Model</label> -->
-									<a href="#" value="All Accessories">All Model</a>
+									<!-- <a href="#" value="All Accessories">All Model</a> -->
+									<a href="#" ng-click="getAllProductFilter('model','')">All Model</a>
 								</div>
-								
+								<div class="col col-4" ng-repeat="Model in Models">
+									<a href="#" ng-click="getAllProductFilter('model',Model.model_name)">{{Model.model_name}}</a>
+								</div>
 							</div>
 						</section>
 						
 						<section class="sky-form">
-							<h4>Colour</h4>
-								<ul class="w_nav2">
-									<li><a class="color1" href="#"></a></li>
-									<li><a class="color2" href="#"></a></li>
-									<li><a class="color3" href="#"></a></li>
-									<li><a class="color4" href="#"></a></li>
-									<li><a class="color5" href="#"></a></li>
-									<li><a class="color6" href="#"></a></li>
-									<li><a class="color7" href="#"></a></li>
-									<li><a class="color8" href="#"></a></li>
-									<li><a class="color9" href="#"></a></li>
-									<li><a class="color10" href="#"></a></li>
-									<li><a class="color12" href="#"></a></li>
-									<li><a class="color13" href="#"></a></li>
-									<li><a class="color14" href="#"></a></li>
-									<li><a class="color15" href="#"></a></li>
-									<li><a class="color5" href="#"></a></li>
-									<li><a class="color6" href="#"></a></li>
-									<li><a class="color7" href="#"></a></li>
-									<li><a class="color8" href="#"></a></li>
-									<li><a class="color9" href="#"></a></li>
-									<li><a class="color10" href="#"></a></li>
-								</ul>
+							<h4>Color</h4>
+							<ul class="w_nav2">
+								<li ng-repeat="Color in Colors" ><a href="#" ng-click="getAllProductFilter('color',Color.color_code)" ng-style="set_color(Color)" ></a></li>
+							</ul>
 						</section>
 					</div>
 				</div>
@@ -164,35 +186,37 @@
        	   </div>
 					<div class="clearfix"></div>
 					<ul>
-					  <li>
-							<a class="cbp-vm-image" href="/detail">
-								<div class="simpleCart_shelfItem">
-							 <div class="view view-first">
-					   		  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="${pageContext.request.contextPath}/resources/user/img/p1.jpg" class="img-responsive" alt=""/>
-									<div class="mask">
-			                       		<div class="info">Quick View</div>
-					                  </div>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">{{title | strLimit : 34}}</p>
-									   </div>
-									   <div class="pricey"><span class="item_price">$259.00</span></div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                      </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								{{des | strLimit : 73}} 
+						<li ng-repeat="Product in Products">
+							<div class="simpleCart_shelfItem">
+								<a class="cbp-vm-image" href="/detail">
+									<div class="view view-first">
+										<div class="inner_content clearfix">
+											<div class="product_image">
+												
+												<img ng-src="http://localhost:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/>
+												<div class="mask">
+													<div class="info">View Detail</div>
+												</div>
+												<div class="product_container">
+													<div class="cart-left">
+														<p class="title">{{Product.product_name | strLimit : 10}}</p>
+													</div>
+													<div class="pricey"><span class="item_price">{{Product.sell_price | currency}}</span></div>
+													<div class="pricey"><p class="title" style="color:red;">{{Product.product_id.substring(1, 2) == "O" ? "USED":"NEW"}}</p></div>
+													<div class="clearfix"></div>
+												</div>		
+											</div>
+										</div>
+									</div>
+								</a>
+								<div class="cbp-vm-details">
+									{{Product.description | strLimit : 10}}
+								</div>
+								<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addToCart($index)">Add to cart</a>
+								<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addToWishlist($index)">Add to Wishlist</a>
 							</div>
-							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Cart</a>
-							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Wishlist</a>
-							
-							</div>
-						</li>
+						</li>	
+					
 										
 					</ul>
 				</div>
@@ -200,7 +224,13 @@
                 <script src="${pageContext.request.contextPath}/resources/user/js/classie.js" type="text/javascript"></script>
 			</div>
 		</div>
-			   
+			   <nav role="navigation">
+					<ul class="cd-pagination no-space">
+						<li class="button"><a href="#" ng-click="getProductsByPagePrev()">Prev</a></li>
+						<li  ng-repeat = "page in Pagination"><a href="#" ng-class="($index == bntClickedIndex) ? 'current' : ''" ng-click="getProductsByPage($index)">{{page}}</a></li>
+						<li class="button"><a href="#" ng-click="getProductsByPageNext()">Next</a></li>
+					</ul>
+				</nav> <!-- cd-pagination-wrapper -->
 		
 			  </div> 
 			  
@@ -210,12 +240,12 @@
 	
 </div>
 
-
-
-<%@include file="user/include/popular.jsp"%>
+<script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script>
 
 <%@include file="user/include/footer.jsp"%>
->>>>>>> 8e0d80c0eff73dcc5a6a8f391b2262e354da28a8 --%>
+
+</body>
+</html> 
 
 
 
@@ -231,10 +261,9 @@
 
 
 
+<%-- 
 
-
-
-<%@ page language="java" contentType="text/html; charset=utf-8"
+ <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -292,7 +321,7 @@
 <body > <!-- ng-app="UserApp" ng-controller="UserCtrl" ng-cloak -->
 
 <%@include file="user/include/header.jsp"%>
-<%-- <%@include file="user/include/banner.jsp"%> --%>
+<%@include file="user/include/banner.jsp"%>
 
 	<div class="product" ng-app="ProductApp" ng-controller="ProductController">
 		<div class="container">
@@ -409,7 +438,7 @@
 												<div class="view view-first">
 													<div class="inner_content clearfix">
 														<div class="product_image">
-															<%-- <img src="${pageContext.request.contextPath}/resources/user/img/p2.jpg" class="img-responsive" alt=""/> --%>
+															
 															<img ng-src="http://localhost:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/>
 															<div class="mask">
 																<div class="info">View Detail</div>
@@ -432,38 +461,7 @@
 											<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addToCart($index)">Add to cart</a>
 											<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addToWishlist($index)">Add to Wishlist</a>
 										</div>
-									</li>
-									
-									
-									<%-- <li>
-										<a class="cbp-vm-image" href="/detail">
-											<div class="simpleCart_shelfItem">
-												<div class="view view-first">
-													<div class="inner_content clearfix">
-														<div class="product_image">
-															<img src="${pageContext.request.contextPath}/resources/user/img/p3.jpg" class="img-responsive" alt=""/>
-															<div class="mask">
-																<div class="info">Quick View</div>
-															</div>
-															<div class="product_container">
-																<div class="cart-left">
-																	<p class="title">Similique Sunt</p>
-																</div>
-																<div class="pricey"><span class="item_price">$699.00</span></div>
-																<div class="clearfix"></div>
-															</div>		
-														</div>
-													</div>
-												</div>
-											</div>
-										</a>
-										<div class="cbp-vm-details">
-										Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean.
-										</div>
-										<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Cart</a>
-										<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to Wishlist</a>
-									</li> --%>
-									
+									</li>								
 								</ul>
 							</div>
 						</div>
@@ -482,9 +480,9 @@
 		</div>
 	</div>
 	<script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script>
-<%@include file="user/include/popular.jsp"%>
+
 
 <%@include file="user/include/footer.jsp"%>
 
 </body>
-</html>
+</html>  --%>
