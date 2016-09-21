@@ -90,12 +90,12 @@ a:hover {
 }
 ul.nav.navbar-nav li a {
     font-size: 0.9em;
-    color: #000;
+    color: black;
     font-family: 'Oswald', sans-serif;
 }
 ul.nav.navbar-nav li a:hover{
 	background:#847057;
-	color:#fff;
+	color:black;
 }
 .dropdown-menu {
 	top: 100%;
@@ -826,6 +826,7 @@ span.glyphicon.glyphicon-share-alt {
 .w_nav2 li a{
 	display: block;
 	padding: 14px;
+	margin: 2px;
 }
 .w_nav2 li a.color1{
 	background:	#0AA5E2;
@@ -984,9 +985,9 @@ span.glyphicon.glyphicon-share-alt {
 .sky-form .radio,.sky-form .checkbox {
 	outline:none;
 	border:none;
-	margin-bottom: 4px;
+	margin-bottom: 0px;
 	padding-left: 27px;
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 27px;
 	color: #555555;
 	cursor: pointer;
@@ -3125,5 +3126,13 @@ ul.multi-column-dropdown h6 {
 .checkoutDiv
 {
 	width:100%;
+}
+.searchBtn
+{
+	padding-left: 4px;
+}
+.searchBlock
+{
+	margin-bottom:35px
 }
 	

@@ -16,33 +16,16 @@
 					</ul>
 				</div>
 				
-				 <div style="display:inline">
-				 	<select class="" ng-model="type">			       
-                       <option ng-repeat="x in search" value="{{x.data}}" >{{x.data}}</option>
-                  </select> 
-                  
-                  
-	                
-	                  <input type="text" name="" id="" placeholder="Search here ">
-	                  <button type="submit"><span class="fa fa-search"></span>Search</button>
-	            
-	                
-				 </div>
 				
 				<div class="header-right-align">					
 					
-					<a href="checkout.html">
+					<a href="#">
 						<span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="${pageContext.request.contextPath}/resources/user/img/bag.png" alt="">
 					</a>
 					<span><a href="javascript:;" class="simpleCart_empty">Empty cart</a></span>	
-					<a href="/checkout"> <span>Checkout</span> </a>
-					<a href="/wishlist"> <span>Wishlist</span> </a>
 					<a href="/cart"> <span>Cart</span> </a>
+					<a href="/wishlist"> <span>Wishlist</span> </a>					
 					<a href="/account"> <span>Account</span> </a>
-					
-					
-					
-							
 				</div>				
 			</div>
 		</div>
