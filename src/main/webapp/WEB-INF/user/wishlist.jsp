@@ -34,8 +34,14 @@
 <!-- //end-smoth-scrolling -->
 <script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script>
 <script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
+
+<link href="${pageContext.request.contextPath}/resources/user/css/pagination.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" ng-cloak>
+<body ng-app="wishlistApp" ng-controller="wishlistController">
 
 <%@include file="include/header.jsp"%>
 
@@ -43,39 +49,53 @@
 		<div class="container">
 			<div class="ckeckout-top">
 			<div class=" cart-items heading">
-			 <h1>My Wishlist (3)</h1>
-				<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-					});
-			   </script>
-			<script>$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-						$('.cart-header1').fadeOut('slow', function(c){
-							$('.cart-header1').remove();
-						});
-						});	  
-					});
-			   </script>
-			   <script>$(document).ready(function(c) {
-					$('.close3').on('click', function(c){
-						$('.cart-header2').fadeOut('slow', function(c){
-							$('.cart-header2').remove();
-						});
-						});	  
-					});
-			   </script>
-				
+			 <h1>My Wishlist ({{countWishlist}})</h1>
 			<div class="in-check" >
 				<ul class="unit">
-					<li><span>Item</span></li>
-					<li><span>Product Name</span></li>		
-					<li><span>Unit Price</span></li>
-					<li><span>Delivery Details</span></li>
-					<li> </li>
+					<li style="width:100px;"><span>Item</span></li>
+					<li style="width:450px;"><span>Product Name</span></li>	
+					<li style="width:100px;"><span>Color</span></li>	
+					<li style="width:100px;"><span>Unit Price</span></li>
+					<li style="width:100px;"><span>Type</span></li>
+					<li ><span>Add To Cart</span></li>
+					<div class="clearfix"> </div>
+				</ul>
+				<ul class="cart-header simpleCart_shelfItem" ng-repeat = "wishlist in wishlists">
+					<div class="close1" ng-click = "deleteWishlist($index)"> </div>
+					<li class="ring-in" style="width:100px;">
+						<a href="/detail" >
+							<img ng-src="http://localhost:9999/{{wishlist.product.images[0].image_url}}" class="img-responsive" style="width:80px;hieght:80px" alt="">
+						</a>
+					</li>
+					<li style="width:450px;">
+						<a href="/detail" ><span>{{wishlist.product.product_name}}</span></a>
+					</li>
+					<li style="width:100px;"><span ng-style = "set_color(wishlist.product.color)">{{wishlist.product.color.color_name}}</span></li>
+					<li style="width:100px;"><span class="item_price">{{wishlist.product.sell_price | currency}}</span></li>
+					<li style="width:100px;"><span style="color:red;">{{wishlist.product.product_id.substring(1, 2) == "O" ? "USED":"NEW"}}</span></li>
+					<li> <a href="#" class="add-cart cart-check item_add" ng-click = "addToCart(wishlist.product)">Add to cart</a></li>				
+					<div class="clearfix"> </div>
+				</ul>
+<%-- 
+				
+				
+				
+				<ul class="cart-header simpleCart_shelfItem">
+					<div class="close1"> </div>
+						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
+						</li>
+						<li><span>Bracelets</span></li>
+						<li><span class="item_price">$ 290.00</span></li>
+						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>				
+					<div class="clearfix"> </div>
+				</ul> --%>
+				<%-- <ul class="cart-header simpleCart_shelfItem">
+					<div class="close1"> </div>
+						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
+						</li>
+						<li><span>Bracelets</span></li>
+						<li><span class="item_price">$ 290.00</span></li>
+						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>				
 					<div class="clearfix"> </div>
 				</ul>
 				<ul class="cart-header simpleCart_shelfItem">
@@ -104,14 +124,24 @@
 						<li><span class="item_price">$ 360.00</span></li>
 						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>						
 						<div class="clearfix"> </div>
-				</ul>
+				</ul> --%>
 			</div>
 			</div>  
 		 </div>
+		<div>
+			<nav role="navigation">
+				<ul class="cd-pagination no-space">
+					<li class="button"><a href="#" ng-click="getWishlistByPagePrev()">Prev</a></li>
+					<li  ng-repeat = "page in Pagination"><a href="#" ng-class="($index == bntClickedIndex) ? 'current' : ''" ng-click="getWishlistByPage($index)">{{page}}</a></li>
+					<li class="button"><a href="#" ng-click="getWishlistByPageNext()">Next</a></li>
+				</ul>
+			</nav> <!-- cd-pagination-wrapper -->
+		</div>
 		</div>
 	</div>
 
 <%@include file="include/footer.jsp"%>
 
+	<script src="${pageContext.request.contextPath}/resources/user/js/wishlist.js"></script>
 </body>
 </html>

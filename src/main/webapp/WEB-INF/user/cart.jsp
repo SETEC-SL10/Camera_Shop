@@ -32,10 +32,13 @@
 			});
 	</script>
 <!-- //end-smoth-scrolling -->
-<script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script>
+<%-- <script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script> --%>
 <script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" ng-cloak>
+<body ng-app="cartApp" ng-controller="cartController"><!-- ng-app="UserApp" ng-controller="UserCtrl" ng-cloak -->
 
 <%@include file="include/header.jsp"%>
 
@@ -43,63 +46,45 @@
 		<div class="container">
 			<div class="ckeckout-top">
 			<div class=" cart-items heading">
-			 <h1>My Cart (3)</h1>
-				<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-					});
-			   </script>
-			<script>$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-						$('.cart-header1').fadeOut('slow', function(c){
-							$('.cart-header1').remove();
-						});
-						});	  
-					});
-			   </script>
-			   <script>$(document).ready(function(c) {
-					$('.close3').on('click', function(c){
-						$('.cart-header2').fadeOut('slow', function(c){
-							$('.cart-header2').remove();
-						});
-						});	  
-					});
-			   </script>
-				
+			 <h1>My Cart ({{Carts.length}})</h1>
 			<div class="in-check" >
 				<ul class="unit">
-					<li><span>Item</span></li>
-					<li><span>Product Name</span></li>		
-					<li><span>Unit Price</span></li>
-					<li><span>Quantity</span></li>
-					<li><span>Total</span></li>
-					<li> </li>
+					<li style="width:100px;"><span>Item</span></li>
+					<li style="width:400px;"><span>Product Name</span></li>	
+					<li style="width:100px;"><span>Color</span></li>	
+					<li style="width:100px;"><span>Unit Price</span></li>
+					<li style="width:100px;"><span>Type</span></li>
+					<li style="width:150px;"><span >Quantity</span></li>
+					<li style="width:100px;"><span >Total</span></li>
 					<div class="clearfix"> </div>
 				</ul>
-				<ul class="cart-header simpleCart_shelfItem">
-					<div class="close1"> </div>
-						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
-						</li>
-						<li><span>Bracelets</span></li>
-						<li><span class="item_price">$ 290.00</span></li>
-						<li>
-							<span>
-								<form>
-								    <input type="button" onclick="reduceValue()" value="-" id="decrease" / >
-								   <input type="text" id="numberQty" value="0" size="10" />
-								   <input type="button" onclick="increaseValue()" value="+" id="increase" / >
-								</form>
-							
-							</span>
-						</li>
-						<li><span>$400</span></li>
-						<!-- <li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li> -->				
+				<ul class="cart-header simpleCart_shelfItem" ng-repeat = "Cart in Carts">
+					<div class="close1" ng-click = "deleteCart($index)"> </div>
+					<li class="ring-in" style="width:100px;">
+						<a href="/detail" >
+							<img ng-src="http://localhost:9999/{{Cart.product.images[0].image_url}}" class="img-responsive" style="width:80px;hieght:80px" alt="">
+						</a>
+					</li>
+					<li style="width:400px;">
+						<a href="/detail" ><span>{{Cart.product.product_name}}</span></a>
+					</li>
+					<li style="width:100px;"><span ng-style = "set_color(Cart.product.color)">{{Cart.product.color.color_name}}</span></li>
+					<li style="width:100px;"><span class="item_price">{{Cart.product.sell_price | currency}}</span></li>
+					<li style="width:100px;"><span style="color:red;">{{Cart.product.product_id.substring(1, 2) == "O" ? "USED":"NEW"}}</span></li>
+					<li style="width:150px;">
+						<span ng-hide = "checkProductType(Cart.product)">
+							<form>
+							   <input type="button" onclick="reduceValue()" value="-" id="decrease" / >
+							   <input type="number" id="numberQty" ng-change = "changeValueQty(Cart)" ng-model = "Cart.product_qty" size="20" />
+							   <input type="button" onclick="increaseValue()" value="+" id="increase" / >
+							</form>
+						</span>
+						<span ng-hide = "!checkProductType(Cart.product)">{{Cart.product_qty}}</span>
+					</li>
+					<li style="width:100px;"><span >{{Cart.product.sell_price * Cart.product_qty | currency}}</span></li>		
 					<div class="clearfix"> </div>
 				</ul>
-				<ul class=" cart-header1 simpleCart_shelfItem">
+				<%-- <ul class=" cart-header1 simpleCart_shelfItem">
 					<div class="close2"> </div>
 						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c2.jpg" class="img-responsive" alt=""></a>
 						</li>
@@ -108,8 +93,8 @@
 						<li>
 							<span>
 								<form>
-								    <input type="button" onclick="reduceValue()" value="-" id="decrease" / >
-								   <input type="text" id="numberQty" value="0" size="10" />
+								   <input type="button" onclick="reduceValue()" value="-" id="decrease" / >
+								   <input type="number"  value="0" size="20" />
 								   <input type="button" onclick="increaseValue()" value="+" id="increase" / >
 								</form>
 							
@@ -139,7 +124,7 @@
 						<li><span>$400</span></li>
 						<!-- <li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li> -->						
 						<div class="clearfix"> </div>
-				</ul>
+				</ul> --%>
 			</div>
 			
 			<div id="TotalSumarry">
@@ -167,6 +152,6 @@
 	</div>
 
 <%@include file="include/footer.jsp"%>
-
+<script src="${pageContext.request.contextPath}/resources/user/js/cart.js"></script>
 </body>
 </html>
