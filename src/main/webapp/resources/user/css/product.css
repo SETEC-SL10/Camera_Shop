@@ -29,8 +29,8 @@ a.product_name {
 .mask {
 	display: none;
 	position: absolute;
-	top: 44%;
-	left: 33%;
+	top: 25%;
+	left: 30%;
 }
 .mask a{
 	background: rgba(255, 255, 255, 0.74);
@@ -108,12 +108,7 @@ ul.product-top-list li span.act{
 .view-first:hover .mask {
 	opacity: 1;
 }
-.view .mask, .view .content {
-	position: absolute;
-	overflow: hidden;
-	top: 10em;
-	left: 6.2em;
-}
+
 .view-first .mask {
 	opacity: 0;
 	background-color: rgba(219,127,8, 0.7);
@@ -131,21 +126,11 @@ ul.product-top-list li span.act{
 	font-size: 0.85em;
 	font-weight: bold;
 }
-.view .mask, .view .content {
-    position: absolute;
-    overflow: hidden;
-    top: 11.5em;
-    left: 8.2em;
-}
+
 .view-first:hover .mask {
 	opacity: 1;
 }
-.view .mask, .view .content {
-	position: absolute;
-	overflow: hidden;
-	top: 11.5em;
-	left: 8.2em;
-}
+
 .product_image {
     position: relative;
 }
@@ -226,10 +211,18 @@ h3.new-models {
 	font-weight: 600;
 	color:#fff;
 }
-.view .mask, .view .content {
+.view .content {
 	position: absolute;
 	overflow: hidden;
 	top: 12em;
 	left: 6.2em;
+}
+.titleBlock
+{
+	height:50px;
+}
+.desBlock
+{
+	height:50px;
 }
 
