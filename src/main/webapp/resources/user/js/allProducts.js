@@ -53,6 +53,13 @@ app.controller('ProductController', function($scope,$http){
 	};
 	
 	$scope.getAllProductFilter = function(colunm,name){
+		if(colunm == "color"){
+			$("input:radio[name='radio']").each(function(i){
+				this.checked=false;
+			});
+		}
+		
+		
 		$scope.pageForm.columnName = colunm;
 		$scope.pageForm.conditionValue = name;
 		$scope.pageForm.page = 0;

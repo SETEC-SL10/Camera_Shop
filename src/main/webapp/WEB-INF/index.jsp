@@ -48,14 +48,18 @@
  <link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="${pageContext.request.contextPath}/resources/user/css/pagination.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script> -->
+<link href="${pageContext.request.contextPath}/resources/user/css/sweetalert.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="${pageContext.request.contextPath}/resources/user/js/sweetalert-dev.js"> </script>
 
 </head>
 <body ><!--  ng-app="UserApp" ng-controller="UserCtrl" ng-cloak-->
 
 <%@include file="user/include/header.jsp"%>
 
+<%-- <%@include file="user/include/banner.jsp"%>  --%>
 
 <div class="product" ng-app="ProductApp" ng-controller="ProductController" ng-cloak>
 	<div class="container">
@@ -79,7 +83,7 @@
 							<h4>Brands</h4>
 								<div class="row1 row2 scroll-pane">
 									<div class="col col-4">
-										<label class="radio" ng-click="getAllProductFilter('brand','')"><input type="radio" name="radio" checked=""><i></i>All Brand</label>
+										<label class="radio" ng-click="getAllProductFilter('brand','')"><input type="radio" name="radio"><i></i>All Brand</label>
 										<label class="radio" ng-repeat="Brand in Brands" ng-click="getAllProductFilter('brand',Brand.brand_name)"><input type="radio" name="radio"><i></i>{{Brand.brand_name}}</label>
 									</div>
 									
@@ -90,7 +94,7 @@
 							<h4>Models</h4>
 								<div class="row1 row2 scroll-pane">
 									<div class="col col-4">
-										<label class="radio" ng-click="getAllProductFilter('model','')"><input type="radio" name="radio" checked=""><i></i>All Model</label>
+										<label class="radio" ng-click="getAllProductFilter('model','')"><input type="radio" name="radio"><i></i>All Model</label>
 										<label class="radio" ng-repeat="Model in Models" ng-click="getAllProductFilter('model',Model.model_name)"><input type="radio" name="radio"><i></i>{{Model.model_name}}</label>
 									</div>
 									
@@ -100,7 +104,7 @@
 						<section class="sky-form">
 							<h4>Colors</h4>
 								<ul class="w_nav2">
-									<li ng-repeat="Color in Colors"><a class="color" href="#" ng-click="getAllProductFilter('color',Color.color_code)" ng-style="set_color(Color)"></a></li>																	
+									<li ng-repeat="Color in Colors"><a class="color" href="#" ng-click="getAllProductFilter('color',Color.color_code)" ng-style="set_color(Color)"> </a></li>																	
 								</ul>
 						</section>																						
 					</div>
@@ -181,6 +185,7 @@
 <script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script>
 
 <%@include file="user/include/footer.jsp"%>
+
 
 </body>
 </html> 
