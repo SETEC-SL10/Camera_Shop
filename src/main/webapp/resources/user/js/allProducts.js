@@ -205,7 +205,8 @@ app.controller('ProductController', function($scope,$http){
 		    	if(response.data.Message != "Success Insert Cart"){
 		    		swal("Request Data!", response.data.Message, "success");
 		    	}else{
-		    		swal("Request Data!", response.data.Message, "success");
+//		    		swal("Request Data!", response.data.Message, "success");
+		    		window.open('http://localhost:8888/cart', "_parent");
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
