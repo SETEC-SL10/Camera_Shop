@@ -9,6 +9,7 @@
  <script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
 
+
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
@@ -130,7 +131,7 @@
 					<ul>
 						<li ng-repeat="Product in Products">
 							<div class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="/detail">
+								<a class="cbp-vm-image" href="/detail?p={{Product.product_id}}&c={{Product.color.color_id}}&s={{Product.serial}}">
 									<div class="view view-first">
 										<div class="inner_content clearfix">
 											<div class="product_image">

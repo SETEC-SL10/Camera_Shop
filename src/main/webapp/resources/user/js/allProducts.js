@@ -4,7 +4,19 @@
 * Description
 */
 var app = angular.module('ProductApp', []);
-app.controller('ProductController', function($scope,$http){
+
+app.controller('ProductController', function($scope,$rootScope,$http,$window){
+	$rootScope.productID = $window.productID;
+	$rootScope.colorID = $window.colorID;
+	$rootScope.serial = $window.serial;
+	
+	alert("This Message is for Test Detail Page only!!\nPlease Click on product for Test!\n\n\n" +
+			""+"ProductID: "+$rootScope.productID+"\nColorID: "+$rootScope.colorID+"\nSerial: "+$rootScope.serial);
+	
+	// So if you want to use ProductID in your angular function just get one of them. Ex: $rootScope.productID
+	
+	
+	
 	$scope.searchFilters = [
 							{ id : "name", value : "Product Name"},
 							{ id : "category", value : "Category Name"},
@@ -46,6 +58,9 @@ app.controller('ProductController', function($scope,$http){
 		    	}else{
 		    		$scope.Products = response.data.DATA;
 		    		$scope.getPageProduct();
+		    		/*console.log("check Product here");
+		    		console.log($scope.Products);*/
+		    		
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -299,6 +314,7 @@ app.controller('ProductController', function($scope,$http){
 	$scope.getAllBrand();
 	$scope.getAllModel();
 	$scope.getAllColor();
+	
 });
 
 app.filter('strLimit', ['$filter', function($filter) {

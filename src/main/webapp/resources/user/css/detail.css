@@ -1693,3 +1693,31 @@ a.to-cart img {
 	padding: 1em 0;
 }
 }
+.addCartWishlist a {
+    background-color: #816263;
+    padding: 9px;
+    display: inline;
+    color: white;
+    text-decoration: none;
+}
+.addCartWishlist a:hover{
+    background-color: black;
+}
+.specification .specName h4,.specification .specDetail p
+{
+	line-height: 35px;
+	padding:0px;
+	margin:0px;
+}
+.description h4,.description p
+{
+	padding:0px;
+	margin:0px;
+}
+.description h4 {
+	font-family:arial black;
+}
+.description p {
+    margin-bottom: 15px;
+    padding-top: 5px;
+}

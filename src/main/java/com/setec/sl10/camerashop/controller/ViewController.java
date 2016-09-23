@@ -6,6 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -42,7 +43,16 @@ public class ViewController {
 	}
 	
 	@RequestMapping(value="/detail",method=RequestMethod.GET)
-	public String detail(){
+	public String detail(@RequestParam("p") String productID,@RequestParam("c") String colorID,@RequestParam("s") String serial,ModelMap model){
+		model.put("productID", productID);
+		model.put("colorID", colorID);
+		model.put("serial", serial);
+		
+		/*System.out.println("PID: "+productID);
+		System.out.println("Color: "+colorID);
+		System.out.println("SN: "+serial);*/
+		
+		
 		return "user/detail";
 	}
 	
