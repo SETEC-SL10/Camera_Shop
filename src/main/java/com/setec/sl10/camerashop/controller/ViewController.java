@@ -43,14 +43,14 @@ public class ViewController {
 	}
 	
 	@RequestMapping(value="/detail",method=RequestMethod.GET)
-	public String detail(@RequestParam("pid") String productID,@RequestParam("coid") String colorID,@RequestParam("sn") String serial,ModelMap model){
+	public String detail(@RequestParam("p") String productID,@RequestParam("c") String colorID,@RequestParam("s") String serial,ModelMap model){
 		model.put("productID", productID);
 		model.put("colorID", colorID);
 		model.put("serial", serial);
 		
-		System.out.println("PID: "+productID);
+		/*System.out.println("PID: "+productID);
 		System.out.println("Color: "+colorID);
-		System.out.println("SN: "+serial);
+		System.out.println("SN: "+serial);*/
 		
 		
 		return "user/detail";

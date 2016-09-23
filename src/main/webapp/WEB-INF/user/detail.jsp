@@ -3,6 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script>
+	window.productID="${productID}";
+ 	window.colorID="${colorID}";
+	window.serial="${serial}";
+	/* alert("ProductID: "+productID+"\nColorID: "+colorID+"\nSerial: "+serial); */
+</script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
 <script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
@@ -92,12 +99,12 @@ $(window).load(function() {
 
 
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" ng-cloak>
+<body>  
 
 <%@include file="include/header.jsp"%>
 
 
-<div class="content">
+<div class="content" ng-app="ProductApp" ng-controller="ProductController" ng-cloak>
 		<div class="container">
 		<div class="single">
 		<div class="col-md-12">
@@ -236,16 +243,9 @@ $(window).load(function() {
 
 <%@include file="include/related.jsp"%>
 
+<script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script>
+
 <%@include file="include/footer.jsp"%>
-
-
-<script>
-var productID="${productID}";
-var colorID="${colorID}";
-var serial="${serial}";
-alert("ProductID: "+productID+"\nColorID: "+colorID+"\nSerial: "+serial);
-
-</script>
 
 </body>
 </html>
