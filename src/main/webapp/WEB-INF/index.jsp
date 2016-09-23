@@ -9,6 +9,7 @@
  <script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
 
+
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>

@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    
-    
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/user/css/font-awesome.min.css" rel="stylesheet" type="text/css">  
+
+
+
     
 <!-- header-section-starts -->
 	<div class="header">
@@ -17,13 +20,10 @@
 				</div>
 				
 				
-				<div class="header-right-align">										
-					<a href="/cart">
-						<span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="${pageContext.request.contextPath}/resources/user/img/bag.png" alt="">
-					</a>
-					<span><a href="javascript:;" class="simpleCart_empty">Empty cart</a></span>	
-					<a href="/wishlist"> <span>Wishlist</span> </a>					
-					<a href="/account"> <span>Account</span> </a>
+				<div class="header-right-align">																				
+					<a href="/cart"> <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> </a>
+					<a href="/wishlist"> <span><i class="fa fa-heart" aria-hidden="true"></i></span> </a>
+					<a href="/account"> <span><i class="fa fa-user" aria-hidden="true"></i></span> </a>					
 				</div>				
 			</div>
 		</div>
