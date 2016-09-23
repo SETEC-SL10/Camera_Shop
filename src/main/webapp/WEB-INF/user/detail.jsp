@@ -63,7 +63,7 @@ $(window).load(function() {
 <!-- End of old code  --> <!-- Will Delete Some of code later -->
 
 <!-- Start New code  -->
-<link href="${pageContext.request.contextPath}/resources/user/css/detail.css" rel="stylesheet" type="text/css" media="all"/>
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/etalage.css">
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.etalage.min.js"></script>
 <script>
@@ -97,7 +97,7 @@ $(window).load(function() {
 <link href="${pageContext.request.contextPath}/resources/user/css/flexisel.css" rel="stylesheet" type="text/css" media="all">
 <!-- End Flexisel -->
 
-
+<link href="${pageContext.request.contextPath}/resources/user/css/detail.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
 <body>  
 
@@ -143,20 +143,34 @@ $(window).load(function() {
 						Built-in WiFi and GPS
 						Good performance overall Sophisticated feature set for the price CONS
 					</p>
-					<h5 class="item_price">Price: $1000 </h5>
-					<h5>Status: Available </h5>
-					<div class="available">
-						
-						<div class="form-in">
-							<a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add To Cart</a>
-							<a href="#">Add To Wishlist</a>
-							
-						</div>
-						
-						<div class="clearfix"></div>
-						
+					
+					<div class="col-md-5">						
+						<section class="sky-form">
+							<h4>Filter By Color</h4>
+								<ul class="w_nav2">
+									<li ng-repeat="Color in Colors"><a class="color" href="#" ng-click="getAllProductFilter('color',Color.color_code)" ng-style="set_color(Color)"> </a></li>																	
+								</ul>
+						</section>																						
 					</div>
-					<div class="share-desc">
+					<div class="col-md-7">
+						<div class="col-xs-4">
+							<h5>Price</h5>
+							<h4>$100</h4>
+						</div>
+						<div class="col-xs-4">
+							<h5>Type</h5>
+							<h4>New</h4>
+						</div>
+						<div class="col-xs-4">
+							<h5>Status</h5>
+							<h4>Available</h4>
+						</div>
+					</div>
+					<div class="col-md-12 addCartWishlist">
+						<a href="#">Add To Cart</a>
+						<a href="#">Add To Wishlist</a>							
+					</div>
+					<div class="col-md-12 share-desc">
 						<div class="share">
 							<h4>Share Product :</h4>
 							<ul class="share_nav">
@@ -168,61 +182,51 @@ $(window).load(function() {
 						</div>
 						<div class="clearfix"></div>
 					</div>
+					
 			   	 </div>
 			   	</div>
           	    <div class="clearfix"></div>
           	   </div>
-			   
-			    <!----- tabs-box ---->
+          	   
+          	   <%@include file="include/related.jsp"%>
 		<div class="sap_tabs">	
-				     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-						  <ul class="resp-tabs-list">
-						  	  <li class="resp-tab-item " aria-controls="tab_item-0" role="tab"><span>Description</span></li>
-							  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Specifications</span></li>
-							  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Accessories</span></li>
-							  <div class="clearfix"></div>
-						  </ul>				  	 
-							<div class="resp-tabs-container">
-							    <h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>Product Description</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
-									<div class="facts">
-									  <p > There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
-										<ul>
-											<li>Research</li>
-											<li>Design and Development</li>
-											<li>Porting and Optimization</li>
-											<li>System integration</li>
-											<li>Verification, Validation and Testing</li>
-											<li>Maintenance and Support</li>
-										</ul>         
-							        </div>
-							    	</div>
-							      <h2 class="resp-accordion" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span>Additional Information</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-									<div class="facts">									
-										<p > Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
-										<ul >
-											<li>Multimedia Systems</li>
-											<li>Digital media adapters</li>
-											<li>Set top boxes for HDTV and IPTV Player applications on various Operating Systems and Hardware Platforms</li>
-										</ul>
-							        </div>	
-								</div>									
-							      <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>Reviews</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
-									 <div class="facts">
-									  <p > There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
-										<ul>
-											<li>Research</li>
-											<li>Design and Development</li>
-											<li>Porting and Optimization</li>
-											<li>System integration</li>
-											<li>Verification, Validation and Testing</li>
-											<li>Maintenance and Support</li>
-										</ul>     
-							     </div>	
-							 </div>
-					      </div>
-					 </div>
-					 <script src="${pageContext.request.contextPath}/resources/user/js/easyResponsiveTabs.js" type="text/javascript"></script>
-		    <script type="text/javascript">
+		     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+				  <ul class="resp-tabs-list">
+				  	  <li class="resp-tab-item " aria-controls="tab_item-0" role="tab"><span>Description</span></li>
+					  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Specifications</span></li>
+					  <div class="clearfix"></div>
+				  </ul>				  	 
+					<div class="resp-tabs-container">
+					    <h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>Product Description</h2>
+					    <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
+							<div class="facts col-md-12 description">
+								<h4>Header Title</h4>
+								<p>This is detail for header</p>   
+								<h4>Header Title</h4>
+								<p>This is detail for header</p>   
+								<h4>Header Title</h4>
+								<p>This is detail for header</p>   
+								<h4>Header Title</h4>
+								<p>This is detail for header</p>   
+								    
+					        </div>
+					    </div>					      
+					      <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+							<div class="facts col-xs-12 specification">									
+								<div class="col-xs-2 specName">
+									<h4>Sensor Resolution</h4>
+									<h4>Sensor Resolution</h4>									
+								</div>
+								<div class="col-xs-10 specDetail">
+									<p>42.4 Megapixels</p>
+									<p>42.4 Megapixels</p>									
+								</div>
+					        </div>	
+						</div>														      
+			      </div>
+			 </div>
+			 <script src="${pageContext.request.contextPath}/resources/user/js/easyResponsiveTabs.js" type="text/javascript"></script>
+			   <script type="text/javascript">
 			    $(document).ready(function () {
 			        $('#horizontalTab').easyResponsiveTabs({
 			            type: 'default', //Types: default, vertical, accordion           
@@ -241,7 +245,7 @@ $(window).load(function() {
 	</div>
 	</div>
 
-<%@include file="include/related.jsp"%>
+
 
 <script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script>
 
