@@ -33,7 +33,7 @@ app.controller('ProductController', function($scope,$http){
 
 	$scope.getAllProduct = function(){
 		$http({
-				url : "http://localhost:9999/api/products/product-form/ProductForm",
+				url : "http://localhost:9999/api/products/product-form/ProductForms",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -64,7 +64,7 @@ app.controller('ProductController', function($scope,$http){
 		$scope.pageForm.conditionValue = name;
 		$scope.pageForm.page = 0;
 		$http({
-				url : "http://localhost:9999/api/products/product-form/ProductForm",
+				url : "http://localhost:9999/api/products/product-form/ProductForms",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -234,7 +234,7 @@ app.controller('ProductController', function($scope,$http){
 		$scope.bntClickedIndex = page;
 		$scope.pageForm.page = page;
 		$http({
-			url : "http://localhost:9999/api/products/product-form/ProductForm",
+			url : "http://localhost:9999/api/products/product-form/ProductForms",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
@@ -274,7 +274,7 @@ app.controller('ProductController', function($scope,$http){
 		$scope.pageForm.columnName = $scope.btnFilter.id;
 		$scope.pageForm.page = 0;
 		$http({
-			url : "http://localhost:9999/api/products/product-form/ProductForm",
+			url : "http://localhost:9999/api/products/product-form/ProductForms",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
