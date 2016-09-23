@@ -130,7 +130,7 @@
 					<ul>
 						<li ng-repeat="Product in Products">
 							<div class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="/detail">
+								<a class="cbp-vm-image" href="/detail?pid={{Product.product_id}}&coid={{Product.color.color_id}}&sn={{Product.serial}}">
 									<div class="view view-first">
 										<div class="inner_content clearfix">
 											<div class="product_image">

@@ -46,6 +46,8 @@ app.controller('ProductController', function($scope,$http){
 		    	}else{
 		    		$scope.Products = response.data.DATA;
 		    		$scope.getPageProduct();
+		    		console.log("check Product here");
+		    		console.log($scope.Products);
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -298,6 +300,7 @@ app.controller('ProductController', function($scope,$http){
 	$scope.getAllBrand();
 	$scope.getAllModel();
 	$scope.getAllColor();
+	
 });
 
 app.filter('strLimit', ['$filter', function($filter) {

@@ -238,5 +238,14 @@ $(window).load(function() {
 
 <%@include file="include/footer.jsp"%>
 
+
+<script>
+var productID="${productID}";
+var colorID="${colorID}";
+var serial="${serial}";
+alert("ProductID: "+productID+"\nColorID: "+colorID+"\nSerial: "+serial);
+
+</script>
+
 </body>
 </html>
