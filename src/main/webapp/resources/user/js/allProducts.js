@@ -10,8 +10,8 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 	$rootScope.colorID = $window.colorID;
 	$rootScope.serial = $window.serial;
 	
-	/*alert("This Message is for Test Detail Page only!!\nPlease Click on product for Test!\n\n\n" +
-			""+"ProductID: "+$rootScope.productID+"\nColorID: "+$rootScope.colorID+"\nSerial: "+$rootScope.serial);*/
+	alert("This Message is for Test Detail Page only!!\nPlease Click on product for Test!\n\n\n" +
+			""+"ProductID: "+$rootScope.productID+"\nColorID: "+$rootScope.colorID+"\nSerial: "+$rootScope.serial);
 	
 	// So if you want to use ProductID in your angular function just get one of them. Ex: $rootScope.productID
 	
