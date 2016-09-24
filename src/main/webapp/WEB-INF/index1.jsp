@@ -9,7 +9,6 @@
  <script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
 
-
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
@@ -46,7 +45,7 @@
 
 <!-- Start New Code here -->
 <link href="${pageContext.request.contextPath}/resources/user/css/component.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/>
+ <link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="${pageContext.request.contextPath}/resources/user/css/pagination.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
 
@@ -60,7 +59,7 @@
 
 <%@include file="user/include/header.jsp"%>
 
- <%@include file="user/include/banner.jsp"%>
+<%-- <%@include file="user/include/banner.jsp"%>  --%>
 
 <div class="product" ng-app="ProductApp" ng-controller="ProductController" ng-cloak>
 	<div class="container">
@@ -131,7 +130,7 @@
 					<ul>
 						<li ng-repeat="Product in Products">
 							<div class="simpleCart_shelfItem">
-								<a class="cbp-vm-image" href="/detail?p={{Product.product_id}}&c={{Product.color.color_id}}&s={{Product.serial}}">
+								<a class="cbp-vm-image" href="/detail">
 									<div class="view view-first">
 										<div class="inner_content clearfix">
 											<div class="product_image">

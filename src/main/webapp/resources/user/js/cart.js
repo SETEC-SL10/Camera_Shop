@@ -4,9 +4,9 @@
 * Description
 */
 var cartApp = angular.module('cartApp', []);
-cartApp.controller('cartController', function($scope,$http){
-
+cartApp.controller('cartController', function($scope,$http){	
 	$scope.getCart = function(){
+		$scope.grandTotal = 0;
 		$http({
 				url : "http://localhost:9999/api/front_end/cart/4",
 		        method : "GET",
@@ -35,7 +35,7 @@ cartApp.controller('cartController', function($scope,$http){
 		        data:{"cart_id": 0, "customer_id": 4, "product": product,"product_qty": 1}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Cart"){
-		    		swal("Request Data!", response.data.Message, "success");
+		    		swal("Request Data!", response.data.Message, "error");
 		    	}else{
 		    		swal("Request Data!", response.data.Message, "success");
 		    	}
@@ -81,9 +81,35 @@ cartApp.controller('cartController', function($scope,$http){
 	};
 	
 	$scope.changeValueQty = function (cart){
-		alert(cart.product_qty);
+		if(cart.product_qty < 1){
+			swal("Update Data!", "Plase enter qty bigger than 0", "error");
+			$scope.getCart();
+		}else{
+			$http({
+					url : "http://localhost:9999/api/front_end/cart",
+			        method : "PUT",
+			        headers:{
+			        	"accept": "application/json; charset=utf-8"
+			        },
+			        data:cart
+			    }).then(function mySucces(response) {
+			    	if(response.data.Message != "Success Update Cart"){
+			    		swal("Update Data!", "Stock unavilable", "error");
+			    	}
+			    	$scope.getCart();
+			    }, function myError(response) {
+			        swal("Error Connection!", "Try to check your network connection", "error");
+			});
+		}
 	};
 	
+	$scope.updateCartQty = function(cart,valueUpdate){
+		cart.product_qty += valueUpdate;
+		$scope.changeValueQty(cart);
+	};
 	
+	$scope.calculateGrandTotal = function(total){
+		return $scope.grandTotal += total;
+	};
 	$scope.getCart();
 });

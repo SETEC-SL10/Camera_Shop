@@ -6,12 +6,12 @@
 var app = angular.module('ProductApp', []);
 
 app.controller('ProductController', function($scope,$rootScope,$http,$window){
-	$rootScope.productID = $window.productID;
+	/*$rootScope.productID = $window.productID;
 	$rootScope.colorID = $window.colorID;
 	$rootScope.serial = $window.serial;
 	
 	alert("This Message is for Test Detail Page only!!\nPlease Click on product for Test!\n\n\n" +
-			""+"ProductID: "+$rootScope.productID+"\nColorID: "+$rootScope.colorID+"\nSerial: "+$rootScope.serial);
+			""+"ProductID: "+$rootScope.productID+"\nColorID: "+$rootScope.colorID+"\nSerial: "+$rootScope.serial);*/
 	
 	// So if you want to use ProductID in your angular function just get one of them. Ex: $rootScope.productID
 	
@@ -45,7 +45,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 
 	$scope.getAllProduct = function(){
 		$http({
-				url : "http://localhost:9999/api/products/product-form/ProductForm",
+				url : "http://localhost:9999/api/products/product-form/ProductForms",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -79,7 +79,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 		$scope.pageForm.conditionValue = name;
 		$scope.pageForm.page = 0;
 		$http({
-				url : "http://localhost:9999/api/products/product-form/ProductForm",
+				url : "http://localhost:9999/api/products/product-form/ProductForms",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -188,7 +188,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 	    		$scope.Pagination = [];
 	    		$scope.bntClickedIndex = 0;
 		    	$scope.generatePagination(response.data);
-		    	console.log(response.data);
+//		    	console.log(response.data);
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
 		});
@@ -227,7 +227,8 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 		    	if(response.data.Message != "Success Insert Cart"){
 		    		swal("Request Data!", response.data.Message, "success");
 		    	}else{
-		    		swal("Request Data!", response.data.Message, "success");
+//		    		swal("Request Data!", response.data.Message, "success");
+		    		window.open('http://localhost:8888/cart', "_parent");
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -248,7 +249,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 		$scope.bntClickedIndex = page;
 		$scope.pageForm.page = page;
 		$http({
-			url : "http://localhost:9999/api/products/product-form/ProductForm",
+			url : "http://localhost:9999/api/products/product-form/ProductForms",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
@@ -288,7 +289,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 		$scope.pageForm.columnName = $scope.btnFilter.id;
 		$scope.pageForm.page = 0;
 		$http({
-			url : "http://localhost:9999/api/products/product-form/ProductForm",
+			url : "http://localhost:9999/api/products/product-form/ProductForms",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"

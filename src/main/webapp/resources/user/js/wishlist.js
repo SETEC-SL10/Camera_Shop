@@ -49,9 +49,9 @@ wishlistApp.controller('wishlistController', function($scope,$http){
 		        data:{"cart_id": 0, "customer_id": 4, "product": product,"product_qty": 1}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Cart"){
-		    		swal("Request Data!", response.data.Message, "success");
+		    		swal("Request Data!", response.data.Message, "error");
 		    	}else{
-		    		swal("Request Data!", response.data.Message, "success");
+		    		window.open('http://localhost:8888/cart', "_parent");
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");

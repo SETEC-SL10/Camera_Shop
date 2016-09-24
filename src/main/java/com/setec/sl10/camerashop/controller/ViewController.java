@@ -48,9 +48,9 @@ public class ViewController {
 		model.put("colorID", colorID);
 		model.put("serial", serial);
 		
-		/*System.out.println("PID: "+productID);
-		System.out.println("Color: "+colorID);
-		System.out.println("SN: "+serial);*/
+//		System.out.println("PID: "+productID);
+//		System.out.println("Color: "+colorID);
+//		System.out.println("SN: "+serial);
 		
 		
 		return "user/detail";
