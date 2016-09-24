@@ -1711,13 +1711,13 @@ a.to-cart img {
 }
 .description h4,.description p
 {
-	padding:0px;
-	margin:0px;
+	/* padding:0px;
+	margin:0px; */
 }
-.description h4 {
+.specification h4 {
 	font-family:arial black;
 }
-.description p {
+.specification p {
     margin-bottom: 15px;
     padding-top: 5px;
 }

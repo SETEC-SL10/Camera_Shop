@@ -56,7 +56,7 @@
 <script src="${pageContext.request.contextPath}/resources/user/js/sweetalert-dev.js"> </script>
 
 </head>
-<body ><!--  ng-app="UserApp" ng-controller="UserCtrl" ng-cloak-->
+<body>
 
 <%@include file="user/include/header.jsp"%>
 

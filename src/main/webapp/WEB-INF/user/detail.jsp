@@ -117,8 +117,8 @@ $(document).ready(function(){
 </script> 
 
 <!-- Related-->
-<link href="${pageContext.request.contextPath}/resources/user/css/component.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/>
+<%-- <link href="${pageContext.request.contextPath}/resources/user/css/component.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/> --%>
 <!-- Flexisel -->
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
 <link href="${pageContext.request.contextPath}/resources/user/css/flexisel.css" rel="stylesheet" type="text/css" media="all">
@@ -134,26 +134,11 @@ $(document).ready(function(){
 
 <div class="content" ng-app="DetailApp" ng-controller="DetailController" ng-cloak>
 	<div class="container">
-		<%@include file="include/related.jsp"%>
 		<div class="single">
 			<div class="col-md-12">
 				<div class="single_grid">
 					<div class="grid images_3_of_2">
 						<ul id="etalage">
-							
-							<%-- <li>
-								<img class="etalage_thumb_image img-responsive" src="${pageContext.request.contextPath}/resources/user/img/p2.jpg" alt="" >
-								<img class="etalage_source_image img-responsive" src="${pageContext.request.contextPath}/resources/user/img/p2.jpg" alt="" >
-							</li>
-							<li>
-								<img class="etalage_thumb_image img-responsive" src="${pageContext.request.contextPath}/resources/user/img/p3.jpg" alt=""  >
-								<img class="etalage_source_image img-responsive" src="${pageContext.request.contextPath}/resources/user/img/p3.jpg" alt="" >
-							</li>
-						    <li>
-								<img class="etalage_thumb_image img-responsive" src="${pageContext.request.contextPath}/resources/user/img/p4.jpg"  alt="" >
-								<img class="etalage_source_image img-responsive" src="${pageContext.request.contextPath}/resources/user/img/p4.jpg" alt="" >
-							</li> --%>
-							
 							<li ng-repeat="Image in ProductDetailsTmp.product.images" on-finish-render="ngRepeatFinished">
 								<img ng-src="http://localhost:9999/{{Image.image_url}}" class="etalage_thumb_image img-responsive"/>
 								<img ng-src="http://localhost:9999/{{Image.image_url}}" class="etalage_source_image img-responsive"/>
@@ -190,10 +175,6 @@ $(document).ready(function(){
 									<h5>Type</h5>
 									<h4>{{ProductDetailsTmp.product.product_id.substring(1, 2) == "O" ? "USED":"NEW"}}</h4>
 								</div>
-								<!-- <div class="col-xs-3">
-									<h5>Status</h5>
-									<h4>Available</h4>
-								</div> -->
 							</div>
 							<div class="col-md-12 addCartWishlist">
 								<a href="#" ng-click = "addToCart()">Add To Cart</a>
@@ -220,7 +201,7 @@ $(document).ready(function(){
 			<div class="sap_tabs">	
 			     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 					  	<ul class="resp-tabs-list">
-						  	  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Detail</span></li>
+						  	  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>description</span></li>
 							  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Specifications</span></li>
 							  <div class="clearfix"></div>
 					  	</ul>				  	 
@@ -228,32 +209,15 @@ $(document).ready(function(){
 						    <h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>Product Description</h2>
 						    <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
 								<div class="facts col-md-12 description">
-									<!-- <h4>Header Title</h4> -->
-									<p>{{ProductDetailsTmp.product.detail}}</p>   
-									<!-- <h4>Header Title</h4>
-									<p>This is detail for header</p>   
-									<h4>Header Title</h4>
-									<p>This is detail for header</p>   
-									<h4>Header Title</h4>
-									<p>This is detail for header</p>  -->  
-									    
+									<p>{{ProductDetailsTmp.product.detail}}</p>   									   
 						        </div>
 						    </div>					      
 						   	<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-								<div class="facts col-xs-12 specification" ng-repeat="Specs in ProductDetailsTmp.specifications">
-										<h3>{{Specs.specification_name}}</h3>
+								<div class="facts col-xs-12 specification">
+									<div ng-repeat="Specs in ProductDetailsTmp.specifications">
+										<h4>{{Specs.specification_name}}</h4>
 										<p>{{Specs.description}}</p>
-									<!-- <div class = "row" > ng-repeat="Specs in ProductDetailsTmp.specifications"
-										<div class="col-xs-2 specName">
-											<h4>Sensor Resolution</h4>
-											<h4>Sensor Resolution</h4>									
-										</div>
-										<div class="col-xs-10 specDetail">
-											<p>42.4 Megapixelsfdsl;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-											;;;;;;;;;;;;;;;;;;;;;; fksjf;lsakfjsl;afj;lsafj salalsfkjalsjflsa;fj alsfjlasfj ;dsalfjsl;dfj a lfjaslf ;allsad;fjslfl;sdffasf</p>
-											<p>42.4 Megapixels</p>									
-										</div>
-									</div>	 -->							
+									</div>							
 						        </div>	
 							</div>														      
 				      	</div>
@@ -278,9 +242,5 @@ $(document).ready(function(){
 
 
 <%@include file="include/footer.jsp"%>
-
-<script type="text/javascript">
-
-</script>
 </body>
 </html>
