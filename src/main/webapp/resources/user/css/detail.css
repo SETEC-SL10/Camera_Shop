@@ -1721,3 +1721,17 @@ a.to-cart img {
     margin-bottom: 15px;
     padding-top: 5px;
 }
+.relatedProduct
+{
+	margin-top:10px;
+	border: 1px solid gainsboro;
+	clear:both;
+	padding-bottom:10px;
+}
+.relatedProduct h3
+{
+	text-align: center;
+    padding-top: 25px;
+    font-weight: bold;
+	
+}

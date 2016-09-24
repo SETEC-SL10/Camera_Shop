@@ -117,8 +117,8 @@ $(document).ready(function(){
 </script> 
 
 <!-- Related-->
-<%-- <link href="${pageContext.request.contextPath}/resources/user/css/component.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/> --%>
+ <link href="${pageContext.request.contextPath}/resources/user/css/component.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- Flexisel -->
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
 <link href="${pageContext.request.contextPath}/resources/user/css/flexisel.css" rel="stylesheet" type="text/css" media="all">
@@ -233,14 +233,54 @@ $(document).ready(function(){
 				    });
 				   </script>	
 				</div>
+				
+				<!-- Start Related -->	
+				<div class="clearfix"></div>
+				 <div class="product relatedProduct"> 				 
+				 <h3>Related Product</h3>
+				<hr>
+					<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">				
+						<div class="clearfix"></div>
+						 <ul>					
+							<li ng-repeat="Product in ProductDetails">
+								<div class="simpleCart_shelfItem">
+									<a class="cbp-vm-image" href="/detail?p={{Product.product.product_id}}&c={{Product.product.color.color_id}}&s={{Product.product.serial}}">
+										<div class="view view-first">
+											<div class="inner_content clearfix">
+												<div class="product_image">												
+													<img ng-src="http://localhost:9999/{{Product.product.images[0].image_url}}" class="img-responsive" alt=""/>
+													<div class="mask">
+														<div class="info">View Detail</div>
+													</div>
+													<div class="product_container">
+														<div class="cart-left titleBlock">
+															<p class="title">{{Product.product.product_name | strLimit : 70}}</p>
+														</div>
+														<div class="pricey"><span class="item_price">{{Product.product.sell_price | currency}}</span></div>
+														<div class="pricey "><p class="title" style="color:red;">{{Product.product.product_id.substring(1, 2) == "O" ? "USED":"NEW"}}</p></div>
+														<div class="clearfix"></div>
+													</div>		
+												</div>
+											</div>
+										</div>
+									</a>
+									<div class="cbp-vm-details desBlock">
+										{{Product.product.description | strLimit : 100}}
+									</div>
+									<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addToCart($index)">Add to cart</a>
+									<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addToWishlist($index)">Add to Wishlist</a>
+								</div>
+							</li>																
+						</ul> 
+					 </div>
+				 </div> 
+				<!-- End Related -->	
+							
 			</div>
 	   		<div class="clearfix"> </div>
 		</div>
-	</div>
+	</div>	
 </div>
-
-
-
 <%@include file="include/footer.jsp"%>
 </body>
 </html>

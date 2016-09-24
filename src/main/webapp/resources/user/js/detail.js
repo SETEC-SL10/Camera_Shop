@@ -78,6 +78,8 @@ app.controller('DetailController', function($scope,$http,$window){
 		    	}else{
 		    		$scope.ProductDetails = response.data.DATA;
 		    		$scope.ProductDetailsTmp = $scope.ProductDetails[0];
+		    		console.log("detail");
+		    		console.log($scope.ProductDetails);
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
