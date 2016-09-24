@@ -60,7 +60,7 @@
 
 <%@include file="user/include/header.jsp"%>
 
-<%-- <%@include file="user/include/banner.jsp"%>  --%>
+ <%@include file="user/include/banner.jsp"%>
 
 <div class="product" ng-app="ProductApp" ng-controller="ProductController" ng-cloak>
 	<div class="container">
