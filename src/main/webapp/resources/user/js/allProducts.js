@@ -6,12 +6,12 @@
 var app = angular.module('ProductApp', []);
 
 app.controller('ProductController', function($scope,$rootScope,$http,$window){
-	$rootScope.productID = $window.productID;
+	/*$rootScope.productID = $window.productID;
 	$rootScope.colorID = $window.colorID;
 	$rootScope.serial = $window.serial;
 	
 	alert("This Message is for Test Detail Page only!!\nPlease Click on product for Test!\n\n\n" +
-			""+"ProductID: "+$rootScope.productID+"\nColorID: "+$rootScope.colorID+"\nSerial: "+$rootScope.serial);
+			""+"ProductID: "+$rootScope.productID+"\nColorID: "+$rootScope.colorID+"\nSerial: "+$rootScope.serial);*/
 	
 	// So if you want to use ProductID in your angular function just get one of them. Ex: $rootScope.productID
 	
@@ -188,7 +188,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 	    		$scope.Pagination = [];
 	    		$scope.bntClickedIndex = 0;
 		    	$scope.generatePagination(response.data);
-		    	console.log(response.data);
+//		    	console.log(response.data);
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
 		});
