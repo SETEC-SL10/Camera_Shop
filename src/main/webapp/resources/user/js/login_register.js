@@ -4,6 +4,7 @@ app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieSt
 	
 	//	COOKIES
 	$scope.setCookiesCustomer = function(id,firstName,lastName,phone,email,address){
+		// TO SET COOKIES
 		$cookieStore.put('cID', id);
 		$cookieStore.put('cFirstName', firstName);
 		$cookieStore.put('cLastName', lastName);
@@ -11,12 +12,16 @@ app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieSt
 		$cookieStore.put('cEmail', email);
 		$cookieStore.put('cAddress', address);
 		
+		// TO GET COKKIES
 		$scope.cID = $cookieStore.get('cID');
 		$scope.cFirstName = $cookieStore.get('cFirstName');
 		$scope.cLastName = $cookieStore.get('cLastName');
 		$scope.cPhone = $cookieStore.get('cPhone');
 		$scope.cEmail = $cookieStore.get('cEmail');
 		$scope.cAddress = $cookieStore.get('cAddress');
+		
+		// TO REMOVE COOKIES
+		//$cookieStore.remove('cPassword');	// For example
 		
 		swal("Set Cookie for Customer successful!",
 				"ID: "+$scope.cID+"\n" +
