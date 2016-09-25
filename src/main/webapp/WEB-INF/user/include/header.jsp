@@ -21,9 +21,9 @@
 				
 				
 				<div class="header-right-align">																				
-					<a href="/cart"> <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> </a>
-					<a href="/wishlist"> <span><i class="fa fa-heart" aria-hidden="true"></i></span> </a>
-					<a href="/account"> <span><i class="fa fa-user" aria-hidden="true"></i></span> </a>					
+					<a href="/cart"> <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> Cart</a>
+					<a href="/wishlist"> <span><i class="fa fa-heart" aria-hidden="true"></i></span> Wishlist</a>
+					<a href="/account"> <span><i class="fa fa-user" aria-hidden="true"></i></span> Account</a>					
 				</div>				
 			</div>
 		</div>
