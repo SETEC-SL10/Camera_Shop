@@ -1,22 +1,36 @@
 
-var app = angular.module('LoginRegisterApp', []);
-app.controller('LoginRegisterController', function($scope,$http,$window){
-	/*$scope.customerTmp = {
-			"customer_id": 0,
-		    "customer_first_name": null,
-			"customer_last_name": null,
-			"customer_phone": null,
-			"customer_email": null,
-			"customer_address": null,
-			"customer_password": null,
-			"customer_status": true
-			};*/
-
-
+var app = angular.module('LoginRegisterApp',['ngCookies']);
+app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieStore',function($scope,$http,$cookies,$cookieStore){		
 	
-	
-	
-	$scope.insertCustomer = function(){
+	//	COOKIES
+	$scope.setCookiesCustomer = function(id,firstName,lastName,phone,email,address){
+		$cookieStore.put('cID', id);
+		$cookieStore.put('cFirstName', firstName);
+		$cookieStore.put('cLastName', lastName);
+		$cookieStore.put('cPhone', phone);
+		$cookieStore.put('cEmail', email);
+		$cookieStore.put('cAddress', address);
+		
+		$scope.cID = $cookieStore.get('cID');
+		$scope.cFirstName = $cookieStore.get('cFirstName');
+		$scope.cLastName = $cookieStore.get('cLastName');
+		$scope.cPhone = $cookieStore.get('cPhone');
+		$scope.cEmail = $cookieStore.get('cEmail');
+		$scope.cAddress = $cookieStore.get('cAddress');
+		
+		swal("Set Cookie for Customer successful!",
+				"ID: "+$scope.cID+"\n" +
+				"FirstName: "+$scope.cFirstName+"\n" +
+				"LastName: "+$scope.cLastName+"\n" +
+				"Phone: "+$scope.cPhone+"\n" +
+				"Email: "+$scope.cEmail+"\n" +
+				"Address: "+$scope.cAddress+"\n",
+				"success"
+		);		
+	};
+	  
+	$scope.insertCustomer = function(){	
+		$scope.phone="0"+$scope.phone;
 		$http({
 				url : "http://localhost:9999/api/user/CustomerFrontEnd",
 		        method : "POST",
@@ -35,6 +49,9 @@ app.controller('LoginRegisterController', function($scope,$http,$window){
 					}
 		    }).then(function mySucces(response) {
 		    	swal("Request Data!", response.data.Message, "success");
+		    	
+		    	$scope.setCookiesCustomer(response.data.DATA.customer_id,$scope.firstName,$scope.lastName,$scope.phone,$scope.email,$scope.address);
+		    	
 		    	$scope.firstName="";
 		    	$scope.lastName="";
 		    	$scope.phone="";
@@ -47,9 +64,6 @@ app.controller('LoginRegisterController', function($scope,$http,$window){
 		        swal("Error Connection!", "Try to check your network connection", "error");
 		});
 	};
-
-
-	
-});
+}]);
 
 
