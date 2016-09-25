@@ -29,7 +29,7 @@
 		</div>
 	</div>
 	<!-- header-section-ends -->
-	<%-- <%@include file="banner.jsp"%> --%>
+	 <%@include file="banner.jsp"%>
 	
 	<div class="inner-banner">
 		<div class="container">

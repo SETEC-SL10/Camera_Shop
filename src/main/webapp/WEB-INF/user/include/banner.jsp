@@ -4,13 +4,11 @@
 
 
 <style>
-* {box-sizing:border-box}
-body {font-family: Verdana,sans-serif;margin:0}
-.mySlides {display:none}
+
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+ 
   position: relative;
   margin: auto;
 }
@@ -23,7 +21,7 @@ body {font-family: Verdana,sans-serif;margin:0}
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: white;
+ * color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -67,31 +65,31 @@ body {font-family: Verdana,sans-serif;margin:0}
   height: 13px;
   width: 13px;
   margin: 0 2px;
-  background-color: #bbb;
+ * background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+ * background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 2s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
+  from {opacity: .1}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4}
+  from {opacity: .1}
   to {opacity: 1}
 }
 
@@ -182,24 +180,6 @@ function showSlides() {
 
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
