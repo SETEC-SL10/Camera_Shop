@@ -46,7 +46,7 @@
 		<div class="login-main">
 			  <h1>Login</h1>
 		  <div class="col-md-6 login-left">
-			<h2>Existing User</h2>
+			<!-- <h2>Existing User</h2> -->
 			<form ng-submit="login()">
 				<input type="text" placeholder="Email" required="" ng-model="newUser">
 				<input type="password" placeholder="Password" required="" ng-model="password">
@@ -54,11 +54,11 @@
 				<a href="/register" class="register-btn">Register</a>			
 			</form>
 		  </div>
-		  <div class="col-md-6 login-right">
+		  <!-- <div class="col-md-6 login-right">
 		  	 <h3>New User</h3>
 		  	 <p>User can register to use our service for free.</p>
 		     <a href="/register" class="register-btn">Create an Account </a>
-		  </div>
+		  </div> -->
 		  <div class="clearfix"> </div>
 		</div>
 	</div>
