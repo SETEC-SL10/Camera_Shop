@@ -2,9 +2,6 @@
     pageEncoding="utf-8"%>
  
 
-
 	<%@include file="header-top.jsp"%>
-	
-	<%--  <%@include file="banner.jsp"%> --%>
 	<%@include file="header-nav.jsp"%>
 	
