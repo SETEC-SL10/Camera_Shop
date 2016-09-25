@@ -1422,7 +1422,7 @@ ul.cart-header li span h6,ul.cart-header1 li span h6,ul.cart-header2 li span h6{
 /*--end-checkout--*/
 /*--signin start here--*/
 .signin {
-    padding: 6em 0em;
+    padding-bottom: 10px;
 }
 .signin-main h1{
     font-size: 2em;
@@ -1436,7 +1436,7 @@ ul.cart-header li span h6,ul.cart-header1 li span h6,ul.cart-header2 li span h6{
     margin: 1em 0em;
     font-family: 'Oswald', sans-serif;
 }
-.signin-main input[type="text"] {
+.signin-main input[type="text"],.signin-main input[type="number"] {
     font-size: 1em;
     color: #000;
     width: 48%;
@@ -1475,7 +1475,8 @@ ul.cart-header li span h6,ul.cart-header1 li span h6,ul.cart-header2 li span h6{
     background:#EA552B;
     border: none;
     outline: none;
-        float: right;
+    *float: right;
+    display:block;	/* My new code */
     margin-top: 2em;
 }
 .signin-main input[type="submit"]:hover {
@@ -1545,7 +1546,7 @@ span.checkbox1 {
 /*--signin end here--*/
 /*--login strat here--*/
 .login {
-    padding: 6em 0em;
+    padding: 10px;
 }
 .login-main h1 {
     font-size: 2.5em;
@@ -1592,7 +1593,7 @@ span.checkbox1 {
     border: none;
     background:#EA572D;
     outline: none;
-    display: block;
+    display: inline;
     margin-top: 1em;
 }
 .login-left input[type="submit"]:hover {
@@ -2024,9 +2025,7 @@ span.bann-heart {
 .login {
     padding: 4em 0em;
 }
-.signin {
-    padding: 4em 0em;
-}
+
 .contact-top {
     padding: 0em 0em 2em 0em;
 }
@@ -2290,9 +2289,7 @@ a.add-cart {
 .signin-main input[type="submit"] {
     margin-top: 1em;
 }
-.signin {
-    padding: 2.5em 0em;
-}
+
 .home-grid {
     padding: 0px;
 }
@@ -2655,9 +2652,7 @@ ul.unit li span {
 .login-left {
     margin-bottom: 1em;
 }
-.signin {
-    padding: 1em 0em;
-}
+
 .signin-main h1 {
     font-size: 1.2em;
 }
@@ -3135,4 +3130,21 @@ ul.multi-column-dropdown h6 {
 {
 	margin-bottom:35px
 }
+a.register-btn
+{
+    color: #fff;
+    padding: 6px 25px;
+    background: #EA572D;
+    display: inline;
+    margin-top: 1em;
+}
+a.register-btn:hover
+{
+	background: #847057;
+}
+.btnRegister
+{
+	display:block;
+}
+    
 	
