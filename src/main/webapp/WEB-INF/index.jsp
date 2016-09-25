@@ -58,7 +58,9 @@
 </head>
 <body>
 
-<%@include file="user/include/header.jsp"%>
+<%@include file="user/include/header-top.jsp"%>
+<%@include file="user/include/banner.jsp"%>
+<%@include file="user/include/header-nav.jsp"%>
 
 
 <div class="product" ng-app="ProductApp" ng-controller="ProductController" ng-cloak>
