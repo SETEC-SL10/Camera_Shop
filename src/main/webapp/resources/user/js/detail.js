@@ -96,7 +96,10 @@ app.controller('DetailController', function($scope,$http,$window){
 		        data:$scope.productTmp
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Record found"){
-		    		swal("Request Data!", "Can not request ProductRelated!!!!", "error");
+//		    		swal("Request Data!", "Can not request ProductRelated!!!!", "error");
+		    		$scope.ProductRelateds = response.data.DATA;
+//		    		alert($scope.ProductRelateds);
+//		    		console.log($scope.ProductRelateds);
 		    	}else{
 		    		$scope.ProductRelateds = response.data.DATA;
 		    		console.log($scope.ProductRelateds);
@@ -160,6 +163,47 @@ app.controller('DetailController', function($scope,$http,$window){
 		        	"accept": "application/json; charset=utf-8"
 		        },
 		        data:{"cart_id": 0, "customer_id": 4, "product": $scope.ProductDetailsTmp.product,"product_qty": 1}
+		    }).then(function mySucces(response) {
+		    	if(response.data.Message != "Success Insert Cart"){
+		    		swal("Request Data!", response.data.Message, "success");
+		    	}else{
+//		    		swal("Request Data!", response.data.Message, "success");
+		    		window.open('http://localhost:8888/cart', "_parent");
+		    	}
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
+	
+	$scope.addProductRelatedToWishlist = function(index){
+		$http({
+				url : "http://localhost:9999/api/front_end/wishlist",
+		        method : "POST",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        },
+		        data:{"wishlist_id": 0, "customer_id": 4, "product": $scope.ProductRelateds[index]}
+		    }).then(function mySucces(response) {
+		    	if(response.data.Message != "Success Insert Wishlist"){
+		    		swal("Request Data!", response.data.Message, "error");
+		    	}else{
+//		    		swal("Request Data!", response.data.Message, "success");
+		    		window.open('http://localhost:8888/wishlist', "_parent");//location.href = "http://localhost:8888/wishlist";
+		    	}
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
+	
+	$scope.addProductRelatedToToCart = function(index){
+//		console.log();
+		$http({
+				url : "http://localhost:9999/api/front_end/cart",
+		        method : "POST",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        },
+		        data:{"cart_id": 0, "customer_id": 4, "product": $scope.ProductRelateds[index],"product_qty": 1}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Cart"){
 		    		swal("Request Data!", response.data.Message, "success");

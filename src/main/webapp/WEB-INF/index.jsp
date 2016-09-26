@@ -183,7 +183,11 @@
 	
 </div>
 
-<script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script>
+<%-- <script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script> --%>
+<%-- <script src="${pageContext.request.contextPath}/resources/user/js/newCameraProducts.js"></script> --%>
+<%-- <script src="${pageContext.request.contextPath}/resources/user/js/oldCameraProducts.js"></script> --%>
+<%-- <script src="${pageContext.request.contextPath}/resources/user/js/newAccessoryProducts.js"></script> --%>
+<script src="${pageContext.request.contextPath}/resources/user/js/oldAccessoryProducts.js"></script>
 
 <%@include file="user/include/footer.jsp"%>
 

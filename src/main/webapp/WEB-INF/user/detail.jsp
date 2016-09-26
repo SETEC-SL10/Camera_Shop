@@ -242,22 +242,22 @@ $(document).ready(function(){
 					<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">				
 						<div class="clearfix"></div>
 						 <ul>					
-							<li ng-repeat="Product in ProductDetails">
+							<li ng-repeat="Product in ProductRelateds">
 								<div class="simpleCart_shelfItem">
-									<a class="cbp-vm-image" href="/detail?p={{Product.product.product_id}}&c={{Product.product.color.color_id}}&s={{Product.product.serial}}">
+									<a class="cbp-vm-image" href="/detail?p={{Product.product_id}}&c={{Product.color.color_id}}&s={{Product.serial}}">
 										<div class="view view-first">
 											<div class="inner_content clearfix">
 												<div class="product_image">												
-													<img ng-src="http://localhost:9999/{{Product.product.images[0].image_url}}" class="img-responsive" alt=""/>
+													<img ng-src="http://localhost:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/>
 													<div class="mask">
 														<div class="info">View Detail</div>
 													</div>
 													<div class="product_container">
 														<div class="cart-left titleBlock">
-															<p class="title">{{Product.product.product_name | strLimit : 70}}</p>
+															<p class="title">{{Product.product_name | strLimit : 70}}</p>
 														</div>
-														<div class="pricey"><span class="item_price">{{Product.product.sell_price | currency}}</span></div>
-														<div class="pricey "><p class="title" style="color:red;">{{Product.product.product_id.substring(1, 2) == "O" ? "USED":"NEW"}}</p></div>
+														<div class="pricey"><span class="item_price">{{Product.sell_price | currency}}</span></div>
+														<div class="pricey "><p class="title" style="color:red;">{{Product.product_id.substring(1, 2) == "O" ? "USED":"NEW"}}</p></div>
 														<div class="clearfix"></div>
 													</div>		
 												</div>
@@ -265,10 +265,10 @@ $(document).ready(function(){
 										</div>
 									</a>
 									<div class="cbp-vm-details desBlock">
-										{{Product.product.description | strLimit : 100}}
+										{{Product.description | strLimit : 100}}
 									</div>
-									<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addToCart($index)">Add to cart</a>
-									<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addToWishlist($index)">Add to Wishlist</a>
+									<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addProductRelatedToCart($index)">Add to cart</a>
+									<a class="cbp-vm-icon cbp-vm-add item_add" href="#" ng-click = "addProductRelatedToWishlist($index)">Add to Wishlist</a>
 								</div>
 							</li>																
 						</ul> 

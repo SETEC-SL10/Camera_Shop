@@ -63,12 +63,12 @@
 				<ul class="cart-header simpleCart_shelfItem" ng-repeat = "wishlist in wishlists">
 					<div class="close1" ng-click = "deleteWishlist($index)"> </div>
 					<li class="ring-in" style="width:100px;">
-						<a href="/detail" >
+						<a class="cbp-vm-image" href="/detail?p={{wishlist.product.product_id}}&c={{wishlist.product.color.color_id}}&s={{wishlist.product.serial}}">
 							<img ng-src="http://localhost:9999/{{wishlist.product.images[0].image_url}}" class="img-responsive" style="width:80px;hieght:80px" alt="">
 						</a>
 					</li>
 					<li style="width:450px;">
-						<a href="/detail" ><span>{{wishlist.product.product_name}}</span></a>
+						<a class="cbp-vm-image" href="/detail?p={{wishlist.product.product_id}}&c={{wishlist.product.color.color_id}}&s={{wishlist.product.serial}}"><span>{{wishlist.product.product_name}}</span></a>
 					</li>
 					<li style="width:100px;"><span ng-style = "set_color(wishlist.product.color)">{{wishlist.product.color.color_name}}</span></li>
 					<li style="width:100px;"><span class="item_price">{{wishlist.product.sell_price | currency}}</span></li>

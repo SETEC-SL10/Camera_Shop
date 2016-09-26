@@ -61,7 +61,7 @@
 						<ul class="cart-header simpleCart_shelfItem" ng-repeat = "Cart in Carts" ng-init = "calculateGrandTotal(Cart.product.sell_price * Cart.product_qty)">
 							<div class="close1" ng-click = "deleteCart($index)"> </div>
 							<li class="ring-in" style="width:100px;">
-								<a href="/detail" >
+								<a class="cbp-vm-image" href="/detail?p={{Cart.product.product_id}}&c={{Cart.product.color.color_id}}&s={{Cart.product.serial}}">
 									<img ng-src="http://localhost:9999/{{Cart.product.images[0].image_url}}" class="img-responsive" style="width:80px;hieght:80px" alt="">
 								</a>
 							</li>
