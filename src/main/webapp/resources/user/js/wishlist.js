@@ -3,19 +3,31 @@
 *
 * Description
 */
-var wishlistApp = angular.module('wishlistApp', []);
-wishlistApp.controller('wishlistController', function($scope,$http){
+var wishlistApp = angular.module('wishlistApp', ['ngCookies']);
+wishlistApp.controller('wishlistController', function($scope,$http,$cookies,$cookieStore){
+	$scope.pageForm = {
+			  "columnName": "all",
+			  "conditionValue": "-1",
+			  "limit": 10,
+			  "page": 0
+			};
+	
+	$scope.getCustomer = function(){
+		$scope.customer = $cookieStore.get('C0504');
+		if( $scope.customer == null){
+			$scope.pageForm.conditionValue = "-1";
+		}else{
+			$scope.pageForm.conditionValue = $scope.customer.customer_id;
+		}
+	};
+	
+	$scope.getCustomer();
 	
 	$scope.numPagination = 0;
 	$scope.Pagination = [];
 	$scope.bntClickedIndex = 0;
 	
-	$scope.pageForm = {
-						  "columnName": "all",
-						  "conditionValue": "4",
-						  "limit": 10,
-						  "page": 0
-						};
+
 
 	$scope.getWishlist = function(){
 		$http({
@@ -40,13 +52,14 @@ wishlistApp.controller('wishlistController', function($scope,$http){
 	};	
 	
 	$scope.addToCart = function(product){
+		$scope.getCustomerAddToCart();
 		$http({
 				url : "http://localhost:9999/api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
 		        },
-		        data:{"cart_id": 0, "customer_id": 4, "product": product,"product_qty": 1}
+		        data:{"cart_id": 0, "customer_id": $scope.customer.customer_id, "product": product,"product_qty": 1}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Cart"){
 		    		swal("Request Data!", response.data.Message, "error");
@@ -166,7 +179,15 @@ wishlistApp.controller('wishlistController', function($scope,$http){
 		);
 	};
 	
+	$scope.getCustomerAddToCart = function(){
+		$scope.customer = $cookieStore.get('C0504');
+		if( $scope.customer == null){
+			window.open('http://localhost:8888/login', "_parent");
+		}
+	};
+	
 	$scope.getWishlist();
 	$scope.getPageWishlist();
 	$scope.countAllWishlist();
+	
 });

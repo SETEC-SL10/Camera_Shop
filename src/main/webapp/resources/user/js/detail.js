@@ -3,8 +3,8 @@
 *
 * Description
 */
-var app = angular.module('DetailApp', []);
-app.controller('DetailController', function($scope,$http,$window){
+var app = angular.module('DetailApp', ['ngCookies']);
+app.controller('DetailController', function($scope,$http,$window,$cookies,$cookieStore){
 	$scope.productTmp = {
 						  "product_id": $window.productID,
 						  "product_name": null,
@@ -135,13 +135,14 @@ app.controller('DetailController', function($scope,$http,$window){
 	});
 	
 	$scope.addToWishlist = function(){
+		$scope.getCustomer();
 		$http({
 				url : "http://localhost:9999/api/front_end/wishlist",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
 		        },
-		        data:{"wishlist_id": 0, "customer_id": 4, "product": $scope.ProductDetailsTmp.product}
+		        data:{"wishlist_id": 0, "customer_id": $scope.customer.customer_id, "product": $scope.ProductDetailsTmp.product}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Wishlist"){
 		    		swal("Request Data!", response.data.Message, "error");
@@ -156,13 +157,14 @@ app.controller('DetailController', function($scope,$http,$window){
 	
 	$scope.addToCart = function(){
 //		console.log();
+		$scope.getCustomer();
 		$http({
 				url : "http://localhost:9999/api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
 		        },
-		        data:{"cart_id": 0, "customer_id": 4, "product": $scope.ProductDetailsTmp.product,"product_qty": 1}
+		        data:{"cart_id": 0, "customer_id": $scope.customer.customer_id, "product": $scope.ProductDetailsTmp.product,"product_qty": 1}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Cart"){
 		    		swal("Request Data!", response.data.Message, "success");
@@ -176,13 +178,14 @@ app.controller('DetailController', function($scope,$http,$window){
 	};
 	
 	$scope.addProductRelatedToWishlist = function(index){
+		$scope.getCustomer();
 		$http({
 				url : "http://localhost:9999/api/front_end/wishlist",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
 		        },
-		        data:{"wishlist_id": 0, "customer_id": 4, "product": $scope.ProductRelateds[index]}
+		        data:{"wishlist_id": 0, "customer_id": $scope.customer.customer_id, "product": $scope.ProductRelateds[index]}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Wishlist"){
 		    		swal("Request Data!", response.data.Message, "error");
@@ -197,13 +200,14 @@ app.controller('DetailController', function($scope,$http,$window){
 	
 	$scope.addProductRelatedToToCart = function(index){
 //		console.log();
+		$scope.getCustomer();
 		$http({
 				url : "http://localhost:9999/api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
 		        },
-		        data:{"cart_id": 0, "customer_id": 4, "product": $scope.ProductRelateds[index],"product_qty": 1}
+		        data:{"cart_id": 0, "customer_id": $scope.customer.customer_id, "product": $scope.ProductRelateds[index],"product_qty": 1}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Cart"){
 		    		swal("Request Data!", response.data.Message, "success");
@@ -214,6 +218,13 @@ app.controller('DetailController', function($scope,$http,$window){
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
 		});
+	};
+	
+	$scope.getCustomer = function(){
+		$scope.customer = $cookieStore.get('C0504');
+		if( $scope.customer == null){
+			window.open('http://localhost:8888/login', "_parent");
+		}
 	};
 
 	$scope.getProductDetail();

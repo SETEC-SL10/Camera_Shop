@@ -3,9 +3,9 @@
 *
 * Description
 */
-var app = angular.module('ProductApp', []);
+var app = angular.module('ProductApp', ['ngCookies']);
 
-app.controller('ProductController', function($scope,$rootScope,$http,$window){
+app.controller('ProductController', function($scope,$rootScope,$http,$window,$cookies,$cookieStore){
 	/*$rootScope.productID = $window.productID;
 	$rootScope.colorID = $window.colorID;
 	$rootScope.serial = $window.serial;
@@ -195,13 +195,14 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 	};
 	
 	$scope.addToWishlist = function(index){
+		$scope.getCustomer();
 		$http({
 				url : "http://localhost:9999/api/front_end/wishlist",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
 		        },
-		        data:{"wishlist_id": 0, "customer_id": 4, "product": $scope.Products[index]}
+		        data:{"wishlist_id": 0, "customer_id": $scope.customer.customer_id, "product": $scope.Products[index]}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Wishlist"){
 		    		swal("Request Data!", response.data.Message, "error");
@@ -216,13 +217,14 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 	
 	$scope.addToCart = function(index){
 //		console.log();
+		$scope.getCustomer();
 		$http({
 				url : "http://localhost:9999/api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
 		        },
-		        data:{"cart_id": 0, "customer_id": 4, "product": $scope.Products[index],"product_qty": 1}
+		        data:{"cart_id": 0, "customer_id": $scope.customer.customer_id, "product": $scope.Products[index],"product_qty": 1}
 		    }).then(function mySucces(response) {
 		    	if(response.data.Message != "Success Insert Cart"){
 		    		swal("Request Data!", response.data.Message, "success");
@@ -307,7 +309,15 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window){
 	    }, function myError(response) {
 	        swal("Error Connection!", "Try to check your network connection", "error");
 	    });
-	}
+	};
+	
+	$scope.getCustomer = function(){
+		$scope.customer = $cookieStore.get('C0504');
+		if( $scope.customer == null){
+			window.open('http://localhost:8888/login', "_parent");
+		}
+	};
+	
 	$scope.getAllProduct();
 	$scope.getPageProduct();
 	$scope.getAllCategory();

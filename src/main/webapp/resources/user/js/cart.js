@@ -3,12 +3,12 @@
 *
 * Description
 */
-var cartApp = angular.module('cartApp', []);
-cartApp.controller('cartController', function($scope,$http){	
+var cartApp = angular.module('cartApp', ['ngCookies']);
+cartApp.controller('cartController', function($scope,$http,$cookies,$cookieStore){	
 	$scope.getCart = function(){
 		$scope.grandTotal = 0;
 		$http({
-				url : "http://localhost:9999/api/front_end/cart/4",
+				url : "http://localhost:9999/api/front_end/cart/"+$scope.customer.customer_id,
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -25,7 +25,7 @@ cartApp.controller('cartController', function($scope,$http){
 		});
 	};	
 	
-	$scope.addToCart = function(product){
+/*	$scope.addToCart = function(product){
 		$http({
 				url : "http://localhost:9999/api/front_end/cart",
 		        method : "POST",
@@ -42,7 +42,7 @@ cartApp.controller('cartController', function($scope,$http){
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
 		});
-	};
+	};*/
 	
 	$scope.set_color = function (color) {
 		return { color: color.color_code}
@@ -111,5 +111,13 @@ cartApp.controller('cartController', function($scope,$http){
 	$scope.calculateGrandTotal = function(total){
 		return $scope.grandTotal += total;
 	};
-	$scope.getCart();
+	
+	$scope.getCustomer = function(){
+		$scope.customer = $cookieStore.get('C0504');
+		if( $scope.customer != null){
+			$scope.getCart();
+		}
+	};
+	
+	$scope.getCustomer();
 });

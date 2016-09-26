@@ -12,8 +12,11 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
-<script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
+<%-- <script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script> --%>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
 
 <link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

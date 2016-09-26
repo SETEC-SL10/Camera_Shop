@@ -4,11 +4,13 @@
 <html>
 <head>
 
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
 
-<script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 
 <link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -36,40 +38,33 @@
 <script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script>
 <script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" ng-cloak>
+<body ng-app="LoginRegisterApp" ng-controller="LoginRegisterController" ng-cloak>
 
 <%@include file="user/include/header.jsp"%>
 
-<div class="login">
+ <div class="login">
 	<div class="container">
 		<div class="login-main">
 			  <h1>Login</h1>
 		  <div class="col-md-6 login-left">
-			<h2>Existing User</h2>
+			<!-- <h2>Existing User</h2> -->
 			<form ng-submit="login()">
-				<!-- <input type="text" placeholder="Username" required="">
-				<input type="password" placeholder="Password" required="">
-				<input type="submit" value="Login"> -->
-				
-				
-				<input type="text" placeholder="Username" required="" ng-model="newUser">
-				<input type="password" placeholder="Password" required="" ng-model="password">
-				<input type="submit" value="Login">
-				
+				<input type="text" placeholder="Email" required="" ng-model="customer.customer_email">
+				<input type="password" placeholder="Password" required="" ng-model="customer.customer_password">
+				<button class="register-btn" ng-click = "loginCustomer()">Login</button>
+				<a href="/register" class="register-btn">Register</a>			
 			</form>
-			
-			
-			
 		  </div>
-		  <div class="col-md-6 login-right">
-		  	 <h3>New User? Create an Account</h3>
-		  	 <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system. and expound the actual teachings of the great.</p>
-		     <a href="/register" class="login-btn">Create an Account </a>
-		  </div>
+		  <!-- <div class="col-md-6 login-right">
+		  	 <h3>New User</h3>
+		  	 <p>User can register to use our service for free.</p>
+		     <a href="/register" class="register-btn">Create an Account </a>
+		  </div> -->
 		  <div class="clearfix"> </div>
 		</div>
 	</div>
 </div>
+
 
 <%@include file="user/include/footer.jsp"%>
 

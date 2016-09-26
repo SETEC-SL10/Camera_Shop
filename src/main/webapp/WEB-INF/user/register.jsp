@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Home</title>
+<title>Home</title> 
 <script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular-cookies.js"></script>
+<link href="${pageContext.request.contextPath}/resources/user/css/sweetalert.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="${pageContext.request.contextPath}/resources/user/js/sweetalert-dev.js"> </script>
+
 
 <link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -33,29 +36,32 @@
 <!-- //end-smoth-scrolling -->
 <script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script>
 <script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/login_register.js"></script>
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" ng-cloak>
+<body>
 
 <%@include file="include/header.jsp"%>
 
-<div class="signin">
+<div class="signin" ng-app="LoginRegisterApp" ng-controller="LoginRegisterController" ng-cloak>
 	<div class="container">
 		<div class="signin-main">
-			<h1>Sign up</h1>
+			<h1>Register New Account</h1>
 			<h2>Informations</h2>
-			<form>
-				<input type="text" placeholder="Username">
-				<input type="text" class="no-margin" placeholder="E-mail">
-				<input type="password" placeholder="Password" required=""/>
-				<input type="password" class="no-margin" placeholder="Confirm Password" required=""/>
-				<span class="checkbox1">
-				 <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>i agree terms of use and privacy</label>
-			   </span>
-				<input type="submit" value="Submit">
+			<form ng-submit="insertCustomer()"><!--   -->
+				<input type="text" placeholder="First Name" ng-model="customer.customer_first_name" required>
+				<input type="text"  placeholder="Last Name" ng-model="customer.customer_last_name" required>
+				<input type="number" placeholder="Phone" ng-model="customer.customer_phone"/>
+				<input type="text"  placeholder="Email" required="" ng-model="customer.customer_email"/>	<!-- class="no-margin" -->
+				<input type="text"  placeholder="Address" ng-model="customer.customer_address"/ required>
+				<input type="password"  placeholder="Password" required="" ng-model="customer.customer_password"/>
+				<input type="password"  placeholder="Confirm Password" required="" ng-model="Confirmpassword"/>
+				<input type="button" class="btn btn-primary btnRegister" value="Register" ng-click="insertCustomer()" ng-disabled="customer.customer_password != Confirmpassword" ><!--ng-click="insertCustomer()"  -->
 			</form>
 		</div>
 	</div>
 </div>
+
+
 
 <%@include file="include/footer.jsp"%>
 
