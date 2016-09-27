@@ -204,14 +204,18 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <!-- AngularJS-->
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
-
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script> -->
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script> -->
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script> 
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular-cookies.js"></script>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -262,7 +266,11 @@
 <body>
 
 <%@include file="user/include/header-top.jsp"%>
-<%@include file="user/include/banner.jsp"%>
+<c:choose>
+    <c:when test="${productPage.equals('all')}">
+      	<%@include file="user/include/banner.jsp"%>       
+    </c:when>
+</c:choose>
 <%@include file="user/include/header-nav.jsp"%>
 
 
@@ -387,15 +395,50 @@
 	
 </div>
 
-<%-- <script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script> --%>
-<%-- <script src="${pageContext.request.contextPath}/resources/user/js/newCameraProducts.js"></script> --%>
-<%-- <script src="${pageContext.request.contextPath}/resources/user/js/oldCameraProducts.js"></script> --%>
-<%-- <script src="${pageContext.request.contextPath}/resources/user/js/newAccessoryProducts.js"></script> --%>
-<script src="${pageContext.request.contextPath}/resources/user/js/oldAccessoryProducts.js"></script>
+<%
+   /* String pages = request.getParameter("productPage"); */
+  /*  out.println("Page Geted is: " + pages); */
+%>
+<%-- <c:set var="pages" value="${productPage}"/> --%>
+
+<c:choose>
+    <c:when test="${productPage.equals('all')}">
+        <script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('camera-new')}">
+        <script src="${pageContext.request.contextPath}/resources/user/js/newCameraProducts.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('camera-used')}">
+        <script src="${pageContext.request.contextPath}/resources/user/js/oldCameraProducts.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('accessory-new')}">
+        <script src="${pageContext.request.contextPath}/resources/user/js/newAccessoryProducts.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('accessory-used')}">
+        <script src="${pageContext.request.contextPath}/resources/user/js/oldAccessoryProducts.js"></script>
+    </c:when>
+    <c:otherwise>
+        
+    </c:otherwise>
+</c:choose>
+
+<%-- <%if(pages.equalsIgnoreCase("all")) {%>
+	<script src="${pageContext.request.contextPath}/resources/user/js/allProducts.js"></script>
+<%}else if(pages.equalsIgnoreCase("camera-new")){%>
+	<script src="${pageContext.request.contextPath}/resources/user/js/newCameraProducts.js"></script>
+<%}else if(pages.equalsIgnoreCase("camera-used")){%>
+	<script src="${pageContext.request.contextPath}/resources/user/js/oldCameraProducts.js"></script>
+<%}else if(pages.equalsIgnoreCase("accessory-new")){%>
+	<script src="${pageContext.request.contextPath}/resources/user/js/newAccessoryProducts.js"></script>
+<%}else if(pages.equalsIgnoreCase("accessory-used")){%>
+	<script src="${pageContext.request.contextPath}/resources/user/js/oldAccessoryProducts.js"></script>
+<%}else{%> 
+	
+<%}%> --%>
+
 
 <%@include file="user/include/footer.jsp"%>
 
 
 </body>
 </html> 
-<!-- >>>>>>> 4e6f1d6569c8b4bf6b263c6ba01ce2b53d899443 -->

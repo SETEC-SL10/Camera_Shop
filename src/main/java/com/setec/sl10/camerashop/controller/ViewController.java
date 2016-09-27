@@ -12,10 +12,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ViewController {
 	
-	@RequestMapping(value="/",method=RequestMethod.GET)
-	public String index(){
+	@RequestMapping(value={"/","/index","/home"},method=RequestMethod.GET)
+	public String index(ModelMap map){
+		map.put("productPage", "all");
+		System.out.println("Page: "+"all");
 		return "index";
 	}
+	
+	@RequestMapping(value={"/{type}"},method=RequestMethod.GET)
+	public String ProductType(@PathVariable("type") String type,ModelMap map){
+		map.put("productPage", type);
+		System.out.println("Page: "+type);
+		return "index";
+	}
+		
 	
 	@RequestMapping(value="/checkout",method=RequestMethod.GET)
 	public String checkout(){
@@ -35,12 +45,7 @@ public class ViewController {
 	@RequestMapping(value="/register",method=RequestMethod.GET)
 	public String register(){
 		return "user/register";
-	}
-	
-	@RequestMapping(value="/product",method=RequestMethod.GET)
-	public String product(){
-		return "user/product";
-	}
+	}		
 	
 	@RequestMapping(value="/detail",method=RequestMethod.GET)
 	public String detail(@RequestParam("p") String productID,@RequestParam("c") String colorID,@RequestParam("s") String serial,ModelMap model){
