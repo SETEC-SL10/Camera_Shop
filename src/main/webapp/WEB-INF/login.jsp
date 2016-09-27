@@ -8,8 +8,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
 
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script> 
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular-cookies.js"></script>
+<link href="${pageContext.request.contextPath}/resources/user/css/sweetalert.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="${pageContext.request.contextPath}/resources/user/js/sweetalert-dev.js"> </script>
 <script src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 
 <link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
@@ -35,7 +37,6 @@
 			});
 	</script>
 <!-- //end-smoth-scrolling -->
-<script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script>
 <script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
 </head>
 <body ng-app="LoginRegisterApp" ng-controller="LoginRegisterController" ng-cloak>

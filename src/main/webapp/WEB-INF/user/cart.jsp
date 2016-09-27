@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
 
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script> 
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular-cookies.js"></script>
 
 <link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -32,13 +32,11 @@
 			});
 	</script>
 <!-- //end-smoth-scrolling -->
-<%-- <script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script> --%>
 <script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/user/css/sweetalert.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="${pageContext.request.contextPath}/resources/user/js/sweetalert-dev.js"> </script>
 </head>
-<body ng-app="cartApp" ng-controller="cartController"><!-- ng-app="UserApp" ng-controller="UserCtrl" ng-cloak -->
+<body ng-app="cartApp" ng-controller="cartController">
 
 <%@include file="include/header.jsp"%>
 

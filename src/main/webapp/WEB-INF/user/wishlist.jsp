@@ -5,9 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
-
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script> 
+<script src="${pageContext.request.contextPath}/resources/user/angular/angular-cookies.js"></script>
 
 <link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -32,13 +31,11 @@
 			});
 	</script>
 <!-- //end-smoth-scrolling -->
-<script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script>
 <script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
 
 <link href="${pageContext.request.contextPath}/resources/user/css/pagination.css" rel="stylesheet" type="text/css" media="all"/>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/user/css/sweetalert.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="${pageContext.request.contextPath}/resources/user/js/sweetalert-dev.js"> </script>
 
 </head>
 <body ng-app="wishlistApp" ng-controller="wishlistController">
@@ -76,55 +73,6 @@
 					<li> <a href="#" class="add-cart cart-check item_add" ng-click = "addToCart(wishlist.product)">Add to cart</a></li>				
 					<div class="clearfix"> </div>
 				</ul>
-<%-- 
-				
-				
-				
-				<ul class="cart-header simpleCart_shelfItem">
-					<div class="close1"> </div>
-						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
-						</li>
-						<li><span>Bracelets</span></li>
-						<li><span class="item_price">$ 290.00</span></li>
-						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>				
-					<div class="clearfix"> </div>
-				</ul> --%>
-				<%-- <ul class="cart-header simpleCart_shelfItem">
-					<div class="close1"> </div>
-						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
-						</li>
-						<li><span>Bracelets</span></li>
-						<li><span class="item_price">$ 290.00</span></li>
-						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>				
-					<div class="clearfix"> </div>
-				</ul>
-				<ul class="cart-header simpleCart_shelfItem">
-					<div class="close1"> </div>
-						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c.jpg" class="img-responsive" alt=""></a>
-						</li>
-						<li><span>Bracelets</span></li>
-						<li><span class="item_price">$ 290.00</span></li>
-						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>				
-					<div class="clearfix"> </div>
-				</ul>
-				<ul class=" cart-header1 simpleCart_shelfItem">
-					<div class="close2"> </div>
-						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c2.jpg" class="img-responsive" alt=""></a>
-						</li>
-						<li><span>Watches</span></li>
-						<li><span class="item_price">$ 300.00</span></li>
-						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>						
-						<div class="clearfix"> </div>
-				</ul>
-				<ul class="cart-header2 simpleCart_shelfItem">
-					<div class="close3"> </div>
-						<li class="ring-in"><a href="/detail" ><img src="${pageContext.request.contextPath}/resources/user/img/c3.jpg" class="img-responsive" alt=""></a>
-						</li>
-						<li><span>Handbag</span></li>
-						<li><span class="item_price">$ 360.00</span></li>
-						<li> <a href="#" class="add-cart cart-check item_add">Add to cart</a></li>						
-						<div class="clearfix"> </div>
-				</ul> --%>
 			</div>
 			</div>  
 		 </div>

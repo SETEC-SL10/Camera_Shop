@@ -15,14 +15,14 @@ public class ViewController {
 	@RequestMapping(value={"/","/index","/home"},method=RequestMethod.GET)
 	public String index(ModelMap map){
 		map.put("productPage", "all");
-		System.out.println("Page: "+"all");
+		//System.out.println("Page: "+"all");
 		return "index";
 	}
 	
 	@RequestMapping(value={"/{type}"},method=RequestMethod.GET)
 	public String ProductType(@PathVariable("type") String type,ModelMap map){
 		map.put("productPage", type);
-		System.out.println("Page: "+type);
+		//System.out.println("Page: "+type);
 		return "index";
 	}
 		

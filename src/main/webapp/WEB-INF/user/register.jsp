@@ -34,7 +34,6 @@
 			});
 	</script>
 <!-- //end-smoth-scrolling -->
-<script src="${pageContext.request.contextPath}/resources/user/js/simpleCart.min.js"> </script>
 <script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/js/login_register.js"></script>
 </head>
