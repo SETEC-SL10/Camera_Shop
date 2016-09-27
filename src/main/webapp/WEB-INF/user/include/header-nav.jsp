@@ -33,15 +33,15 @@
 				            <div class="col-sm-6">
 					            <ul class="multi-column-dropdown">
 									<h6>CAMERAS</h6>
-						            <li><a href="/camera-new">New Camera</a></li>
-						            <li><a href="/camera-used">Used Camera</a></li>
+						            <li><a href="/product/camera-new">New Camera</a></li>
+						            <li><a href="/product/camera-used">Used Camera</a></li>
 					            </ul>
 				            </div>
 				            <div class="col-sm-6">
 					             <ul class="multi-column-dropdown">
 									<h6>ACCESSORIES</h6>
-						            <li><a href="/accessory-new">New Accessory</a></li>
-						            <li><a href="/accessory-used">Used Accessory</a></li>
+						            <li><a href="/product/accessory-new">New Accessory</a></li>
+						            <li><a href="/product/accessory-used">Used Accessory</a></li>
 					            </ul>
 				            </div>
 							<!-- <div class="clearfix"></div> -->

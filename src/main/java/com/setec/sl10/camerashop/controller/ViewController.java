@@ -19,7 +19,7 @@ public class ViewController {
 		return "index";
 	}
 	
-	@RequestMapping(value={"/{type}"},method=RequestMethod.GET)
+	@RequestMapping(value={"/product/{type}"},method=RequestMethod.GET)
 	public String ProductType(@PathVariable("type") String type,ModelMap map){
 		map.put("productPage", type);
 		//System.out.println("Page: "+type);
