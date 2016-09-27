@@ -4,7 +4,7 @@
     <div class="user-panel">
 			<div class="pull-left image">
 				<img
-					src="${pageContext.request.contextPath}/resources/img/admin/avatar.png"
+					src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
 					class="img-circle" alt="User Image">
 			</div>
 			<div class="pull-left info">

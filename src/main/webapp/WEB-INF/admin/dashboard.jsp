@@ -13,9 +13,8 @@
 
 
 
-<script	src="${pageContext.request.contextPath}/resources/angular/admin/angular.min.js"></script>
-<script	src="${pageContext.request.contextPath}/resources/js/admin/sweetalert-dev.js"></script>
-<link href="${pageContext.request.contextPath}/resources/css/admin/sweetalert.css" rel="stylesheet" />
+
+
 
 <style>
 .form-horizontal .form-group {
@@ -31,8 +30,7 @@
 }
 </style>
 </head>
-<body ng-cloak class="skin-blue sidebar-mini" ng-app="MainApp"
-	ng-controller="MainCtrl">
+<body class="skin-blue sidebar-mini">
 	<div class="wrapper">
 	
 	
@@ -107,19 +105,19 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="c in category" ng-init="rowNumber= 10">
-										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
-										<td>{{c.CAT_NAME}}</td>
-										<td>{{c.CREATED_DATE}}</td>
+									<tr>
+										<td>wwe</td>
+										<td>wewe</td>
+										<td>wewe</td>
 										
 										<!-- <td>{{c.PARENT_ID}}</td> -->
-										<td>{{c.STATUS}}</td>
+										<td>wewewe</td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm" ng-click="getDataForUpdate(this)"
+											<button type="button" class="btn btn-primary btn-sm"
 													data-toggle="modal"	data-target="#updateCategory">
 												<i class="fa fa-edit"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm" ng-click="remove(c.CAT_ID)">
+											<button type="button" class="btn btn-danger btn-sm">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
@@ -130,17 +128,6 @@
 
 								</tbody>
 								<tfoot>
-									<!-- <tr>									
-										<th>
-											<button class="btn btn-flat btn-primary" data-toggle="modal"
-												data-target="#addMainModal" ng-click="showCatBox=false">Add Categories</button>
-										</th>
-										<th>
-											<button class="btn btn-flat btn-primary" data-toggle="modal"
-												data-target="#addMainModal" ng-click="showCatBox=true">Add Sub Categories</button>
-										</th>
-									</tr> -->
-
 									<!-- Modal -->
 									<div class="modal fade" id="addMainModal" role="dialog">
 										<div class="modal-dialog">
@@ -161,12 +148,12 @@
 																	ng-model="folderName">
 															</div>
 
-															<div class="form-group" ng-show="showCatBox">
+															<!-- <div class="form-group" ng-show="showCatBox">
 																<label>Category:</label> <select class="form-control"
 																	ng-model="ParentID">
 																	<option ng-repeat="x in category" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option>
 																</select>
-															</div>
+															</div> -->
 
 
 															<div class="form-group">
@@ -188,9 +175,8 @@
 													</form>
 												</div>
 												<div class="modal-footer">
-													<!--   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
 													<input type="submit" class="btn btn-primary btn-flat"
-														value="Submit" ng-click="uploadFolder($event)">
+														value="Submit" >
 												</div>
 											</div>
 
@@ -218,8 +204,7 @@
 	</div>
 <body>
 
-	<script type="text/javascript"	src="${pageContext.request.contextPath}/resources/angular/admin/AdminApp.js"></script>
-<script src="/resources/js/admin/jquery.bootpage.min.js"></script>
-<script src="/resources/angular/admin/angular.min.js"></script>
+<%-- <script type="text/javascript"	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script> --%>
+<!-- <script src="/resources/admin/js/jquery.bootpage.min.js"></script> -->
 </body>
 </html>
