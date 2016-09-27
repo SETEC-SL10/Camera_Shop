@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%-- <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -39,7 +39,7 @@
 		
 		
 		
-		<%-- <%@include file="../include/navigation.jsp" %> --%>
+		<%@include file="../include/navigation.jsp" %>
 		
 		
 		<aside class="main-sidebar"> <!-- sidebar: style can be found in sidebar.less -->
@@ -204,7 +204,7 @@
 	</div>
 <body>
 
-<%-- <script type="text/javascript"	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script> --%>
+<script type="text/javascript"	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
 <!-- <script src="/resources/admin/js/jquery.bootpage.min.js"></script> -->
 </body>
-</html>
+</html> --%>
