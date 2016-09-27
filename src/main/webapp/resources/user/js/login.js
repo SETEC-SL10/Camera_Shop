@@ -61,7 +61,8 @@ app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieSt
 		    	if(response.data.Message == "Success Login"){
 			    	$scope.customer = response.data.DATA;
 			    	$scope.setCookiesCustomer();
-			    	window.open('http://localhost:8888', "_parent");
+			    	alert($scope.customer.customer_last_name);
+			    //	window.open('http://localhost:8888', "_parent");
 		    	}else{
 		    		swal("Login fail!", "Invalid Email or Password!!!", "error");
 		    	}
