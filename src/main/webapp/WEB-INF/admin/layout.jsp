@@ -9,10 +9,11 @@
 	<meta charset="utf-8">	
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/font-awesome/font-awesome.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/ionicons/ionicons.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/AdminLTE/AdminLTE.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/AdminLTE/_all-skins.min.css">
+	<link href="${pageContext.request.contextPath}/resources/admin/css/style.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
