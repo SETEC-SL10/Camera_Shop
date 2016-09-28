@@ -14,9 +14,9 @@ public class AdminController {
 		return "admin/dashboard";
 	}
 	
-	@RequestMapping(value={"/admin/layout"},method=RequestMethod.GET)
+	@RequestMapping(value={"/admin/customer"},method=RequestMethod.GET)
 	public String layout(){
-		return "admin/layout";
+		return "admin/customer";
 	}
 	
 	

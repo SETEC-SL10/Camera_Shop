@@ -1,210 +1,67 @@
-<%-- <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Admin | Main Categories</title>
-
-
-
-<%@include file="include/link.jsp"%>
-
-
-
-
-
-
-
-<style>
-.form-horizontal .form-group {
-	margin-right: 20px;
-	margin-left: 20px;
-}
-.btn-flat {
-	border-radius: 0;
-	margin-left: 20px;
-}
-#PAGINATION{
-	text-align:center;
-}
-</style>
+	<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">	
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/AdminLTE/AdminLTE.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/AdminLTE/_all-skins.min.css">
+	<link href="${pageContext.request.contextPath}/resources/admin/css/style.css" rel="stylesheet" type="text/css" media="all">
 </head>
-<body class="skin-blue sidebar-mini">
-	<div class="wrapper">
-	
-	
-	
-		<%@include file="include/header.jsp"%>
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+	<%@include file="include/header-top.jsp"%>
+  	<%@include file="include/left-side-bar.jsp"%>
+  	
+	<div class="content-wrapper">
+	  <section class="content-header">
+		  <h1>
+		    Dashboard
+		  </h1>
+	  </section>
+	  <section class="content">
 		
+		<!-- CONTENT BLOCK START HERE -->
 		
+	    <div class="box">
+	      <div class="box-header with-border">
+	        <h3 class="box-title">Title</h3>
+	        <div class="box-tools pull-right">
+	          <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+	            <i class="fa fa-minus"></i></button>
+	          <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+	            <i class="fa fa-times"></i></button>
+	        </div>
+	      </div>
+	      <div class="box-body">
+	        Start creating your amazing application!
+	      </div>
+	      <div class="box-footer">
+	        Footer
+	      </div>
+	    </div>
 		
-		<%@include file="../include/navigation.jsp" %>
+		<!-- END CONTENT BLOCK HERE -->
 		
-		
-		<aside class="main-sidebar"> <!-- sidebar: style can be found in sidebar.less -->
-		<section class="sidebar"> <!-- Sidebar user panel -->
-		
-		
-		
-		
-		
-		<%@include file="include/left-side-bar.jsp"%>
-		
-		
-		
-		
-		
-		</section> <!-- /.sidebar --> </aside>
-
-		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
-			<section class="content-header">
-			<h1>
-				Data Tables <small>advanced tables</small>
-			</h1>
-			<ol class="breadcrumb">
-				<li><a href="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-				<li><a href="#">Categories</a></li>
-				<li class="active">Main Categories</li>
-			</ol>
-			</section>
-
-			<!-- Main content -->
-			<section class="content">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="box">
-						<div class="box-header">
-							<h3 class="box-title">Data Table With Full Features</h3>
-							<br>
-							<br>
-
-							<button class="btn btn-flat btn-primary" data-toggle="modal"
-								data-target="#addMainModal" ng-click="showCatBox=false">Add
-								Categories</button>
-
-
-							<button class="btn btn-flat btn-primary" data-toggle="modal"
-								data-target="#addMainModal" ng-click="showCatBox=true">Add
-								Sub Categories</button>
-
-						</div>
-						<!-- /.box-header -->
-						<div class="box-body">
-							<table id="example1" class="table table-bordered table-striped">
-								<thead>
-									<tr>
-									<th>#</th>
-										<th>Name</th>
-										<th>Date</th>
-										
-										<!-- <th>Type</th> -->
-										<th>Status</th>
-										<th>Action</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>wwe</td>
-										<td>wewe</td>
-										<td>wewe</td>
-										
-										<!-- <td>{{c.PARENT_ID}}</td> -->
-										<td>wewewe</td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm"
-													data-toggle="modal"	data-target="#updateCategory">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-
-
-
-
-								</tbody>
-								<tfoot>
-									<!-- Modal -->
-									<div class="modal fade" id="addMainModal" role="dialog">
-										<div class="modal-dialog">
-
-											<!-- Modal content-->
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal">&times;</button>
-													<h4 class="modal-title">Add Category</h4>
-												</div>
-												<div class="modal-body">
-													<form role="form">
-														<div class="box-body">
-															<div class="form-group">
-																<label for="categoryTitle">Category Title</label> <input
-																	type="text" class="form-control"
-																	placeholder="Category title " name="folderName"
-																	ng-model="folderName">
-															</div>
-
-															<!-- <div class="form-group" ng-show="showCatBox">
-																<label>Category:</label> <select class="form-control"
-																	ng-model="ParentID">
-																	<option ng-repeat="x in category" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option>
-																</select>
-															</div> -->
-
-
-															<div class="form-group">
-																<label for="description">Description</label>
-																<textarea class="form-control"
-																	placeholder="Description..." rows="4" ng-model="des"></textarea>
-															</div>
-
-															<div class="form-group">
-																<div class="radio">
-																	<label> Status </label><br /> <label> <input
-																		ng-model="sta" type="radio" name="rdoResult"
-																		ng-value="'1'"> Enable
-																	</label> <label> <input ng-model="sta" type="radio"
-																		name="rdoResult" ng-value="'0'"> Disable
-																	</label>
-																</div>
-															</div>
-													</form>
-												</div>
-												<div class="modal-footer">
-													<input type="submit" class="btn btn-primary btn-flat"
-														value="Submit" >
-												</div>
-											</div>
-
-										</div>
-
-									</div>
-
-									<!-- End Modal -->
-
-								</tfoot>
-							</table>
-							<div id="PAGINATION"></div>
-						</div>
-						<!-- /.box-body -->
-					</div>
-					
-					<!-- /.box -->
-				</div>
-				<!-- /.col -->
-			</div>
-			<!-- /.row --> </section>
-			<!-- /.content -->
-		</div>
-
+	  </section>
 	</div>
-<body>
 
-<script type="text/javascript"	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
-<!-- <script src="/resources/admin/js/jquery.bootpage.min.js"></script> -->
+  <%@include file="include/footer.jsp"%>
+  <%@include file="include/right-control-side-bar.jsp"%>
+</div>
+<script src="${pageContext.request.contextPath}/resources/admin/js/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/admin/js/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/admin/js/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/admin/js/plugins/fastclick/fastclick.js"></script>
+<script src="${pageContext.request.contextPath}/resources/admin/js/plugins/AdminLTE/app.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/admin/js/plugins/AdminLTE/demo.js"></script>
 </body>
-</html> --%>
+</html>

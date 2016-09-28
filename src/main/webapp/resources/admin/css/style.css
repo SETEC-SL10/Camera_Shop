@@ -1,4 +1,14 @@
-.form-horizontal .form-group {
-    margin-right: 20px;
-    margin-left: 20px;
+@CHARSET "utf-8";
+
+.content-header>h1
+{
+	text-align: center;
+}
+.skin-blue-light .content-header {
+    background: #436679;
+    padding: 10px;
+    color: white;
+}
+.content{
+	*background-color: white;
 }
