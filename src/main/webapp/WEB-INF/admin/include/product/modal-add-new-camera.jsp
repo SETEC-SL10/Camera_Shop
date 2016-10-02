@@ -1,5 +1,11 @@
 <%@ page pageEncoding="utf-8"%>
 
+<style>
+	.cke_chrome {
+    display: none;
+}
+</style>
+
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -22,56 +28,17 @@
             <input type="date" class="form-control" id="warranty">
           </div>
           <div class="form-group">
-           <!--  <label for="description">Description:</label>
-            <textarea class="form-control" rows="5" id="description"></textarea> -->
+            <label for="description">Description:</label>
+            <!-- We not use this but need to add it -->
+            <form >
+                  <textarea id="editor1" name="editor1"></textarea>
+            </form>
+            <!--  -->
             
-            <!-- <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Bootstrap WYSIHTML5
-                <small>Simple and fast</small>
-              </h3>
-              tools box
-              <div class="pull-right box-tools">
-                <button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                  <i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-default btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
-                  <i class="fa fa-times"></i></button>
-              </div>
-              /. tools
-            </div>
-            /.box-header
-            <div class="box-body pad">
-              <form>
-                <textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-              </form>
-            </div>
-          </div> -->
-          
-          
-          <div class="box box-info">
-            <div class="box-header">
-              <h3 class="box-title">CK Editor
-                <small>Advanced and full of features</small>
-              </h3>
-              <!-- tools box -->
-              <div class="pull-right box-tools">
-                <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                  <i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
-                  <i class="fa fa-times"></i></button>
-              </div>
-              <!-- /. tools -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body pad">
-              <form>
-                    <textarea id="editor1" name="editor1" rows="10" cols="80">
-                                            This is my textarea to be replaced with CKEditor.
-                    </textarea>
-              </form>
-            </div>
-          </div>
-            
+            <!-- We use this -->
+            <form>
+              <textarea class="textarea form-control" placeholder="Description"></textarea>
+            </form>
           </div>
           <div class="form-group">
             <label for="detail">Detail:</label>
