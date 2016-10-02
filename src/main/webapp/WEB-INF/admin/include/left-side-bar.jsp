@@ -50,8 +50,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i>New Camera</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i>Used Camera</a></li>
+              <li><a href="/admin/product/new-camera"><i class="fa fa-circle-o"></i>New Camera</a></li>
+              <li><a href="/admin/product/used-camera"><i class="fa fa-circle-o"></i>Used Camera</a></li>
             </ul>
           </li>
           <li>
@@ -61,8 +61,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i>New Accessory</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i>Used Accessory</a></li>
+              <li><a href="/admin/product/new-accessory"><i class="fa fa-circle-o"></i>New Accessory</a></li>
+              <li><a href="/admin/product/used-accessory"><i class="fa fa-circle-o"></i>Used Accessory</a></li>
             </ul>
           </li>
         </ul>
