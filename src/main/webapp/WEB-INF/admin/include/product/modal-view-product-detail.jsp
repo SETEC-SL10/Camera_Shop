@@ -11,9 +11,24 @@
       <div class="modal-body">
         <form >
           <div class="form-group">
-            <label>PID:</label>
-            
-          </div>          
+            <label>ID:</label>                                              
+          </div> 
+          <div class="form-group">
+            <label>Serial:</label>                                               
+          </div>
+          <div class="form-group">
+            <label>Color:</label>                                            
+          </div>
+          <div class="form-group">
+            <label>Cost:</label>                                          
+          </div>
+          <div class="form-group">
+            <label>Price:</label>                                             
+          </div>
+          <div class="form-group">
+            <label>Status:</label>                                             
+          </div>
+                   
         </form>
       </div>
     </div>
