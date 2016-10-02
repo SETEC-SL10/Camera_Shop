@@ -4,13 +4,13 @@
 <html>
 <head>
 	<title>Insert title here</title>
-	<%@include file="include/link.jsp"%>
+	<%@include file="include/layout/link.jsp"%>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
-	<%@include file="include/header-top.jsp"%>
-  	<%@include file="include/left-side-bar.jsp"%>
+	<%@include file="include/layout/header-top.jsp"%>
+  	<%@include file="include/layout/left-side-bar.jsp"%>
   	
 	<div class="content-wrapper">
 	  <section class="content-header">
@@ -25,9 +25,9 @@
 	  </section>
 	</div>
 
-  <%@include file="include/footer.jsp"%>
-  <%@include file="include/right-control-side-bar.jsp"%>
+  <%@include file="include/layout/footer.jsp"%>
+  <%@include file="include/layout/right-control-side-bar.jsp"%>
 </div>
-<%@include file="include/script.jsp"%>
+<%@include file="include/layout/script.jsp"%>
 </body>
 </html>

@@ -6,14 +6,14 @@
 <html>
 <head>
 	<title>Product Setup</title>	
-	<%@include file="include/link.jsp"%>
+	<%@include file="include/layout/link.jsp"%>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
-	<%@include file="include/header-top.jsp"%>
-  	<%@include file="include/left-side-bar.jsp"%>
+	<%@include file="include/layout/header-top.jsp"%>
+  	<%@include file="include/layout/left-side-bar.jsp"%>
   	
 	<div class="content-wrapper">
 	  <section class="content-header">
@@ -33,7 +33,7 @@
 			          <div class="col-sm-8">
 			            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Add more Camera</button>
 			          </div> 			          
-			          <%@include file="include/search.jsp"%>			          
+			          <%@include file="include/product/search.jsp"%>			          
 			        </div>
 			        
 			        <div class="table-responsive" >
@@ -92,19 +92,20 @@
 	  </section>
 	</div>
 
-  <%@include file="include/footer.jsp"%>
-  <%@include file="include/right-control-side-bar.jsp"%>
+  <%@include file="include/layout/footer.jsp"%>
+  <%@include file="include/layout/right-control-side-bar.jsp"%>
 </div>
 
 
 
 
-<%@include file="include/script.jsp"%>
+<%@include file="include/layout/script.jsp"%>
 
 <!-- CK Editor -->
 <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
 
 <script>
   $(function () {
