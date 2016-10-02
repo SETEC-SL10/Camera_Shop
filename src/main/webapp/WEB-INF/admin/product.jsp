@@ -56,7 +56,7 @@
 			                <td>
 			                  <button type="button" class="btn btn-warning">Update</button>
 			                  <button type="button" class="btn btn-danger">Delete</button>
-			                  <button type="button" class="btn btn-primary">View Detail</button>          
+			                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewProductDetail">View Detail</button>          
 			                </td>
 			                <td>EOS 5D</td>
 			                <td>123456</td>
@@ -71,6 +71,7 @@
 			      </div>
 			    </div>			   
 			    <%@include file="include/product/modal-add-new-camera.jsp"%>
+			    <%@include file="include/product/modal-view-product-detail.jsp"%>
 		    </c:when>
 		    <c:when test="${productPage.equals('used-camera')}">
 		       Used Camera
