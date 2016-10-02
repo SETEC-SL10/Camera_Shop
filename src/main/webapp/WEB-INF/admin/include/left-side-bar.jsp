@@ -69,7 +69,7 @@
       </li>
       
       <li>
-        <a href="#">
+        <a href="/admin/staff">
           <i class="fa fa-dashboard"></i> <span>Staff</span> 
           <span class="pull-right-container">
             <small class="label pull-right bg-green">60</small>
@@ -78,7 +78,7 @@
       </li>
       
        <li>
-        <a href="#">
+        <a href="/admin/role">
           <i class="fa fa-dashboard"></i> <span>User Role</span> 
           <span class="pull-right-container">
             <small class="label pull-right bg-orange">30</small>
@@ -96,7 +96,7 @@
       </li>
       
       <li>
-        <a href="#">
+        <a href="/admin/supplier">
           <i class="fa fa-dashboard"></i> <span>Supplier</span> 
           <span class="pull-right-container">
             <small class="label pull-right bg-yellow">30</small>
@@ -105,7 +105,7 @@
       </li>
       
        <li>
-        <a href="#">
+        <a href="/admin/color">
           <i class="fa fa-dashboard"></i> <span>Color</span> 
           <span class="pull-right-container">
             <small class="label pull-right bg-blue">30</small>
@@ -114,7 +114,7 @@
       </li>
       
        <li>
-        <a href="#">
+        <a href="/admin/category">
           <i class="fa fa-dashboard"></i> <span>Category</span> 
           <span class="pull-right-container">
             <small class="label pull-right bg-black">30</small>
@@ -123,7 +123,7 @@
       </li>
       
        <li>
-        <a href="#">
+        <a href="/admin/model">
           <i class="fa fa-dashboard"></i> <span>Model</span> 
           <span class="pull-right-container">
             <small class="label pull-right bg-gray">30</small>
@@ -132,7 +132,7 @@
       </li>
       
        <li>
-        <a href="#">
+        <a href="/admin/brand">
           <i class="fa fa-dashboard"></i> <span>Brand</span> 
           <span class="pull-right-container">
             <small class="label pull-right bg-blue">30</small>
