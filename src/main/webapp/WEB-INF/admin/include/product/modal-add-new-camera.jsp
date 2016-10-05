@@ -17,11 +17,11 @@
         <form >
           <div class="form-group">
             <label for="code">Product Code:</label>
-            <input type="text" class="form-control" id="code">
+            <input type="text" ng-model = "ProductTmp.CODE" class="form-control" id="code">
           </div>
           <div class="form-group">
             <label for="name">Product Name:</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" ng-model = "ProductTmp.NAME" class="form-control" id="name">
           </div>
           <!-- <div class="form-group">
             <label for="warranty">Warranty:</label>
@@ -31,41 +31,41 @@
             <label for="description">Description:</label>
             <!-- We not use this but need to add it -->
             <form >
-                  <textarea id="Description" name="Description"></textarea>
+                  <textarea id="Description"  name="Description"></textarea>
             </form>
             <!--  -->
             
             <!-- We use this -->
             <form>
-              <textarea class="textarea form-control" placeholder="Description"></textarea>
+              <textarea class="textarea form-control" ng-model="ProductTmp.DESCRIPTION" placeholder="Description"></textarea> 
             </form>
           </div>
           <div class="form-group">
             <label for="detail">Detail:</label>
             <!-- We not use this but need to add it -->
             <form >
-                  <textarea id="Detail" name="Detail"></textarea>
+                  <textarea id="Detail" ></textarea>
             </form>
             <!--  -->
             
             <!-- We use this -->
             <form>
-              <textarea class="textarea form-control" placeholder="Detail"></textarea>
+              <textarea class="textarea form-control" ng-model = "ProductTmp.DETAIL" placeholder="Detail"></textarea>
             </form>
           </div>
           <div class="form-group">
             <label for="model">Model:</label>
-            <select class="form-control" id="model" ng-model="Model" ng-options="model.model_name for model in Models">
+            <select class="form-control" id="model" ng-model="ProductTmp.MODEL" ng-options="model.model_name for model in Models">
             </select>
           </div>
           <div class="form-group">
             <label for="brand">Brand:</label>
-            <select class="form-control" id="brand" ng-model="Brand" ng-options="brand.brand_name for brand in Brands">
+            <select class="form-control" id="brand" ng-model="ProductTmp.BRAND" ng-options="brand.brand_name for brand in Brands">
             </select>
           </div>
           <div class="form-group">
             <label for="category">Category:</label>
-            <select class="form-control" id="category" ng-model="Category" ng-options="category.category_name for category in Categorys">
+            <select class="form-control" id="category" ng-model="ProductTmp.CATEGORY" ng-options="category.category_name for category in Categorys">
             </select>
           </div>
           <div class="form-group">

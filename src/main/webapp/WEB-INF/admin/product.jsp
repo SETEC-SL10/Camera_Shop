@@ -126,8 +126,8 @@
 <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/angular-ckeditor.js"></script>
 <script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
-
 
 <script>
   $(function () {

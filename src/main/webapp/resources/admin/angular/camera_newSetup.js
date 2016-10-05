@@ -175,30 +175,15 @@ app.controller('productController', function($scope,$http){
 	};
 
 	$scope.addNewButtonClicked = function(){
-		$scope.btnModal = true;
-		$scope.ProductTmp.AVAILABLE_STOCK = 0;
-		$scope.ProductTmp.BRAND = null;
-		$scope.ProductTmp.CATEGORY = null;
-		$scope.ProductTmp.CODE = null;
-		$scope.ProductTmp.CREATED_DATE = 0;
-		$scope.ProductTmp.DESCRIPTION = null;
-		$scope.ProductTmp.DETAIL = null;
-		$scope.ProductTmp.ID = null;
-		$scope.ProductTmp.IMG_URL = null;
-		$scope.ProductTmp.LOCAL_SHIP_PRICE = 0;
-		$scope.ProductTmp.MODEL = null;
-		$scope.ProductTmp.NAME = null;
-		$scope.ProductTmp.PROVINCE_SHIP_PRICE = 0;
-		$scope.ProductTmp.QTY_STOCK = 0;
-		$scope.ProductTmp.STATUS = true;
-		$scope.ProductTmp.TYPE_ID = 1;
+		$scope.clearText();
 		callModal('show');
 	};
 
 	$scope.updateButtonClicked = function(ind){
 		$scope.btnModal = false;
-		callModal('show');
 		$scope.ProductTmp = angular.copy($scope.Products[ind]);
+		console.log($scope.ProductTmp);
+		callModal('show');
 	};
 
 	$scope.deleteButtonClicked = function(id){
@@ -303,8 +288,29 @@ app.controller('productController', function($scope,$http){
 		$scope.bntClickedIndex = 0;
 		$scope.getAllCamera($scope.pageForm);
 	};
+
+	$scope.clearText = function(){
+		$scope.btnModal = true;
+		$scope.ProductTmp.AVAILABLE_STOCK = 0;
+		$scope.ProductTmp.BRAND = null;
+		$scope.ProductTmp.CATEGORY = null;
+		$scope.ProductTmp.CODE = null;
+		$scope.ProductTmp.CREATED_DATE = 0;
+		$scope.ProductTmp.DESCRIPTION = null;
+		$scope.ProductTmp.DETAIL = null;
+		$scope.ProductTmp.ID = null;
+		$scope.ProductTmp.IMG_URL = null;
+		$scope.ProductTmp.LOCAL_SHIP_PRICE = 0;
+		$scope.ProductTmp.MODEL = null;
+		$scope.ProductTmp.NAME = null;
+		$scope.ProductTmp.PROVINCE_SHIP_PRICE = 0;
+		$scope.ProductTmp.QTY_STOCK = 0;
+		$scope.ProductTmp.STATUS = true;
+		$scope.ProductTmp.TYPE_ID = 1;
+	};
 	
 	$scope.getAllProducts($scope.pageForm);
+	$scope.getPageProduct();
 	$scope.getAllBrand();
 	$scope.getAllModel();
 	$scope.getAllCategory();
@@ -325,7 +331,7 @@ app.controller('productController', function($scope,$http){
 						  "PROVINCE_SHIP_PRICE": 0,
 						  "QTY_STOCK": 0,
 						  "STATUS": true,
-						  "TYPE_ID": 0,
+						  "TYPE_ID": 1,
 						  "WARRANTY": 0
 						};
 });
