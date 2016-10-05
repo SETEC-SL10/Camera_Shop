@@ -173,8 +173,25 @@ app.controller('productController', function($scope,$http){
 		        swal("Error Connection!", "Try to check your network connection", "error");
 		});
 	};
-
+	
+	$scope.insertButtonClicked = function(){
+		$scope.ProductTmp.CATEGORY = $scope.Category;
+		$scope.ProductTmp.BRAND = $scope.Brand;
+		$scope.ProductTmp.MODEL = $scope.Model;
+		console.log($scope.ProductTmp);
+		$scope.insertProduct($scope.ProductTmp);
+	};
+	
+	$scope.updateButtonClicked = function(){
+		$scope.ProductTmp.CATEGORY = $scope.Category;
+		$scope.ProductTmp.BRAND = $scope.Brand;
+		$scope.ProductTmp.MODEL = $scope.Model;
+		console.log($scope.ProductTmp);
+		$scope.updateProduct($scope.ProductTmp);
+	};
+	
 	$scope.addNewButtonClicked = function(){
+		$scope.btnModal = true;
 		$scope.clearText();
 		callModal('show');
 	};
@@ -182,7 +199,10 @@ app.controller('productController', function($scope,$http){
 	$scope.updateButtonClicked = function(ind){
 		$scope.btnModal = false;
 		$scope.ProductTmp = angular.copy($scope.Products[ind]);
-		console.log($scope.ProductTmp);
+		$scope.Category = $scope.ProductTmp.CATEGORY;
+		$scope.Brand = $scope.ProductTmp.BRAND;
+		$scope.Model = $scope.ProductTmp.MODEL;
+//		console.log($scope.ProductTmp);
 		callModal('show');
 	};
 

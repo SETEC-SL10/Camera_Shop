@@ -60,7 +60,7 @@
 			            </thead>
 			            <tbody>
 			              <tr ng-repeat="product in Products"> <!--  ng-repeat="camera in Cameras" -->
-			                <td>1</td>
+			                <td>{{(bntClickedIndex * pageForm.limit) + $index + 1}}</td>
 			                <td>
 			                  <button type="button" class="btn btn-warning" ng-click = "updateButtonClicked($index)">Update</button>
 			                  <button type="button" class="btn btn-danger" ng-click = "deleteButtonClicked(product.ID)">Delete</button>

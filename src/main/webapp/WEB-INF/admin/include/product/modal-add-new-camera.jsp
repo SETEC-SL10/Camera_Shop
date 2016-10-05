@@ -30,10 +30,10 @@
           <div class="form-group">
             <label for="description">Description:</label>
             <!-- We not use this but need to add it -->
-            <form >
+<!--             <form >
                   <textarea id="Description"  name="Description"></textarea>
             </form>
-            <!--  -->
+             -->
             
             <!-- We use this -->
             <form>
@@ -43,9 +43,9 @@
           <div class="form-group">
             <label for="detail">Detail:</label>
             <!-- We not use this but need to add it -->
-            <form >
+            <!-- <form >
                   <textarea id="Detail" ></textarea>
-            </form>
+            </form> -->
             <!--  -->
             
             <!-- We use this -->
@@ -55,22 +55,22 @@
           </div>
           <div class="form-group">
             <label for="model">Model:</label>
-            <select class="form-control" id="model" ng-model="ProductTmp.MODEL" ng-options="model.model_name for model in Models">
+            <select class="form-control" id="model" ng-model="Model" ng-options="model.model_name for model in Models">
             </select>
           </div>
           <div class="form-group">
             <label for="brand">Brand:</label>
-            <select class="form-control" id="brand" ng-model="ProductTmp.BRAND" ng-options="brand.brand_name for brand in Brands">
+            <select class="form-control" id="brand" ng-model="Brand" ng-options="brand.brand_name for brand in Brands">
             </select>
           </div>
           <div class="form-group">
             <label for="category">Category:</label>
-            <select class="form-control" id="category" ng-model="ProductTmp.CATEGORY" ng-options="category.category_name for category in Categorys">
+            <select class="form-control" id="category" ng-model="Category" ng-options="category.category_name for category in Categorys">
             </select>
           </div>
           <div class="form-group">
-            <button type="button" class="btn btn-primary">Insert</button>
-            <button type="button" class="btn btn-warning">Update</button>
+            <button type="button" class="btn btn-primary" ng-click = "insertButtonClicked()" ng-hide = "!btnModal">Insert</button>
+            <button type="button" class="btn btn-warning" ng-click = "updateButtonClicked()" ng-hide = "btnModal">Update</button>
           </div>
         </form>
       </div>
