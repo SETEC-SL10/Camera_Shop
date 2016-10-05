@@ -16,22 +16,22 @@
       <div class="modal-body">
         <form >
           <div class="form-group">
-            <label for="code">Camera Code:</label>
+            <label for="code">Product Code:</label>
             <input type="text" class="form-control" id="code">
           </div>
           <div class="form-group">
-            <label for="name">Camera Name:</label>
+            <label for="name">Product Name:</label>
             <input type="text" class="form-control" id="name">
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="warranty">Warranty:</label>
             <input type="date" class="form-control" id="warranty">
-          </div>
+          </div> -->
           <div class="form-group">
             <label for="description">Description:</label>
             <!-- We not use this but need to add it -->
             <form >
-                  <textarea id="editor1" name="editor1"></textarea>
+                  <textarea id="Description" name="Description"></textarea>
             </form>
             <!--  -->
             
@@ -42,7 +42,16 @@
           </div>
           <div class="form-group">
             <label for="detail">Detail:</label>
-            <textarea class="form-control" rows="5" id="detail"></textarea>
+            <!-- We not use this but need to add it -->
+            <form >
+                  <textarea id="Detail" name="Detail"></textarea>
+            </form>
+            <!--  -->
+            
+            <!-- We use this -->
+            <form>
+              <textarea class="textarea form-control" placeholder="Detail"></textarea>
+            </form>
           </div>
           <div class="form-group">
             <label for="model">Model:</label>

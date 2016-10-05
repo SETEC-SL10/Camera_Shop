@@ -4,3 +4,5 @@
 <script src="${pageContext.request.contextPath}/resources/plugins/fastclick/fastclick.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/plugins/AdminLTE/js/app.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/plugins/AdminLTE/js/demo.js"></script>
+<script src="${pageContext.request.contextPath}/resources/plugins/angular/angular.min.js"></script>
+

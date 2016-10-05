@@ -2,16 +2,16 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   font-size: 62.5%;
-}
+} */
 
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+/* body {
   font-size: 1.6rem;
   font-family: "PT Sans", sans-serif;
   color: #2E4057;
@@ -21,7 +21,7 @@ body {
 a {
   color: #2E4057;
   text-decoration: none;
-}
+} */
 
 section {
   /* used just to separate paginations */
@@ -306,7 +306,7 @@ xcarbonads
 Basic style
 
 -------------------------------- */
-header {
+/* header {
   position: relative;
   height: 200px;
   line-height: 220px;
@@ -330,7 +330,7 @@ header h1 {
 
 nav[role="navigation"] {
   text-align: center;
-}
+} */
 
 .cd-pagination {
   width: 90%;
