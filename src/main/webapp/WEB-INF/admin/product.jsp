@@ -62,7 +62,7 @@
 			              <tr ng-repeat="product in Products"> <!--  ng-repeat="camera in Cameras" -->
 			                <td>{{(bntClickedIndex * pageForm.limit) + $index + 1}}</td>
 			                <td>
-			                  <button type="button" class="btn btn-warning" ng-click = "updateButtonClicked($index)">Update</button>
+			                  <button type="button" class="btn btn-warning" ng-click = "updateButtonClickedTB($index)">Update</button>
 			                  <button type="button" class="btn btn-danger" ng-click = "deleteButtonClicked(product.ID)">Delete</button>
 			                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewProductDetail">View Detail</button>          
 			                </td>
@@ -129,7 +129,7 @@
 <script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/angular-ckeditor.js"></script>
 <script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
 
-<script>
+<!-- <script>
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
@@ -139,6 +139,6 @@
     //bootstrap WYSIHTML5 - text editor
     $(".textarea").wysihtml5();
   });
-</script>
+</script> -->
 </body>
 </html>

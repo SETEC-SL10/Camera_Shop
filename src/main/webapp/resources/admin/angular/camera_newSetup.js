@@ -196,13 +196,16 @@ app.controller('productController', function($scope,$http){
 		callModal('show');
 	};
 
-	$scope.updateButtonClicked = function(ind){
+	$scope.updateButtonClickedTB = function(ind){
+		alert("Update Clicked!!!!!");
 		$scope.btnModal = false;
 		$scope.ProductTmp = angular.copy($scope.Products[ind]);
 		$scope.Category = $scope.ProductTmp.CATEGORY;
 		$scope.Brand = $scope.ProductTmp.BRAND;
 		$scope.Model = $scope.ProductTmp.MODEL;
-//		console.log($scope.ProductTmp);
+		console.log($scope.Category);
+		console.log($scope.Brand);
+		console.log($scope.Model);
 		callModal('show');
 	};
 
@@ -354,4 +357,7 @@ app.controller('productController', function($scope,$http){
 						  "TYPE_ID": 1,
 						  "WARRANTY": 0
 						};
+	$scope.changeOption = function(object){
+		console.log(object);
+	};
 });

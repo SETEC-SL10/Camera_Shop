@@ -55,17 +55,18 @@
           </div>
           <div class="form-group">
             <label for="model">Model:</label>
-            <select class="form-control" id="model" ng-model="Model" ng-options="model.model_name for model in Models">
+            <select class="form-control" id="model" ng-model="Model.model_id" ng-options="model.model_id as model.model_name for model in Models"> <!-- ng-options="model as model.model_name for model in Models" -->
+            	<!-- <option ng-repeat="model in Models" value="{{model}}">{{model.model_name}}</option> -->
             </select>
           </div>
           <div class="form-group">
             <label for="brand">Brand:</label>
-            <select class="form-control" id="brand" ng-model="Brand" ng-options="brand.brand_name for brand in Brands">
+            <select class="form-control" id="brand" ng-model="Brand.brand_id" ng-options="brand.brand_id as brand.brand_name for brand in Brands" ng-change = "changeOption(Brand)">
             </select>
           </div>
           <div class="form-group">
             <label for="category">Category:</label>
-            <select class="form-control" id="category" ng-model="Category" ng-options="category.category_name for category in Categorys">
+            <select class="form-control" id="category" ng-model="Category.category_id" ng-options="category.category_id as category.category_name for category in Categorys" ng-change = "changeOption(Category)">
             </select>
           </div>
           <div class="form-group">
