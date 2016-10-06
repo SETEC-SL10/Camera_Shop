@@ -11,24 +11,33 @@
       <div class="modal-body">
         <form >
           <div class="form-group">
-            <label>ID:</label>                                              
+            <label>Code:</label>
+            <h4>{{productDetial.CODE}}</h4>                                              
           </div> 
           <div class="form-group">
-            <label>Serial:</label>                                               
+            <label>Name:</label>
+            <h4>{{productDetial.NAME}}</h4>                                            
           </div>
           <div class="form-group">
-            <label>Color:</label>                                            
+            <label>Model:</label>
+            <h4>{{productDetial.MODEL.model_name}}</h4>                                           
           </div>
           <div class="form-group">
-            <label>Cost:</label>                                          
+            <label>Brand:</label>
+            <h4>{{productDetial.BRAND.brand_name}}</h4>                                        
           </div>
           <div class="form-group">
-            <label>Price:</label>                                             
+            <label>Category:</label>
+            <h4>{{productDetial.CATEGORY.category_name}}</h4>                                            
           </div>
           <div class="form-group">
-            <label>Status:</label>                                             
+            <label>Description:</label>
+            <p>{{productDetial.DESCRIPTION}}</p>                                           
           </div>
-                   
+          <div class="form-group">
+            <label>Detail:</label>
+            <p>{{productDetial.DETAIL}}</p>                                          
+          </div>
         </form>
       </div>
     </div>

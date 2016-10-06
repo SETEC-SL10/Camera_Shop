@@ -64,7 +64,7 @@
 			                <td>
 			                  <button type="button" class="btn btn-warning" ng-click = "updateButtonClickedTB($index)">Update</button>
 			                  <button type="button" class="btn btn-danger" ng-click = "deleteButtonClicked(product.ID)">Delete</button>
-			                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewProductDetail">View Detail</button>          
+			                  <button type="button" class="btn btn-primary" data-toggle="modal" ng-click = "viewProductDetail($index)" >View Detail</button>          
 			                </td>
 			                <td>{{product.NAME}}</td>
 			                <td>{{product.CODE}}</td>
