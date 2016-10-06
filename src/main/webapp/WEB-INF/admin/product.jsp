@@ -90,8 +90,12 @@
 			    </div>			   
 			    <%@include file="include/product/modal-add-new-camera.jsp"%>
 			    <%@include file="include/product/modal-view-product-detail.jsp"%>
+			    
+			    <%@include file="include/product/camera-image.jsp"%>
+			    
+			    <%@include file="include/product/specification.jsp"%>
 
-				<%-- <c:choose>
+				 <%-- <c:choose>
 				    <c:when test="${productPage.equals('new-camera')}">
                 		<th>Warranty</th>
 				    </c:when>
@@ -108,7 +112,6 @@
 				        
 				    </c:otherwise>
 				</c:choose> --%>
-		<!-- END CONTENT BLOCK HERE -->
 		
 	  </section>
 	</div>

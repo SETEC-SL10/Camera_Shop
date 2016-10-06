@@ -51,7 +51,9 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="/admin/product/new-camera"><i class="fa fa-circle-o"></i>New Camera</a></li>
+              <li><a href="/admin/product/new-camera-spec"><i class="fa fa-circle-o"></i>New Camera Specification</a></li>              
               <li><a href="/admin/product/used-camera"><i class="fa fa-circle-o"></i>Used Camera</a></li>
+              <li><a href="/admin/product/used-camera-spec"><i class="fa fa-circle-o"></i>Used Camera Specification</a></li>              
             </ul>
           </li>
           <li>
@@ -139,17 +141,6 @@
           </span>         
         </a>
       </li>
-      
-       <li>
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>Specification</span> 
-          <span class="pull-right-container">
-            <small class="label pull-right bg-orange">30</small>
-          </span>         
-        </a>
-      </li>
-      
-      
       
       
       
