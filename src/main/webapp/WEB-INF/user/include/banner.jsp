@@ -1,179 +1,207 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-    
-
+<%@ page pageEncoding="utf-8"%>
 
 <style>
-
-
-/* Slideshow container */
-.slideshow-container {
- 
-  position: relative;
-  margin: auto;
+#slider1_container{
+	visibility: hidden;
+	position: relative;
+	margin: 0px;
+	width: 100%;
+	height: 442px;
+	overflow: hidden;
+}
+.mySlideBlock{
+	cursor: move;
+	position: absolute;
+	/* left: 0px;
+	top: 0px;  */
+	width: 100%; 
+	height: 442px;
+	overflow: hidden;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
- * color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor:pointer;
-  height: 13px;
-  width: 13px;
-  margin: 0 2px;
- * background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
- * background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 2s;
-  animation-name: fade;
-  animation-duration: 2s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .1}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .1}
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
 </style>
 
+<div id="slider1_container">
+    <div u="slides" class="mySlideBlock">
+        <div>
+            <img u="image" src2="${pageContext.request.contextPath}/resources/user/img/Slider-01.jpg" />
+        </div>
+        <div>
+            <img u="image" src2="${pageContext.request.contextPath}/resources/user/img/Slider-02.jpg" />
+        </div>
+        <div>
+            <img u="image" src2="${pageContext.request.contextPath}/resources/user/img/Slider-03.jpg" />
+        </div>
+        <div>
+            <img u="image" src2="${pageContext.request.contextPath}/resources/user/img/Slider-04.jpg"/>
+        </div>
+        <div>
+            <img u="image" src2="${pageContext.request.contextPath}/resources/user/img/Slider-05.jpg" />
+        </div>
+        <div>
+            <img u="image" src2="${pageContext.request.contextPath}/resources/user/img/Slider-06.png" />
+        </div>
+        <div>
+            <img u="image" src2="${pageContext.request.contextPath}/resources/user/img/Slider-07.png"/>
+        </div>
+        <div>
+            <img u="image" src2="${pageContext.request.contextPath}/resources/user/img/Slider-08.png" />
+        </div>
+    </div>
+    
+    
+    <style>
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url(${pageContext.request.contextPath}/resources/plugins/jssorSlider/img/slideBtn.png) no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+    </style>
+    
+    
+    <!-- bullet navigator container -->
+    <div u="navigator" class="jssorb05" style="bottom: 16px; right: 6px;">
+        <!-- bullet navigator item prototype -->
+        <div u="prototype"></div>
+    </div>
 
-<div class="slideshow-container">
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="${pageContext.request.contextPath}/resources/user/img/Slide-01.png" alt="" style="width:100%"/>
-  <div class="text">Caption Text</div>
+    <!--#endregion Bullet Navigator Skin End -->
+    
+    <!--#region Arrow Navigator Skin Begin -->
+    <!-- Help: http://www.jssor.com/tutorial/set-arrow-navigator.html -->
+    
+    
+    <style>
+        /* jssor slider arrow navigator skin 11 css */
+        /*
+        .jssora11l                  (normal)
+        .jssora11r                  (normal)
+        .jssora11l:hover            (normal mouseover)
+        .jssora11r:hover            (normal mouseover)
+        .jssora11l.jssora11ldn      (mousedown)
+        .jssora11r.jssora11rdn      (mousedown)
+        */
+        .jssora11l, .jssora11r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 37px;
+            height: 37px;
+            cursor: pointer;
+            background: url(${pageContext.request.contextPath}/resources/plugins/jssorSlider/img/nextPre.png) no-repeat;
+            overflow: hidden;
+        }
+        .jssora11l { background-position: -11px -41px; }
+        .jssora11r { background-position: -71px -41px; }
+        .jssora11l:hover { background-position: -131px -41px; }
+        .jssora11r:hover { background-position: -191px -41px; }
+        .jssora11l.jssora11ldn { background-position: -251px -41px; }
+        .jssora11r.jssora11rdn { background-position: -311px -41px; }
+    </style>
+    
+    
+    <!-- Arrow Left -->
+    <span u="arrowleft" class="jssora11l" style="top: 123px; left: 8px;">
+    </span>
+    <!-- Arrow Right -->
+    <span u="arrowright" class="jssora11r" style="top: 123px; right: 8px;">
+    </span>
+    <!--#endregion Arrow Navigator Skin End -->
 </div>
 
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="${pageContext.request.contextPath}/resources/user/img/Slide-02.png" alt="" style="width:100%"/>
-  <div class="text">Caption Two</div>
-</div>
 
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="${pageContext.request.contextPath}/resources/user/img/Slide-03.png" alt="" style="width:100%"/>
-  <div class="text">Caption Three</div>
-</div>
+<!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="bootstrap.min.js"></script> -->
+    <script src="${pageContext.request.contextPath}/resources/plugins/jssorSlider/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="${pageContext.request.contextPath}/resources/plugins/jssorSlider/ie10-viewport-bug-workaround.js"></script>
 
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
+    <!-- jssor slider scripts-->
+    <!-- use jssor.slider.debug.js for debug -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/jssorSlider/jssor.slider.mini.js"></script>
+    <script>
 
-</div>
-<br>
+        jQuery(document).ready(function ($) {
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $Idle: 2000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
 
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $Cols: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
 
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
+                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Scale: false                                   //Scales bullets navigator or not while slider scale
+                },
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Rows: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 12,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 4,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                    $Scale: false                                   //Scales bullets navigator or not while slider scale
+                }
+            };
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth) {
+                    /* jssor_slider1.$ScaleWidth(parentWidth - 30); */
+                	jssor_slider1.$ScaleWidth(parentWidth);
+                }
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
 
-//for automatic slideshow
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
-    }
-    slideIndex++;
-    if (slideIndex> slides.length) {slideIndex = 1} 
-    slides[slideIndex-1].style.display = "block"; 
-    setTimeout(showSlides, 4000); // Change image every 2 seconds
-}
-
-</script>
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
