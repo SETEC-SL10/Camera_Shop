@@ -48,8 +48,9 @@
 SL CAM TEN SHOP. Established in late 2010 and has been a prominent Degital online Shop destination in Cambodia ever since . Our customer service is ready to answer your questions in almost any waking hour. We redefine Degital shopping experience in Cambodia. As a premier photo and video outlet, we are full line dealers for the entire range of photographic equipment and supplies. 
 Whether you are a leading professional or new to photography, our expert staff are always ready to assist you in finding the perfect equipment at great prices.
 	</p>
-	<h2>President : Nemo Ruy Setec Institute</h2>
-	<img src="${pageContext.request.contextPath}/resources/user/img/Monster.jpg" class="img-responsive" alt=""/>
+	<%-- <h2>President : Nemo Ruy Setec Institute</h2>
+	<img src="${pageContext.request.contextPath}/resources/user/img/teacher.jpg" class="img-responsive" alt=""/>
+	 --%>
 	</div>
 	
 	<div class="col-md-9 ">

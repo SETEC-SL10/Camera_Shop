@@ -75,18 +75,17 @@ background: url(../images/grid_view.png)no-repeat;
 }
 .cbp-vm-add {
 	color: #fff;
-	background:#816263;
 	padding: 8px 10px;
 	border-radius: 2px;
 	margin: 20px 0 0;
 	display: inline-block;
 	font-size: 13px;
 }
-.cbp-vm-add:hover {
+/* .cbp-vm-add:hover {
 	color: #fff;
 	background:#000;
 	text-decoration:none;
-}
+} */
 .cbp-vm-add:before {
 	margin-right: 5px;
 }

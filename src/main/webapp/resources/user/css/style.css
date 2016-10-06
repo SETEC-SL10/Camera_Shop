@@ -1,3 +1,47 @@
+/* color  */
+
+
+.header-top-strip,.sky-form h4,.cbp-vm-add,ul.unit,.footer-grid-icon input[type="submit"]{
+	background-color:#ff8484;
+}
+.navbar-collapse.collapse{
+	background-color:#ff8484;
+}
+ul.nav.navbar-nav li a:hover{
+	background:white;
+	color: #ff8484;
+}
+.navbar-default .navbar-nav > li > a{
+	color: white;
+}
+button.btn.btn-primary,button.btn.btn-primary:hover,button.searchBtn,button.searchBtn:hover,.btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info{
+	background: #c7c3c3;
+	border:1px solid #c7c3c3;
+}
+
+.cbp-vm-add:hover {
+	color: #fff;
+	background:#b09a9a;
+	text-decoration:none;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    /* background-color: transparent;
+    color: #816263; */
+}
+
+ul.nav.navbar-nav li a{
+	padding: 15px;
+}
+
+/* logo  */
+.logo img{
+	height:100%;
+}
+
+
+
+
 
 h4, h5, h6,
 h1, h2, h3 {margin: 0;}
@@ -90,13 +134,12 @@ a:hover {
 }
 ul.nav.navbar-nav li a {
     font-size: 0.9em;
-    color: black;
     font-family: 'Oswald', sans-serif;
 }
-ul.nav.navbar-nav li a:hover{
+/* ul.nav.navbar-nav li a:hover{
 	background:#847057;
 	color:black;
-}
+} */
 .dropdown-menu {
 	top: 100%;
     padding: 20px;
@@ -677,13 +720,11 @@ select.country:hover{
 .footer-grid-icon input[type="submit"] {
     font-size: 1em;
     color: #fff;
-    background: #EA572D;
     border: none;
     padding: 0.5em 1em;
     outline: none;
 }
 .footer-grid-icon input[type="submit"]:hover {
-    background:#847057;
      transition: 0.5s all;
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
@@ -922,7 +963,6 @@ span.glyphicon.glyphicon-share-alt {
 	font-family: 'Oswald', sans-serif;
 }
 .sky-form h4{
-	background: #847057;
 	padding: 15px 20px;
 	color: #fff;
 	text-transform: uppercase;
@@ -1361,7 +1401,6 @@ a.add-cart:hover {
 	margin: 2em 0 2em;
 }
 ul.unit{
-	background:#EA572D;
 	padding:1em;
 }
 ul.unit li {
@@ -2877,7 +2916,6 @@ label{
 
 .header-top-strip{
 	padding:8px 0 14px 0;
-	background-color:#816263;
 }
 .header-top-left ul li {
     display: inline-block;
@@ -2959,9 +2997,7 @@ a.simpleCart_empty {
     border-color: transparent;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #000;
     text-transform: uppercase;
-    border: 1px solid #f8f8f8;
 	margin:0 10px;
 	padding-top: 10px;
     padding-bottom: 10px;
@@ -2973,11 +3009,7 @@ a.simpleCart_empty {
 .navbar-collapse.collapse {
     padding: 0;
 }
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: transparent;
-    border: 1px solid #816263;
-    color: #816263;
-}
+
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
     color: #000;
     background-color: transparent;

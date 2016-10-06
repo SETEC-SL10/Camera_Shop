@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
     
 <div class="inner-banner">
-		<div class="container">
+		<div class="container#">
 			<div class="banner-top inner-head">
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="navbar-header">
@@ -13,7 +13,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand logo">
-							<a href="/"><img src="${pageContext.request.contextPath}/resources/user/img/logo1.png" alt=""></a>
+							<a href="/"><img src="${pageContext.request.contextPath}/resources/user/img/logo.png" alt=""></a>
 						</div>
 					</div>
 	    <!--/.navbar-header-->
