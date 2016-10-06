@@ -26,7 +26,7 @@
 	  <section class="content">
 		
 		<!-- CONTENT BLOCK START HERE -->
-		    	<div class="row">
+		    	<div class="row" ng-hide = "layoutProduct">
 			      <div class="col-lg-12">
 			        <div class="row"> 
 			          <div class="col-sm-8">
@@ -64,7 +64,9 @@
 			                <td>
 			                  <button type="button" class="btn btn-warning" ng-click = "updateButtonClickedTB($index)">Update</button>
 			                  <button type="button" class="btn btn-danger" ng-click = "deleteButtonClicked(product.ID)">Delete</button>
-			                  <button type="button" class="btn btn-primary" data-toggle="modal" ng-click = "viewProductDetail($index)" >View Detail</button>          
+			                  <button type="button" class="btn btn-primary"  ng-click = "viewProductDetail($index)" >View Detail</button>
+			                  <button type="button" class="btn btn-primary" data-toggle="modal" ng-click = "addSpecClicked()" >Add Spec</button>
+			                  <button type="button" class="btn btn-primary" data-toggle="modal" ng-click = "viewProductDetail($index)" >Add Image</button>          
 			                </td>
 			                <td>{{product.NAME}}</td>
 			                <td>{{product.CODE}}</td>
