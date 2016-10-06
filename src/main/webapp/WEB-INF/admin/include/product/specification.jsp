@@ -1,6 +1,6 @@
 <%@ page pageEncoding="utf-8"%>	
 
-<div class="main">
+<div class="main" ng-hide = "layoutSpec">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Camera spech<span class="glyphicon glyphicon-camera pull-right"></span></h1>
@@ -11,6 +11,9 @@
         <div class="col-lg-12">
             <button type="button" data-toggle="modal" data-target="#insert-edit-camera-spec" class="btn btn-primary btn-no-radius"><span
                     class="glyphicon glyphicon-plus"></span> Create...
+            </button>
+            <button type="button"  class="btn btn-primary btn-no-radius" ng-click = "backSpecClicked()">
+            	<i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
             </button>
         </div>
     </div>

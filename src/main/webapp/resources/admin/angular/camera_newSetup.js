@@ -11,7 +11,11 @@ function callModal(id,modal){
 var app = angular.module('productApp', []);
 
 app.controller('productController', function($scope,$http){
-
+	
+	$scope.layoutProduct = false;
+	$scope.layoutSpec = true;
+	$scope.layoutImage = true;
+	
 	$scope.btnModal = true;
 	$scope.numPagination = 0;
 	$scope.Pagination = [];
@@ -366,4 +370,24 @@ app.controller('productController', function($scope,$http){
 		$scope.productDetial = angular.copy($scope.Products[ind]);
 		callModal('#viewProductDetail','show');
 	};
+	
+	$scope.addSpecClicked = function(){
+		$scope.layoutProduct = true;
+		$scope.layoutSpec = false;
+	};
+	
+	$scope.backSpecClicked = function(){
+		$scope.layoutProduct = false;
+		$scope.layoutSpec = true;
+	};
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 });
