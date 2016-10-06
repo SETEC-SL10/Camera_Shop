@@ -4,8 +4,8 @@
 * Description
 */
 
-function callModal(modal){
-	$("#myModal").modal(modal);
+function callModal(id,modal){
+	$(id).modal(modal);
 }
 
 var app = angular.module('productApp', []);
@@ -18,7 +18,7 @@ app.controller('productController', function($scope,$http){
 	$scope.bntClickedIndex = 0;
 
 	$scope.searchFilters = [
-							{ id : "all", value : "All Camera"},
+							/*{ id : "all", value : "All Camera"},*/
 							{ id : "name", value : "Camera Name"},
 							{ id : "code", value : "Camera Code"},
 							{ id : "category", value : "Category Name"},
@@ -31,7 +31,7 @@ app.controller('productController', function($scope,$http){
 	$scope.pageForm = {
 						  columnName: "all",
 						  conditionValue: "",
-						  limit: 20,
+						  limit: 2,
 						  page: 0
 						};
 
@@ -193,7 +193,7 @@ app.controller('productController', function($scope,$http){
 	$scope.addNewButtonClicked = function(){
 		$scope.btnModal = true;
 		$scope.clearText();
-		callModal('show');
+		callModal('#myModal','show');
 	};
 
 	$scope.updateButtonClickedTB = function(ind){
@@ -206,7 +206,7 @@ app.controller('productController', function($scope,$http){
 		console.log($scope.Category);
 		console.log($scope.Brand);
 		console.log($scope.Model);
-		callModal('show');
+		callModal('#myModal','show');
 	};
 
 	$scope.deleteButtonClicked = function(id){
@@ -309,7 +309,8 @@ app.controller('productController', function($scope,$http){
 		$scope.numPagination = 0;
 		$scope.Pagination = [];
 		$scope.bntClickedIndex = 0;
-		$scope.getAllCamera($scope.pageForm);
+		$scope.getAllProducts($scope.pageForm);
+		$scope.getPageProduct();
 	};
 
 	$scope.clearText = function(){
@@ -359,5 +360,10 @@ app.controller('productController', function($scope,$http){
 						};
 	$scope.changeOption = function(object){
 		console.log(object);
+	};
+	
+	$scope.viewProductDetail = function(ind){
+		$scope.productDetial = angular.copy($scope.Products[ind]);
+		callModal('#viewProductDetail','show');
 	};
 });
