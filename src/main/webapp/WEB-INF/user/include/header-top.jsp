@@ -1,7 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-    
-<link href="${pageContext.request.contextPath}/resources/user/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+<%@ page pageEncoding="utf-8"%>
 
 <div class="header">
 	<div class="header-top-strip">

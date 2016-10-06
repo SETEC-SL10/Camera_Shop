@@ -7,130 +7,20 @@
 	window.productID="${productID}";
  	window.colorID="${colorID}";
 	window.serial="${serial}";
-	/* alert("ProductID: "+productID+"\nColorID: "+colorID+"\nSerial: "+serial); */
 </script>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home</title>
-<script src="${pageContext.request.contextPath}/resources/user/angular/angular.min.js"></script> 
-<script src="${pageContext.request.contextPath}/resources/user/angular/angular-cookies.js"></script>
-<link href="${pageContext.request.contextPath}/resources/user/css/sweetalert.css" rel="stylesheet" type="text/css" media="all"/>
-<script src="${pageContext.request.contextPath}/resources/user/js/sweetalert-dev.js"> </script>
-
-<link href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="${pageContext.request.contextPath}/resources/user/js/jquery-1.11.0.min.js"></script>
-<!-- Custom Theme files -->
-<link href="${pageContext.request.contextPath}/resources/user/css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--Google Fonts-->
-<link href='//fonts.googleapis.com/css?family=Hind:400,500,300,600,700' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-<!-- start-smoth-scrolling -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/move-top.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/easing.js"></script>
-	<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-	</script>
-	
-<!-- //end-smoth-scrolling -->
-<script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
-
-<!-- End of old code  --> <!-- Will Delete Some of code later -->
-
-<!-- Start New code  -->
+<%@include file="link/user-link.jsp"%>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/etalage.css">
-<script src="${pageContext.request.contextPath}/resources/user/js/detail.js"></script>
-<script src="${pageContext.request.contextPath}/resources/user/js/jquery.etalage.min.js"></script>
-<script>
-/* jQuery(document).ready(function($){
-
-	$('#etalage').etalage({
-		thumb_image_width: 300,
-		thumb_image_height: 300,
-		source_image_width: 900,
-		source_image_height: 1200,
-		show_hint: true,
-		click_callback: function(image_anchor, instance_id){
-				alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-			}
-		});
-	
-}); 
-$(document).ready(function(){
-
-	// If your <ul> has the id "etalage":
-	$('#etalage').etalage({
-	// These are the most common settings (because they are case specific)
-	thumb_image_width: 300,
-	thumb_image_height: 400,
-	source_image_width: 1200,
-	source_image_height: 1600,
-	zoom_area_width: 800
-	// Note: the last option does not end with a comma
-	}); 
-
-	});
-	jQuery(document).ready(function($){
-		$('#etalage').etalage({
-			thumb_image_width: 300,
-			thumb_image_height: 300,
-			source_image_width: 900,
-			source_image_height: 1200,
-			show_hint: true,
-			click_callback: function(image_anchor, instance_id){
-					alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-				}
-			});
-		
-		});*/
-		var myjQuery;
-		jQuery(document).ready(function($){
-			myjQuery = $;
-			/* myjQuery('#etalage').etalage({
-				thumb_image_width: 300,
-				thumb_image_height: 300,
-				source_image_width: 900,
-				source_image_height: 1200,
-				show_hint: true,
-				click_callback: function(image_anchor, instance_id){
-						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-					}
-				}); */
-			
-			});
-</script>
-<!-- the jScrollPane script -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/jquery.jscrollpane.min.js"></script>
-<script type="text/javascript" id="sourcecode">
-/* 	$(function()
-	{
-		$('.scroll-pane').jScrollPane();
-	}); */
-</script> 
-
 <!-- Related-->
  <link href="${pageContext.request.contextPath}/resources/user/css/component.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/>
-<!-- Flexisel -->
-<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
-<link href="${pageContext.request.contextPath}/resources/user/css/flexisel.css" rel="stylesheet" type="text/css" media="all">
-<!-- End Flexisel -->
 <link href="${pageContext.request.contextPath}/resources/user/css/detail.css" rel="stylesheet" type="text/css" media="all"/>
 
 </head>
 <body>  
 
 <%@include file="include/header.jsp"%>
-
 
 <div class="content" ng-app="DetailApp" ng-controller="DetailController" ng-cloak>
 	<div class="container">
@@ -222,16 +112,7 @@ $(document).ready(function(){
 							</div>														      
 				      	</div>
 				 	</div>
-				   <script src="${pageContext.request.contextPath}/resources/user/js/easyResponsiveTabs.js" type="text/javascript"></script>
-				   <script type="text/javascript">
-				    $(document).ready(function () {
-				        $('#horizontalTab').easyResponsiveTabs({
-				            type: 'default', //Types: default, vertical, accordion           
-				            width: 'auto', //auto or any width like 600px
-				            fit: true   // 100% fit in a container
-				        });
-				    });
-				   </script>	
+				   	
 				</div>
 				
 				<!-- Start Related -->	
@@ -282,5 +163,46 @@ $(document).ready(function(){
 	</div>	
 </div>
 <%@include file="include/footer.jsp"%>
+<%@include file="script/user-script.jsp"%>
+
+
+<script src="${pageContext.request.contextPath}/resources/user/js/detail.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery.etalage.min.js"></script>
+
+<script>
+		var myjQuery;
+		jQuery(document).ready(function($){
+			myjQuery = $;
+			/* myjQuery('#etalage').etalage({
+				thumb_image_width: 300,
+				thumb_image_height: 300,
+				source_image_width: 900,
+				source_image_height: 1200,
+				show_hint: true,
+				click_callback: function(image_anchor, instance_id){
+						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+					}
+				}); */
+			
+			});
+</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" id="sourcecode">
+/* 	$(function()
+	{
+		$('.scroll-pane').jScrollPane();
+	}); */
+</script> 
+
+<script src="${pageContext.request.contextPath}/resources/user/js/easyResponsiveTabs.js" type="text/javascript"></script>
+  <script type="text/javascript">
+   $(document).ready(function () {
+       $('#horizontalTab').easyResponsiveTabs({
+           type: 'default', //Types: default, vertical, accordion           
+           width: 'auto', //auto or any width like 600px
+           fit: true   // 100% fit in a container
+       });
+   });
+  </script>
 </body>
 </html>
