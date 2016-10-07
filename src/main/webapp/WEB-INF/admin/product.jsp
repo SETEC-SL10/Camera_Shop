@@ -23,10 +23,13 @@
 		    Product
 		  </h1>
 	  </section>
-	  <section class="content">
+	  <section class="content" ng-hide = "layoutProduct">
 		
 		<!-- CONTENT BLOCK START HERE -->
-		    	<div class="row" ng-hide = "layoutProduct">
+				            <form >
+                  <textarea id="Detail" name="Detail"></textarea>
+            </form>
+		    	<div class="row" >
 			      <div class="col-lg-12">
 			        <div class="row"> 
 			          <div class="col-sm-8">
@@ -65,8 +68,8 @@
 			                  <button type="button" class="btn btn-warning" ng-click = "updateButtonClickedTB($index)">Update</button>
 			                  <button type="button" class="btn btn-danger" ng-click = "deleteButtonClicked(product.ID)">Delete</button>
 			                  <button type="button" class="btn btn-primary"  ng-click = "viewProductDetail($index)" >View Detail</button>
-			                  <button type="button" class="btn btn-primary" data-toggle="modal" ng-click = "addSpecClicked()" >Add Spec</button>
-			                  <button type="button" class="btn btn-primary" data-toggle="modal" ng-click = "viewProductDetail($index)" >Add Image</button>          
+			                  <button type="button" class="btn btn-primary" ng-click = "addSpecClicked(product.ID)" ng-hide = "product.ID.substring(0, 1) == 'C' ? false : true">Add Spec</button>
+			                  <button type="button" class="btn btn-primary" ng-click = "viewProductDetail($index)" >Add Image</button>          
 			                </td>
 			                <td>{{product.NAME}}</td>
 			                <td>{{product.CODE}}</td>
@@ -92,10 +95,6 @@
 			    </div>			   
 			    <%@include file="include/product/modal-add-new-camera.jsp"%>
 			    <%@include file="include/product/modal-view-product-detail.jsp"%>
-			    
-			    <%@include file="include/product/camera-image.jsp"%>
-			    
-			    <%@include file="include/product/specification.jsp"%>
 
 				 <%-- <c:choose>
 				    <c:when test="${productPage.equals('new-camera')}">
@@ -116,6 +115,13 @@
 				</c:choose> --%>
 		
 	  </section>
+	  
+	<section class="content" ng-hide = "layoutImage"> 
+	<%@include file="include/product/camera-image.jsp"%>
+	</section>
+	<section class="content" ng-hide = "layoutSpec"> <!-- ng-hide = "layoutImage" -->
+	<%@include file="include/product/specification.jsp"%>
+	</section>
 	</div>
 
   <%@include file="include/layout/footer.jsp"%>
@@ -126,16 +132,19 @@
 
 
 <%@include file="include/layout/script.jsp"%>
-
+<script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/ckeditor/ckeditor.js"></script>
 <!-- CK Editor -->
-<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script> -->
 <!-- Bootstrap WYSIHTML5 -->
 <script src="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/angular-ckeditor.js"></script>
+<%-- <script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/angular-ckeditor.js"></script> --%>
+<script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
 <script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
 
-<!-- <script>
+<script>
   $(function () {
+	  alert("Hi");
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace('Detail');
@@ -144,6 +153,6 @@
     //bootstrap WYSIHTML5 - text editor
     $(".textarea").wysihtml5();
   });
-</script> -->
+</script>
 </body>
 </html>

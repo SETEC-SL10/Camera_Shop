@@ -15,7 +15,6 @@ app.controller('productController', function($scope,$http){
 	$scope.layoutProduct = false;
 	$scope.layoutSpec = true;
 	$scope.layoutImage = true;
-	
 	$scope.btnModal = true;
 	$scope.numPagination = 0;
 	$scope.Pagination = [];
@@ -201,7 +200,7 @@ app.controller('productController', function($scope,$http){
 	};
 
 	$scope.updateButtonClickedTB = function(ind){
-		alert("Update Clicked!!!!!");
+		//alert("Update Clicked!!!!!");
 		$scope.btnModal = false;
 		$scope.ProductTmp = angular.copy($scope.Products[ind]);
 		$scope.Category = $scope.ProductTmp.CATEGORY;
@@ -371,7 +370,9 @@ app.controller('productController', function($scope,$http){
 		callModal('#viewProductDetail','show');
 	};
 	
-	$scope.addSpecClicked = function(){
+	$scope.addSpecClicked = function(id){
+		$scope.SpecProID = id;
+		$scope.getAllSpecs();
 		$scope.layoutProduct = true;
 		$scope.layoutSpec = false;
 	};
@@ -382,12 +383,141 @@ app.controller('productController', function($scope,$http){
 	};
 	
 	
+	/*
+	 * Spec implement
+	 *  
+	 *  */
 	
+	$scope.SpecTmp = {
+						"product_id": null,
+						"specification_id": 1,
+						"specification_name": null,
+						"description": null,
+						"status": true
+					};
 	
+	$scope.getAllSpecs = function(){
+		$http({
+				url : "http://localhost:9999/api/products/pro_d/Specification/"+$scope.SpecProID,
+		        method : "GET",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        }
+		    }).then(function mySucces(response) {
+//		    	if(response.data.Message != "Record Found"){
+//		    		swal("Request Data!", "Can not request Spec!!!!", "error");
+//		    	}else{
+//		    		$scope.Specs = response.data.DATA;
+//		    		if($scope.Models != null){
+//		    			$scope.Model = $scope.Models[0];
+//		    		}
+//		    	}
+		    	$scope.Specs = response.data.DATA;
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
 	
+	// insert Spec
+	$scope.insertSpec0 = function(spec){
+		$http({
+				url : "http://localhost:9999/api/products/Specification",
+		        method : "POST",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        },
+		        data:spec
+		    }).then(function mySucces(response) {
+		    	if(response.data.Message != "SUCCESS"){
+		    		swal("Error!", "Error Insert Spec!!!!", "error");
+		    	}else{
+		    		swal("SUCCESS!", "Success Insert Spec!!!!", "success");
+		    		$scope.getAllSpecs();
+		    	}
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
 	
+	// update Spec
+	$scope.updateSpec0 = function(spec){
+		$http({
+			url : "http://localhost:9999/api/products/Specification",
+	        method : "PUT",
+	        headers:{
+	        	"accept": "application/json; charset=utf-8"
+	        },
+	        data:spec
+	    }).then(function mySucces(response) {
+	    	if(response.data.Message != "SUCCESS"){
+	    		swal("Error!", "Error Update Spec!!!!", "error");
+	    	}else{
+	    		swal("SUCCESS!", "Success Update Spec!!!!", "success");
+	    		$scope.getAllSpecs();
+	    	}
+	    }, function myError(response) {
+	        swal("Error Connection!", "Try to check your network connection", "error");
+	});
+	};
+	// delet Spec
+	$scope.deleteSpec0 = function(id){
+		$http({
+				url : "http://localhost:9999/api/products/Specification/"+id,
+		        method : "DELETE",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        }
+		    }).then(function mySucces(response) {
+		    	if(response.data.Message != "SUCCESS"){
+		    		swal("Error!", "Error Update Spec!!!!", "error");
+		    	}else{
+		    		swal("SUCCESS!", "Success Delete Spec!!!!", "success");
+		    		$scope.getAllSpecs();
+		    	}
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
 	
+	$scope.insertSpec1 = function(){
+		$scope.SpecTmp.product_id = $scope.SpecProID;
+		$scope.insertSpec0($scope.SpecTmp);
+	};
 	
+	$scope.updateSpec1 = function(){
+		$scope.updateSpec0($scope.SpecTmp);
+	};
 	
+	$scope.deleteSpec1 = function(id){
+		swal({   title: "Are you sure?",   text: "You will not be able to recover this Spec!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Delete",   cancelButtonText: "Cancel",   closeOnConfirm: false,   closeOnCancel: false }, 
+			function(isConfirm){  
+			 	if (isConfirm) {  
+			 		$scope.deleteSpec0(id);
+				} else {     
+					swal("Cancelled", "Your record is safe :)", "error");   
+				} 
+			}
+		);
+	};
 	
+	$scope.clearTextSpec = function(){
+		$scope.SpecTmp.product_id = -1 ;
+		$scope.SpecTmp.specification_id = -1 ;
+		$scope.SpecTmp.specification_name = null ;
+		$scope.SpecTmp.description = null ;
+		
+	};
+	
+	$scope.addNewSpecButtonClicked = function(){
+		$scope.btnModal = true;
+		$scope.clearTextSpec();
+		callModal('#insert-edit-camera-spec','show');
+	};
+	
+	$scope.updateSpecButtonClickedTB = function(ind){
+		//alert("Update Clicked!!!!!");
+		$scope.btnModal = false;
+		$scope.SpecTmp = angular.copy($scope.Specs[ind]);
+		callModal('#insert-edit-camera-spec','show');
+	};
 });

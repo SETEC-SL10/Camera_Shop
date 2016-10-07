@@ -30,10 +30,9 @@
           <div class="form-group">
             <label for="description">Description:</label>
             <!-- We not use this but need to add it -->
-<!--             <form >
+            <form >
                   <textarea id="Description"  name="Description"></textarea>
             </form>
-             -->
             
             <!-- We use this -->
             <form>
@@ -43,9 +42,9 @@
           <div class="form-group">
             <label for="detail">Detail:</label>
             <!-- We not use this but need to add it -->
-            <!-- <form >
-                  <textarea id="Detail" ></textarea>
-            </form> -->
+            <form >
+                  <textarea id="Detail" name="Detail"></textarea>
+            </form>
             <!--  -->
             
             <!-- We use this -->
