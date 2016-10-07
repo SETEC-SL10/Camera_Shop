@@ -19,7 +19,7 @@
 				<form ng-submit="login()">
 					<input type="text" placeholder="Email" required="" ng-model="customer.customer_email">
 					<input type="password" placeholder="Password" required="" ng-model="customer.customer_password">
-					<button class="register-btn" ng-click = "loginCustomer()">Login</button>
+					<a href="" class="register-btn" ng-click = "loginCustomer()">Login</a>
 					<a href="/register" class="register-btn">Register</a>			
 				</form>
 			  </div>

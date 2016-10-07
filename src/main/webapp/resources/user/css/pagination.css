@@ -388,7 +388,7 @@ nav[role="navigation"] {
 }
 .cd-pagination .current {
   /* selected number */
-  background-color: #64a281;
+  background-color: #ff8484;
   border-color: #64a281;
   color: #ffffff;
   pointer-events: none;
@@ -621,4 +621,15 @@ animated buttons - animate the text inside prev and next buttons
   -ms-transform: translateX(-50%) rotate(180deg) translateY(50px);
   -o-transform: translateX(-50%) rotate(180deg) translateY(50px);
   transform: translateX(-50%) rotate(180deg) translateY(50px);
+}
+.main-pagination{
+	text-align: center;
+}
+.main-pagination a{
+	height: 45px;
+    font-size: 16px;
+    min-width: 50px;
+    text-decoration: none;
+    background-color: #555;
+    color: white;
 }

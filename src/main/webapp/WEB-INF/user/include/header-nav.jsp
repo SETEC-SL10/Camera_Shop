@@ -55,11 +55,18 @@
 			            </div>
 		            </ul>
 		        </li>
+		        
+		        <li class="dropdown">
+		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">WARRANTY & SUPPORT <b class="caret"></b></a>
+		            <ul class="dropdown-menu warrantyDrop">
+			            <li><a href="/warranty">WARRANTY REGISTRATION</a></li>
+						<li><a href="/warranty-canon">CANON AUTHORISED SERVICE CENTRE</a></li>
+		            </ul>
+		        </li>
 		       
-		        	<li><a href="/warranty">WARRANTY & SUPPORT</a></li>
-					<li><a href="/promotion">PROMOTION</a></li>
-					<li><a href="/contact">CONTACT US</a></li>
-					<li><a href="/about">ABOUT US</a></li>
+				<li><a href="/promotion">PROMOTION</a></li>
+				<li><a href="/contact">CONTACT US</a></li>
+				<li><a href="/about">ABOUT US</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->

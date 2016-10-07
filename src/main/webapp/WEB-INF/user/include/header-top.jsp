@@ -47,8 +47,10 @@
 </div>  
 
 <div class="container site-logo">
-	<img src="${pageContext.request.contextPath}/resources/user/img/logo-top.png" style="width: 128px;float: left;"/>               
-    <p style="padding-top: 40px;" class="site-name">SL Cam Ten<strong> Shop</strong>	
-    </p>
-    <span class="site-slog">The Best Shop Camera</span>
+	<a href="/">
+		<img src="${pageContext.request.contextPath}/resources/user/img/logo-top.png" style="width: 128px;float: left;"/>               
+	    <p style="padding-top: 40px;" class="site-name">SL Cam Ten<strong> Shop</strong>	
+	    </p>
+	    <span class="site-slog">The Best Shop Camera</span>
+	</a>
 </div>  

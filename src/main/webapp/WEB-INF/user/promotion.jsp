@@ -10,12 +10,11 @@
 
 	<%@include file="include/header.jsp"%>
 	
-	<section id="aa-contact">
+	<section id="promotion">
 	   <div class="container">
 	     <div class="row">
 	       <div class="col-md-12">
 	         <div class="aa-contact-area">
-	             <h2 style="Text-decoration:underline;">Promotion</h2>
 	            <div class="col-lg-12 col-md-8 col-sm-6">
 	
 	              <div class="col-md-8 col-sm-8" well><img src="${pageContext.request.contextPath}/resources/user/img/promotion.jpg" style="width:650px;"></div>
