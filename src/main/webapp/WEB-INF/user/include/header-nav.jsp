@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     
+    <style>
+    	.navbar-collapse.collapse
+    	{
+    		padding: 0px 46px;
+    	}
+    </style>
+    
 <div class="inner-banner">
 		<div class="container#">
 			<div class="banner-top inner-head">
@@ -12,14 +19,14 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<div class="navbar-brand logo">
+						<%-- <div class="navbar-brand logo">
 							<a href="/"><img src="${pageContext.request.contextPath}/resources/user/img/logo.png" alt=""></a>
-						</div>
+						</div> --%>
 					</div>
 	    <!--/.navbar-header-->
 	    
 	     
-	
+		
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	  
 	        <ul class="nav navbar-nav" style="float:left">
