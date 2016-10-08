@@ -20,15 +20,16 @@
 		</div>
 		
 		<div class="col-md-9 ">
+		
+		<iframe src="https://drive.google.com/file/d/0B4s0IT36IlaQT0RObXVxZnpEbGM/preview" style="height:480px; width:100%;"></iframe>
+		
 		<%-- <iframe src="${pageContext.request.contextPath}/resources/user/video/about720.mp4" style="height:480px; width:100%;" loop="true"> --%>
 		
-		<video  autoplay loop style="height:480px; width:100%;">
+		<%-- <video  autoplay loop style="height:480px; width:100%;">
 		  <source src="${pageContext.request.contextPath}/resources/user/video/about720.mp4" type="video/mp4">
 		  <!-- <source src="movie.ogg" type="video/ogg"> -->
 		  Your browser does not support the video tag.
-		</video>
-		<%-- <img src="${pageContext.request.contextPath}/resources/user/img/about 720.gif" class="img-responsive" alt=""/> --%>
-		<%-- <img src="${pageContext.request.contextPath}/resources/user/img/2.jpg" class="img-responsive" alt=""/> --%>
+		</video> --%>
 		</div>
 	</div>
 	<%@include file="include/footer.jsp"%>
