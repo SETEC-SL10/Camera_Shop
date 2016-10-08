@@ -2,7 +2,7 @@
 
 <style>
 	.cke_chrome {
-    display: none;
+   * display: none;
 }
 </style>
 
@@ -30,28 +30,27 @@
           <div class="form-group">
             <label for="description">Description:</label>
             <!-- We not use this but need to add it -->
-<!--             <form >
-                  <textarea id="Description"  name="Description"></textarea>
+            <form >
+                  <textarea id="Description"  ck-editor ng-model="ProductTmp.DESCRIPTION" placeholder="Description" name="Description"></textarea>
             </form>
-             -->
             
             <!-- We use this -->
-            <form>
+            <!-- <form>
               <textarea class="textarea form-control" ng-model="ProductTmp.DESCRIPTION" placeholder="Description"></textarea> 
-            </form>
+            </form> -->
           </div>
           <div class="form-group">
             <label for="detail">Detail:</label>
             <!-- We not use this but need to add it -->
-            <!-- <form >
-                  <textarea id="Detail" ></textarea>
-            </form> -->
+            <form >
+                  <textarea id="Detail" name="Detail" ng-model = "ProductTmp.DETAIL" placeholder="Detail"></textarea>
+            </form>
             <!--  -->
             
             <!-- We use this -->
-            <form>
+            <!-- <form>
               <textarea class="textarea form-control" ng-model = "ProductTmp.DETAIL" placeholder="Detail"></textarea>
-            </form>
+            </form> -->
           </div>
           <div class="form-group">
             <label for="model">Model:</label>
@@ -61,12 +60,12 @@
           </div>
           <div class="form-group">
             <label for="brand">Brand:</label>
-            <select class="form-control" id="brand" ng-model="Brand.brand_id" ng-options="brand.brand_id as brand.brand_name for brand in Brands" ng-change = "changeOption(Brand)">
+            <select class="form-control" id="brand" ng-model="Brand.brand_id" ng-options="brand.brand_id as brand.brand_name for brand in Brands" >
             </select>
           </div>
           <div class="form-group">
             <label for="category">Category:</label>
-            <select class="form-control" id="category" ng-model="Category.category_id" ng-options="category.category_id as category.category_name for category in Categorys" ng-change = "changeOption(Category)">
+            <select class="form-control" id="category" ng-model="Category.category_id" ng-options="category.category_id as category.category_name for category in Categorys" >
             </select>
           </div>
           <div class="form-group">

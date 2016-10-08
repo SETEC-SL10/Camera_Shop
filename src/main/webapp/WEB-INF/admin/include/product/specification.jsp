@@ -1,6 +1,6 @@
 <%@ page pageEncoding="utf-8"%>	
 
-<div class="main" ng-hide = "layoutSpec">
+<div class="main" > <!-- ng-hide = "layoutSpec" -->
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Camera spech<span class="glyphicon glyphicon-camera pull-right"></span></h1>
@@ -9,7 +9,7 @@
     <!--Start action button-->
     <div class="row">
         <div class="col-lg-12">
-            <button type="button" data-toggle="modal" data-target="#insert-edit-camera-spec" class="btn btn-primary btn-no-radius"><span
+            <button type="button" data-toggle="modal" ng-click = "addNewSpecButtonClicked()" class="btn btn-primary btn-no-radius"><span
                     class="glyphicon glyphicon-plus"></span> Create...
             </button>
             <button type="button"  class="btn btn-primary btn-no-radius" ng-click = "backSpecClicked()">
@@ -33,16 +33,17 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" required="required">
+                            <input type="text" class="form-control" id="name" ng-model = "SpecTmp.specification_name" required="required">
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <input type="text" class="form-control" id="description" required="required">
+                            <textarea class="form-control" id="description" ng-model = "SpecTmp.description" required="required"></textarea>
+                            <!-- <input type="text" class="form-control" id="description" ng-model = "SpecTmp.description" required="required"> -->
                         </div>
-                        <button type="submit" class="btn btn-primary"><span
+                        <button type="button" class="btn btn-primary" ng-hide = "!btnModal" ng-click = "insertSpec1()"><span
                                 class="glyphicon glyphicon-floppy-save"></span> Save
                         </button>
-                        <button type="submit" class="btn btn-primary"><span
+                        <button type="button" class="btn btn-primary" ng-hide = "btnModal" ng-click = "updateSpec1()"><span
                                 class="glyphicon glyphicon-floppy-save"></span> Update
                         </button>
                         <button type="button" class="btn btn-danger pull-right" data-dismiss="modal"><span
@@ -68,15 +69,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Canon</td>
-                <td>This is description</td>
+            <tr ng-repeat="Spec in Specs" >
+                <td>{{$index}}</td>
+                <td>{{Spec.specification_name}}</td>
+                <td>{{Spec.description}}</td>
                 <td>
-                    <button class="btn btn-success btn-no-radius btn-sm" data-toggle="modal" data-target="#insert-edit-camera-spec">
+                    <button class="btn btn-success btn-no-radius btn-sm" ng-click = "updateSpecButtonClickedTB($index)">
                         <span class="glyphicon glyphicon-edit"></span> Edit...
                     </button>
-                    <button class="btn btn-danger btn-no-radius btn-sm"><span class="glyphicon glyphicon-trash"></span>
+                    <button class="btn btn-danger btn-no-radius btn-sm" ng-click = "deleteSpec1(SpecTmp.specification_id)"><span class="glyphicon glyphicon-trash"></span>
                         Delete...
                     </button>
                 </td>

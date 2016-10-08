@@ -1,21 +1,9 @@
-/**
-*  Module
-*
-* Description
-*/
 
-function callModal(id,modal){
-	$(id).modal(modal);
-}
-
-var app = angular.module('productApp', []);
-
-app.controller('productController', function($scope,$http){
+app.controller('productController', function($scope,$http,SharedService){
 	
 	$scope.layoutProduct = false;
 	$scope.layoutSpec = true;
 	$scope.layoutImage = true;
-	
 	$scope.btnModal = true;
 	$scope.numPagination = 0;
 	$scope.Pagination = [];
@@ -41,8 +29,9 @@ app.controller('productController', function($scope,$http){
 
 	// this function use for request Brand
 	$scope.getAllBrand = function(){
+		//alert(SharedService.apiAddress);
 		$http({
-				url : "http://localhost:9999/api/products/Brand/1",
+				url : SharedService.apiAddress + "api/products/Brand/1", //"http://localhost:9999/api/products/Brand/1
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -64,7 +53,7 @@ app.controller('productController', function($scope,$http){
 	// this function use for request Model
 	$scope.getAllModel = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Model/1",
+				url : SharedService.apiAddress + "api/products/Model/1",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -86,7 +75,7 @@ app.controller('productController', function($scope,$http){
 	// this function use for request Category
 	$scope.getAllCategory = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Category/1",
+				url : SharedService.apiAddress + "api/products/Category/1",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -108,7 +97,7 @@ app.controller('productController', function($scope,$http){
 	// insert product
 	$scope.insertProduct = function(product){
 		$http({
-				url : "http://localhost:9999/api/products/newCamera",
+				url : SharedService.apiAddress + "api/products/newCamera",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -119,11 +108,12 @@ app.controller('productController', function($scope,$http){
 		    		swal("Error!", "Error Insert Product!!!!", "error");
 		    	}else{
 		    		swal("SUCCESS!", "Success Insert Product!!!!", "success");
-		    			$scope.pageForm.conditionValue = "";
-						$scope.pageForm.columnName = "all";
-						$scope.pageForm.page = 0;
-						$scope.getAllCamera($scope.pageForm);
-						$scope.getPageProduct();
+		    		$scope.clearText();
+	    			$scope.pageForm.conditionValue = "";
+					$scope.pageForm.columnName = "all";
+					$scope.pageForm.page = 0;
+					$scope.getAllCamera($scope.pageForm);
+					$scope.getPageProduct();
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -133,7 +123,7 @@ app.controller('productController', function($scope,$http){
 	// update product
 	$scope.updateProduct = function(product){
 		$http({
-				url : "http://localhost:9999/api/products/newCamera",
+				url : SharedService.apiAddress + "api/products/newCamera",
 		        method : "PUT",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -144,11 +134,12 @@ app.controller('productController', function($scope,$http){
 		    		swal("Error!", "Error Update Product!!!!", "error");
 		    	}else{
 		    		swal("SUCCESS!", "Success Update Product!!!!", "success");
-		    			$scope.pageForm.conditionValue = "";
-						$scope.pageForm.columnName = "all";
-						$scope.pageForm.page = 0;
-						$scope.getAllCamera($scope.pageForm);
-						$scope.getPageProduct();
+//		    		$scope.clearText();
+	    			$scope.pageForm.conditionValue = "";
+					$scope.pageForm.columnName = "all";
+					$scope.pageForm.page = 0;
+					$scope.getAllCamera($scope.pageForm);
+					$scope.getPageProduct();
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -157,7 +148,7 @@ app.controller('productController', function($scope,$http){
 
 	$scope.deleteProduct = function(id){
 		$http({
-				url : "http://localhost:9999/api/products/newCamera/"+id,
+				url : SharedService.apiAddress + "api/products/newCamera/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -167,11 +158,11 @@ app.controller('productController', function($scope,$http){
 		    		swal("Error!", "Error Delete Product!!!!", "error");
 		    	}else{
 		    		swal("SUCCESS!", "Success Delete Product!!!!", "success");
-		    			$scope.pageForm.conditionValue = "";
-						$scope.pageForm.columnName = "all";
-						$scope.pageForm.page = 0;
-						$scope.getAllCamera($scope.pageForm);
-						$scope.getPageProduct();
+	    			$scope.pageForm.conditionValue = "";
+					$scope.pageForm.columnName = "all";
+					$scope.pageForm.page = 0;
+					$scope.getAllCamera($scope.pageForm);
+					$scope.getPageProduct();
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -201,7 +192,7 @@ app.controller('productController', function($scope,$http){
 	};
 
 	$scope.updateButtonClickedTB = function(ind){
-		alert("Update Clicked!!!!!");
+		//alert("Update Clicked!!!!!");
 		$scope.btnModal = false;
 		$scope.ProductTmp = angular.copy($scope.Products[ind]);
 		$scope.Category = $scope.ProductTmp.CATEGORY;
@@ -228,7 +219,7 @@ app.controller('productController', function($scope,$http){
 	$scope.getAllProducts = function(page){
 		//console.log(page);
 		$http({
-				url : "http://localhost:9999/api/products/newCamera/all",
+				url : SharedService.apiAddress +  "api/products/newCamera/all",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -249,7 +240,7 @@ app.controller('productController', function($scope,$http){
 		$scope.bntClickedIndex = page;
 		$scope.pageForm.page = page;
 		$http({
-			url : "http://localhost:9999/api/products/newCamera/all",
+			url : SharedService.apiAddress + "api/products/newCamera/all",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
@@ -268,7 +259,7 @@ app.controller('productController', function($scope,$http){
 
 	$scope.getPageProduct = function(){
 		$http({
-				url : "http://localhost:9999/api/products/newCamera/page",
+				url : SharedService.apiAddress + "api/products/newCamera/page",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -318,7 +309,7 @@ app.controller('productController', function($scope,$http){
 	};
 
 	$scope.clearText = function(){
-		$scope.btnModal = true;
+//		$scope.btnModal = true;
 		$scope.ProductTmp.AVAILABLE_STOCK = 0;
 		$scope.ProductTmp.BRAND = null;
 		$scope.ProductTmp.CATEGORY = null;
@@ -371,9 +362,26 @@ app.controller('productController', function($scope,$http){
 		callModal('#viewProductDetail','show');
 	};
 	
-	$scope.addSpecClicked = function(){
+	$scope.addSpecClicked = function(id){
+		$scope.SpecProID = id;
+		$scope.getAllSpecs();
 		$scope.layoutProduct = true;
 		$scope.layoutSpec = false;
+	};
+	
+	$scope.ImageTmp = {
+	        "ID": -1,
+	        "PRO_TMP": null,
+	        "COLOR": null,
+	        "IMG_URL": null,
+	        "STATUS": true
+	      };
+	$scope.addImageClicked = function(pro){
+		//console.log(pro);
+		$scope.ImageTmp.PRO_TMP = pro;
+		$scope.getAllImages();
+		$scope.layoutProduct = true;
+		$scope.layoutImage = false;
 	};
 	
 	$scope.backSpecClicked = function(){
@@ -381,13 +389,337 @@ app.controller('productController', function($scope,$http){
 		$scope.layoutSpec = true;
 	};
 	
+	$scope.backImageClicked = function(){
+		$scope.layoutProduct = false;
+		$scope.layoutImage = true;
+	};
+	
+	/*
+	 * Spec implement
+	 *  
+	 *  */
+	
+	$scope.SpecTmp = {
+						"product_id": null,
+						"specification_id": 1,
+						"specification_name": null,
+						"description": null,
+						"status": true
+					};
+	
+	$scope.getAllSpecs = function(){
+		$http({
+				url : SharedService.apiAddress +  "api/products/pro_d/Specification/"+$scope.SpecProID,
+		        method : "GET",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        }
+		    }).then(function mySucces(response) {
+//		    	if(response.data.Message != "Record Found"){
+//		    		swal("Request Data!", "Can not request Spec!!!!", "error");
+//		    	}else{
+//		    		$scope.Specs = response.data.DATA;
+//		    		if($scope.Models != null){
+//		    			$scope.Model = $scope.Models[0];
+//		    		}
+//		    	}
+		    	$scope.Specs = response.data.DATA;
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
+	
+	// insert Spec
+	$scope.insertSpec0 = function(spec){
+		$http({
+				url : SharedService.apiAddress +  "api/products/Specification",
+		        method : "POST",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        },
+		        data:spec
+		    }).then(function mySucces(response) {
+		    	if(response.data.Message != "SUCCESS"){
+		    		swal("Error!", "Error Insert Spec!!!!", "error");
+		    	}else{
+		    		swal("SUCCESS!", "Success Insert Spec!!!!", "success");
+		    		$scope.clearTextSpec();
+		    		$scope.getAllSpecs();
+		    	}
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
+	
+	// update Spec
+	$scope.updateSpec0 = function(spec){
+		$http({
+			url : SharedService.apiAddress + "api/products/Specification",
+	        method : "PUT",
+	        headers:{
+	        	"accept": "application/json; charset=utf-8"
+	        },
+	        data:spec
+	    }).then(function mySucces(response) {
+	    	if(response.data.Message != "SUCCESS"){
+	    		swal("Error!", "Error Update Spec!!!!", "error");
+	    	}else{
+	    		swal("SUCCESS!", "Success Update Spec!!!!", "success");
+//	    		$scope.clearTextSpec();
+	    		$scope.getAllSpecs();
+	    	}
+	    }, function myError(response) {
+	        swal("Error Connection!", "Try to check your network connection", "error");
+	});
+	};
+	// delet Spec
+	$scope.deleteSpec0 = function(id){
+		$http({
+				url : SharedService.apiAddress + "api/products/Specification/"+id,
+		        method : "DELETE",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        }
+		    }).then(function mySucces(response) {
+		    	if(response.data.Message != "SUCCESS"){
+		    		swal("Error!", "Error Delete Spec!!!!", "error");
+		    	}else{
+		    		swal("SUCCESS!", "Success Delete Spec!!!!", "success");
+		    		$scope.getAllSpecs();
+		    	}
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
+	
+	$scope.insertSpec1 = function(){
+		$scope.SpecTmp.product_id = $scope.SpecProID;
+		$scope.insertSpec0($scope.SpecTmp);
+	};
+	
+	$scope.updateSpec1 = function(){
+		$scope.updateSpec0($scope.SpecTmp);
+	};
+	
+	$scope.deleteSpec1 = function(id){
+		swal({   title: "Are you sure?",   text: "You will not be able to recover this Spec!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Delete",   cancelButtonText: "Cancel",   closeOnConfirm: false,   closeOnCancel: false }, 
+			function(isConfirm){  
+			 	if (isConfirm) {  
+			 		$scope.deleteSpec0(id);
+				} else {     
+					swal("Cancelled", "Your record is safe :)", "error");   
+				} 
+			}
+		);
+	};
+	
+	$scope.clearTextSpec = function(){
+//		$scope.SpecTmp.product_id = -1 ;
+		$scope.SpecTmp.specification_id = -1 ;
+		$scope.SpecTmp.specification_name = null ;
+		$scope.SpecTmp.description = null ;
+		
+	};
+	
+	$scope.addNewSpecButtonClicked = function(){
+		$scope.btnModal = true;
+		$scope.clearTextSpec();
+		callModal('#insert-edit-camera-spec','show');
+	};
+	
+	$scope.updateSpecButtonClickedTB = function(ind){
+		//alert("Update Clicked!!!!!");
+		$scope.btnModal = false;
+		$scope.SpecTmp = angular.copy($scope.Specs[ind]);
+		callModal('#insert-edit-camera-spec','show');
+	};
 	
 	
+	/*
+	 * Image implement
+	 *  
+	 *  */
 	
+	$scope.ImageTmp = {
+				        "ID": -1,
+				        "PRO_TMP": null,
+				        "COLOR": null,
+				        "IMG_URL": null,
+				        "STATUS": true
+				      };
 	
+	$scope.getAllImages = function(){
+		$http({
+				url : SharedService.apiAddress + "api/products/newCamera/newCameraImage/Camera/"+$scope.ImageTmp.PRO_TMP.ID,
+		        method : "GET",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        }
+		    }).then(function mySucces(response) {
+		    	$scope.Images = response.data.DATA;
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
 	
+	// insert Image
+	$scope.insertImage0 = function(image){
+		
+		//$scope.insertImage0({"ID": -1,"PRO_ID": $scope.ImageTmp.PRO_TMP.ID,"COLOR": $scope.ImageTmp.COLOR,"IMG_URL": null,"STATUS": true});
+		var fd = new FormData();
+		fd.append('file', $scope.selectedFile);
+		fd.append('PRO_ID', image.PRO_ID);
+		fd.append('COLOR_ID', image.COLOR.color_id);
+		//console.log(angular.toJson(image));
+		$http.post(SharedService.apiAddress + 'api/products/newCamera/newCameraImage', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined }
+        }).success(function(datas, status, headers, config) {
+	    	if(datas.Message != "SUCCESS"){
+	    		swal("Error!", "Error Insert Image!!!!", "error");
+	    	}else{
+	    		swal("SUCCESS!", "Success Insert Image!!!!", "success");
+	    		$scope.getAllImages();
+	    		$("#fileselected").val("");
+	    	}
+		}).
+		error(function(datas, status, headers, config) {
+			swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
 	
+	// update Image
+	$scope.updateImage0 = function(image){
+		var fd = new FormData();
+		fd.append('file', $scope.selectedFile);
+		fd.append('data', angular.toJson(image));
+		$http.put(SharedService.apiAddress + 'api/products/newCamera/newCameraImage', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined }
+        }).success(function(datas, status, headers, config) {
+	    	if(datas.Message != "SUCCESS"){
+	    		swal("Error!", "Error Update Image!!!!", "error");
+	    	}else{
+	    		swal("SUCCESS!", "Success Update Image!!!!", "success");
+	    		$scope.getAllImages();
+	    	}
+		}).
+		error(function(datas, status, headers, config) {
+			swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
+	// delet Image
+	$scope.deleteImage0 = function(id){
+		$http({
+				url : SharedService.apiAddress + "api/products/newCamera/newCameraImage/"+id,
+		        method : "DELETE",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        }
+		    }).then(function mySucces(response) {
+		    	if(response.data.Message != "SUCCESS"){
+		    		swal("Error!", "Error Delete Image!!!!", "error");
+		    	}else{
+		    		swal("SUCCESS!", "Success Delete Image!!!!", "success");
+		    		$scope.getAllSpecs();
+		    	}
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
 	
+	$scope.insertImage1 = function(){
+		//console.log($scope.ImageTmp.PRO_TMP.ID);
+		$scope.insertImage0({"ID": -1,"PRO_ID": $scope.ImageTmp.PRO_TMP.ID,"COLOR": $scope.ImageTmp.COLOR,"IMG_URL": null,"STATUS": true});
+	};
 	
+	$scope.updateImage1 = function(){
+		$scope.updateImage0({"ID": -1,"PRO_ID": $scope.ImageTmp.PRO_TMP.ID,"COLOR": $scope.ImageTmp.PRO_TMP.COLOR,"IMG_URL": null,"STATUS": true});
+	};
 	
+	$scope.deleteImage1 = function(id){
+		swal({   title: "Are you sure?",   text: "You will not be able to recover this Image!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Delete",   cancelButtonText: "Cancel",   closeOnConfirm: false,   closeOnCancel: false }, 
+			function(isConfirm){  
+			 	if (isConfirm) {  
+			 		$scope.deleteImage0(id);
+				} else {     
+					swal("Cancelled", "Your record is safe :)", "error");   
+				} 
+			}
+		);
+	};
+	
+	$scope.clearTextImage = function(){
+		$("#fileselected").val("");
+	};
+	
+	$scope.addNewImageButtonClicked = function(){
+		$scope.btnModal = true;
+		$scope.clearTextImage();
+		callModal('#insert-edit-camera-image','show');
+	};
+	
+/*	$scope.ImageTmp = {
+	        "ID": -1,
+	        "PRO_TMP": null,
+	        "COLOR": null,
+	        "IMG_URL": null,
+	        "STATUS": true
+	      };*/
+	$scope.updateImageButtonClickedTB = function(ind){
+		//alert("Update Clicked!!!!!");
+		$scope.btnModal = false;
+		$scope.ImageTmp.ID = $scope.Images[ind].ID;
+		$scope.ImageTmp.COLOR = $scope.Images[ind].COLOR;
+		$scope.SpecTmp = angular.copy($scope.Specs[ind]);
+		callModal('#insert-edit-camera-spec','show');
+	};
+	
+	$scope.getAllColor = function(){
+		$http({
+				url : SharedService.apiAddress + "api/products/Color",
+		        method : "GET",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        }
+		    }).then(function mySucces(response) {
+		    	if(response.data.Message != "Record Found"){
+		    		swal("Request Data!", "Can not request Colors!!!!", "error");
+		    	}else{
+		    		$scope.Colors = response.data.DATA;
+		    	}
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
+	
+	$scope.getAllColor();
 });
+
+/*app.directive('ckEditor', function() {
+    return {
+        restrict: 'A', // only activate on element attribute
+        scope: false,
+        require: 'ngModel',
+        controller: function($scope, $element, $attrs) {}, //open for now
+        link: function($scope, element, attr, ngModel, ngModelCtrl) {
+            if(!ngModel) return; // do nothing if no ng-model you might want to remove this
+            element.bind('click', function(){
+                for(var name in CKEDITOR.instances)
+                    CKEDITOR.instances[name].destroy();
+                var ck = CKEDITOR.replace(element[0]);
+                ck.on('instanceReady', function() {
+                    ck.setData(ngModel.$viewValue);
+                });
+                ck.on('pasteState', function() {
+                    $scope.$apply(function() {
+                        ngModel.$setViewValue(ck.getData());
+                    });
+                });
+                ngModel.$render = function(value) {
+                    ck.setData(ngModel.$viewValue);
+                };
+            });
+        }
+    }
+});*/
