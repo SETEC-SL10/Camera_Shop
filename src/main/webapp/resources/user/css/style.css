@@ -15,7 +15,7 @@ ul.nav.navbar-nav li a:hover{
 	color: white;
 }
 button.btn.btn-primary,button.btn.btn-primary:hover,button.searchBtn,button.searchBtn:hover,.btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info{
-	background: #c7c3c3;
+	background: #51679c;
 	border:1px solid #c7c3c3;
 }
 
@@ -225,6 +225,7 @@ nav.navbar.navbar-default {
 	}
 	.dropdown-menu.columns-2 {
 		min-width: 400px;
+		left:9px;
 	}
 	.dropdown-menu.columns-3 {
 		min-width: 600px;
@@ -3115,6 +3116,14 @@ ul.multi-column-dropdown h6 {
 	padding:5px;
 	color:white;
 }
+.aboutUs
+{
+	padding: 10px 0px;
+}
+.aboutUs h1.header
+{
+	text-align:center;
+}
 .aboutUs img
 {
 	margin:10px auto;
@@ -3163,7 +3172,7 @@ ul.multi-column-dropdown h6 {
 {
 	margin-bottom:35px
 }
-a.register-btn
+a.register-btn,button.register-btn
 {
     color: #fff;
     padding: 6px 25px;
@@ -3178,6 +3187,48 @@ a.register-btn:hover
 .btnRegister
 {
 	display:block;
+}
+#promotion{
+	padding:10px 0px;
+}
+
+/* Contact Us */
+
+.aa-contact-top{
+	background: white;
+    text-align: center;
+    height: 100px;
+    vertical-align: middle;
+	
+}
+.aa-contact-top h2{
+    vertical-align: middle;
+	padding: 30px;	
+}
+.aa-contact-address{
+	background: white;
+	padding: 50px;
+}
+.aa-secondary-btn {
+    color: #ff6666;
+    background-color: #fff;
+    font-size: 16px;
+    padding: 10px 22px;
+    margin-top: 10px;
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 4px;
+}
+.aa-secondary-btn:hover {
+    background-color: #ff6666;
+    color:white;
+}
+.aa-contact-address-right p{
+	padding:4px;
+}
+.warrantyDrop{
+	min-width: 216px;
+    left: 9px;
 }
     
 	

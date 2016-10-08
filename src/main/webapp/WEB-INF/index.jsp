@@ -117,19 +117,18 @@
 								</li>						
 							</ul>
 						</div>
-						
+						<div ng-hide = "Pagination.length == 0" class="main-pagination">
+						   <div role="navigation">
+								<ul class="cd-pagination no-space">
+									<li class="button"><a href="#" ng-click="getProductsByPagePrev()">Prev</a></li>
+									<li  ng-repeat = "page in Pagination"><a href="#" ng-class="($index == bntClickedIndex) ? 'current' : ''" ng-click="getProductsByPage($index)">{{page}}</a></li>
+									<li class="button"><a href="#" ng-click="getProductsByPageNext()">Next</a></li>
+								</ul>
+							</div> 
+						</div> 
 					</div>
 				</div>
-			</div>
-			<div ng-hide = "Pagination.length == 0">
-			   <nav role="navigation">
-					<ul class="cd-pagination no-space">
-						<li class="button"><a href="#" ng-click="getProductsByPagePrev()">Prev</a></li>
-						<li  ng-repeat = "page in Pagination"><a href="#" ng-class="($index == bntClickedIndex) ? 'current' : ''" ng-click="getProductsByPage($index)">{{page}}</a></li>
-						<li class="button"><a href="#" ng-click="getProductsByPageNext()">Next</a></li>
-					</ul>
-				</nav> <!-- cd-pagination-wrapper -->
-			</div> 	  
+			</div>				  
 		</div>
 	</div>
 </div>

@@ -81,6 +81,11 @@ public class ViewController {
 		return "user/warranty";
 	}
 	
+	@RequestMapping(value="/warranty-canon",method=RequestMethod.GET)
+	public String warrantyCanon(){
+		return "user/warranty-canon";
+	}
+	
 	@RequestMapping(value="/promotion",method=RequestMethod.GET)
 	public String promotion(){
 		return "user/promotion";

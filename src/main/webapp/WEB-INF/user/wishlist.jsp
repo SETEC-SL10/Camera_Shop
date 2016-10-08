@@ -44,8 +44,8 @@
 			</div>
 			</div>  
 		 </div>
-		<div>
-			<nav role="navigation">
+		<div class="main-pagination">
+			<nav role="navigation" >
 				<ul class="cd-pagination no-space">
 					<li class="button"><a href="#" ng-click="getWishlistByPagePrev()">Prev</a></li>
 					<li  ng-repeat = "page in Pagination"><a href="#" ng-class="($index == bntClickedIndex) ? 'current' : ''" ng-click="getWishlistByPage($index)">{{page}}</a></li>
