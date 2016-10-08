@@ -8,7 +8,7 @@
 	<title>Product Setup</title>	
 	
 	<%@include file="include/layout/link.jsp"%>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"> --%>
 	
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -26,9 +26,6 @@
 	  <section class="content" ng-hide = "layoutProduct">
 		
 		<!-- CONTENT BLOCK START HERE -->
-				            <form >
-                  <textarea id="Detail" name="Detail"></textarea>
-            </form>
 		    	<div class="row" >
 			      <div class="col-lg-12">
 			        <div class="row"> 
@@ -65,11 +62,11 @@
 			              <tr ng-repeat="product in Products"> <!--  ng-repeat="camera in Cameras" -->
 			                <td>{{(bntClickedIndex * pageForm.limit) + $index + 1}}</td>
 			                <td>
-			                  <button type="button" class="btn btn-warning" ng-click = "updateButtonClickedTB($index)">Update</button>
-			                  <button type="button" class="btn btn-danger" ng-click = "deleteButtonClicked(product.ID)">Delete</button>
-			                  <button type="button" class="btn btn-primary"  ng-click = "viewProductDetail($index)" >View Detail</button>
-			                  <button type="button" class="btn btn-primary" ng-click = "addSpecClicked(product.ID)" ng-hide = "product.ID.substring(0, 1) == 'C' ? false : true">Add Spec</button>
-			                  <button type="button" class="btn btn-primary" ng-click = "viewProductDetail($index)" >Add Image</button>          
+			                  <button type="button" class="btn btn-warning" ng-click = "updateButtonClickedTB($index)" data-tooltip title="Update"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+			                  <button type="button" class="btn btn-danger" ng-click = "deleteButtonClicked(product.ID)" data-tooltip title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+			                  <button type="button" class="btn btn-primary"  ng-click = "viewProductDetail($index)" data-tooltip title="View Detail"><i class="fa fa-eye" aria-hidden="true"></i></button>
+			                  <button type="button" class="btn btn-primary" ng-click = "addSpecClicked(product.ID)" ng-hide = "product.ID.substring(0, 1) == 'C' ? false : true" data-tooltip title="Add Spec"><i class="fa fa-list-alt" aria-hidden="true"></i></button>
+			                  <button type="button" class="btn btn-primary" ng-click = "addImageClicked(product)" data-tooltip title="Add Image"><i class="fa fa-picture-o" aria-hidden="true"></i></button>          
 			                </td>
 			                <td>{{product.NAME}}</td>
 			                <td>{{product.CODE}}</td>
@@ -137,21 +134,21 @@
 <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
 <!-- <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script> -->
 <!-- Bootstrap WYSIHTML5 -->
-<script src="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<%-- <script src="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> --%>
 <%-- <script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/angular-ckeditor.js"></script> --%>
 <script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
 <script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
 
 <script>
   $(function () {
-	  alert("Hi");
+	  //alert("Hi");
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace('Detail');
     CKEDITOR.replace('Description');
     
     //bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
+    //$(".textarea").wysihtml5();
   });
 </script>
 </body>

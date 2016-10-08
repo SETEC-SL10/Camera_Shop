@@ -1,6 +1,6 @@
 <%@ page pageEncoding="utf-8"%>	
 
-<div class="main" > <!-- <!-- ng-hide = "layoutSpec" --> -->
+<div class="main" > <!-- ng-hide = "layoutSpec" -->
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Camera spech<span class="glyphicon glyphicon-camera pull-right"></span></h1>
