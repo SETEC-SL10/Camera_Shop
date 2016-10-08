@@ -101,6 +101,18 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
+		
+		<!-- Hosting -->
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-remote-shell</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -109,6 +121,15 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<plugin>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <configuration>
+	                <fork>true</fork>
+	                <executable>C:\Program Files\Java\jdk1.8.0_92\bin\javac.exe</executable>
+	            </configuration>
+	        </plugin>
+			
 		</plugins>
 	</build>
 	
