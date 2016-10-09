@@ -88,7 +88,7 @@
 		            </tr>
 		            </thead>
 		            <tbody>
-		            <tr ng-repeat = "colorTmp in colorTmps">
+		            <tr ng-repeat = "colorTmp in colorTmps" ng-cloak>
 		                <th>
 		                    <form>
 		                        <label><input type="checkbox"></label>

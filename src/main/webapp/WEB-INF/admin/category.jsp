@@ -98,7 +98,7 @@
 		              </tr>
 		            </thead>
 		            <tbody>
-		              <tr role="row" class="odd" ng-repeat="category in categories">
+		              <tr role="row" class="odd" ng-repeat="category in categories" ng-cloak>
 		                <td>{{$index}}</td>
 		                <td>{{category.category_name}}</td>
 		                <td>{{category.description}}</td>
