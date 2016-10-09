@@ -1,5 +1,5 @@
 
-var app = angular.module('UserApp', []);
+var app = angular.module('front-App', []);
 
 app.controller('UserCtrl',['$scope', function($scope){	
 	$scope.search=[
@@ -57,7 +57,7 @@ app.filter('strLimit', ['$filter', function($filter) {
    };
 }]);
 
-function increaseValue()
+/*function increaseValue()
 {
     var value = parseInt(document.getElementById('numberQty').value, 10);
     value = isNaN(value) ? 0 : value;
@@ -70,7 +70,7 @@ function reduceValue()
     value = isNaN(value) ? 0 : value;
     value = value - 1;
     document.getElementById('numberQty').value = value;
-}
+}*/
 
 
 

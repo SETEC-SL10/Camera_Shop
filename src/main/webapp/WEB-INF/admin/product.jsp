@@ -12,8 +12,13 @@
 	
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
+	 <%@include file="include/product/modal-add-new-camera.jsp"%>
+    <%@include file="include/product/modal-view-product-detail.jsp"%>	
+    <%@include file="include/product/modal-product-serial.jsp"%>	
+    
 <!-- Site wrapper -->
-<div class="wrapper" ng-app = "productApp" ng-controller = "productController">
+<div class="wrapper" ng-app = "admin-App" ng-controller = "productController">
 	<%@include file="include/layout/header-top.jsp"%>
   	<%@include file="include/layout/left-side-bar.jsp"%>
   	
@@ -90,27 +95,7 @@
 						</div>
 			      </div>
 			    </div>			   
-			    <%@include file="include/product/modal-add-new-camera.jsp"%>
-			    <%@include file="include/product/modal-view-product-detail.jsp"%>
-
-				 <%-- <c:choose>
-				    <c:when test="${productPage.equals('new-camera')}">
-                		<th>Warranty</th>
-				    </c:when>
-				    <c:when test="${productPage.equals('used-camera')}">
-				    	<th>Warranty</th>
-				    </c:when>
-				    <c:when test="${productPage.equals('new-accessory')}">
-				       New Accessory
-				    </c:when>
-				    <c:when test="${productPage.equals('used-accessory')}">
-				        Used Accessory
-				    </c:when>
-				    <c:otherwise>
-				        
-				    </c:otherwise>
-				</c:choose> --%>
-		
+			   
 	  </section>
 	  
 	<section class="content" ng-hide = "layoutImage"> 
@@ -136,9 +121,26 @@
 <!-- Bootstrap WYSIHTML5 -->
 <%-- <script src="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> --%>
 <%-- <script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/angular-ckeditor.js"></script> --%>
-<script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
 
-<script>
+<c:choose>
+    <c:when test="${productPage.equals('new-camera')}">
+    	<script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('used-camera')}">
+    	<script src="${pageContext.request.contextPath}/resources/admin/angular/camera_oldSetup.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('new-accessory')}">
+       <script src="${pageContext.request.contextPath}/resources/admin/angular/accessory_newSetup.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('used-accessory')}">
+        <script src="${pageContext.request.contextPath}/resources/admin/angular/accessory_oldSetup.js"></script>
+    </c:when>
+    <c:otherwise>
+        
+    </c:otherwise>
+</c:choose>
+
+<!-- <script>
   $(function () {
 	  //alert("Hi");
     // Replace the <textarea id="editor1"> with a CKEditor
@@ -149,6 +151,6 @@
     //bootstrap WYSIHTML5 - text editor
     //$(".textarea").wysihtml5();
   });
-</script>
+</script> -->
 </body>
 </html>
