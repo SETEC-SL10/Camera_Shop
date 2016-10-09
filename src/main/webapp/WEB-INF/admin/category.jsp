@@ -19,7 +19,7 @@
 		  </h1>
 	  </section>
 	  <section class="content">
-	  	<div class="main" ng-app="categoryApp" ng-controller="categoryController">
+	  	<div class="main" ng-app="admin-App" ng-controller="categoryController">
 		    <div class="row">
 		        <div class="col-lg-12">
 		            <h1 class="page-header">ប្រភេទ<span class="glyphicon glyphicon-camera pull-right"></span></h1>

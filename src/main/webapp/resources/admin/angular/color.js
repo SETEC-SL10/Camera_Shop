@@ -1,6 +1,6 @@
-var color_app = angular.module('colorApp', []);
+//var color_app = angular.module('colorApp', []);
 
-color_app.controller('colorAppController',function($scope,$http){
+app.controller('colorAppController',function($scope,$http,SharedService){
 	$scope.colorTmp = {
 					    "color_id": "",
 					    "color_name": "",
@@ -12,7 +12,7 @@ color_app.controller('colorAppController',function($scope,$http){
 	//console.log($scope.colorTmp);
 	$scope.getColorByID = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Color",
+				url : SharedService.apiAddress + "api/products/Color",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -29,7 +29,7 @@ color_app.controller('colorAppController',function($scope,$http){
 
 	$scope.insertColor = function (){
 	$http({
-			url : "http://localhost:9999/api/products/Color",
+			url : SharedService.apiAddress + "api/products/Color",
 			method : "POST",
 			headers:{
 				"accept": "application/json; charset=utf-8"
@@ -48,7 +48,7 @@ color_app.controller('colorAppController',function($scope,$http){
 	/*start update*/
 	$scope.updateColor = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Color",
+				url : SharedService.apiAddress + "api/products/Color",
 		        method : "PUT",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -73,7 +73,7 @@ color_app.controller('colorAppController',function($scope,$http){
 	$scope.deleteColor = function(id){
 	//	alert(id);
 		$http({
-				url : "http://localhost:9999/api/products/Color/"+id,
+				url : SharedService.apiAddress + "api/products/Color/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"

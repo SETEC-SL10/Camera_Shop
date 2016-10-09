@@ -19,7 +19,7 @@
 		  </h1>
 	  </section>
 	  <section class="content">
-	  	<div class="main" ng-app="BrandApp" ng-controller="BrandController">
+	  	<div class="main" ng-app="admin-App" ng-controller="BrandController">
 		    <div class="row">
 		        <div class="col-lg-12">
 		            <h1 class="page-header">កាមេរ៉ា<span class="glyphicon glyphicon-camera pull-right"></span></h1>

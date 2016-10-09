@@ -1,7 +1,7 @@
 
-var app = angular.module('categoryApp', []);
+//var app = angular.module('categoryApp', []);
 
-app.controller('categoryController', function($scope,$http) {
+app.controller('categoryController', function($scope,$http,SharedService) {
 	$scope.btnModal = false;
 
 	$scope.categoryTmp = {
@@ -17,7 +17,7 @@ app.controller('categoryController', function($scope,$http) {
 
 	$scope.getCategories = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Category",
+				url : SharedService.apiAddress + "api/products/Category",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -38,7 +38,7 @@ app.controller('categoryController', function($scope,$http) {
 
 	$scope.insertCategories = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Category",
+				url : SharedService.apiAddress + "api/products/Category",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -63,7 +63,7 @@ app.controller('categoryController', function($scope,$http) {
 
 	$scope.updateCategories = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Category",
+				url : SharedService.apiAddress + "api/products/Category",
 		        method : "PUT",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -88,7 +88,7 @@ app.controller('categoryController', function($scope,$http) {
 
 	$scope.deleteCategories = function(id){
 		$http({
-				url : "http://localhost:9999/api/products/Category/"+id,
+				url : SharedService.apiAddress + "api/products/Category/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"

@@ -19,7 +19,7 @@
 		  </h1>
 	  </section>
 	  <section class="content">
-	  	<div class="main" ng-app="modelApp" ng-controller="modelController">
+	  	<div class="main" ng-app="admin-App" ng-controller="modelController">
 		    <div class="row">
 		        <div class="col-lg-12">
 		            <h1 class="page-header">Models<span class="glyphicon glyphicon-camera pull-right"></span></h1>

@@ -1,7 +1,7 @@
 
-var app = angular.module('modelApp', []);
+//var app = angular.module('modelApp', []);
 
-app.controller('modelController', function($scope,$http) {
+app.controller('modelController', function($scope,$http,SharedService) {
 	$scope.btnModal = false;
 				     //"model_camera": true,
 
@@ -22,7 +22,7 @@ app.controller('modelController', function($scope,$http) {
 		// var res = transaction($http,{url:"http://localhost:9999/api/products/Brand",method:"GET",data:null});
 		// $scope.Brands = res.data.DATA;
 		$http({
-				url : "http://localhost:9999/api/products/Brand",
+				url : SharedService.apiAddress + "api/products/Brand",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -49,7 +49,7 @@ app.controller('modelController', function($scope,$http) {
 		// var res = transaction($http,{url:"http://localhost:9999/api/products/Brand",method:"GET",data:null});
 		// $scope.Brands = res.data.DATA;
 		$http({
-				url : "http://localhost:9999/api/products/Model",
+				url : SharedService.apiAddress + "api/products/Model",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -71,7 +71,7 @@ app.controller('modelController', function($scope,$http) {
 
 	$scope.insertproModel = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Model",
+				url : SharedService.apiAddress + "api/products/Model",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -95,7 +95,7 @@ app.controller('modelController', function($scope,$http) {
 
 	$scope.updateproModel = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Model",
+				url : SharedService.apiAddress + "api/products/Model",
 		        method : "PUT",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -119,7 +119,7 @@ app.controller('modelController', function($scope,$http) {
 
 	$scope.deleteproModel = function(id){
 		$http({
-				url : "http://localhost:9999/api/products/Model/"+id,
+				url : SharedService.apiAddress + "api/products/Model/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"

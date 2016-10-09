@@ -18,7 +18,7 @@
 		  
 	  </section>
 	  <section class="content">
-	  	<div class=" main" ng-app="colorApp" ng-controller="colorAppController">
+	  	<div class=" main" ng-app="admin-App" ng-controller="colorAppController">
 		    <!--Start action button-->
 		    <div class="row">
 		        <div class="col-lg-12">

@@ -1,5 +1,5 @@
 
-var app = angular.module('BrandApp', []);
+//var app = angular.module('BrandApp', []);
 
 // function transaction($http,request){
 // 	var res;
@@ -23,7 +23,8 @@ var app = angular.module('BrandApp', []);
 // 	return res;
 // };
 
-app.controller('BrandController', function($scope,$http) {
+
+app.controller('BrandController', function($scope,$http,SharedService) {
 	$scope.btnModal = false;
 
 	$scope.brandTmp = {
@@ -38,10 +39,10 @@ app.controller('BrandController', function($scope,$http) {
 				    };
 
 	$scope.getBrands = function(){
-		// var res = transaction($http,{url:"http://localhost:9999/api/products/Brand",method:"GET",data:null});
+		// var res = transaction($http,{url:SharedService.apiAddress + "api/products/Brand",method:"GET",data:null});
 		// $scope.Brands = res.data.DATA;
 		$http({
-				url : "http://localhost:9999/api/products/Brand",
+				url : SharedService.apiAddress + "api/products/Brand",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -62,7 +63,7 @@ app.controller('BrandController', function($scope,$http) {
 
 	$scope.insertBrands = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Brand",
+				url : SharedService.apiAddress + "api/products/Brand",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -86,7 +87,7 @@ app.controller('BrandController', function($scope,$http) {
 
 	$scope.updateBrands = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Brand",
+				url : SharedService.apiAddress + "api/products/Brand",
 		        method : "PUT",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -110,7 +111,7 @@ app.controller('BrandController', function($scope,$http) {
 
 	$scope.deleteBrands = function(id){
 		$http({
-				url : "http://localhost:9999/api/products/Brand/"+id,
+				url : SharedService.apiAddress + "api/products/Brand/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
