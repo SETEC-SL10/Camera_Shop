@@ -35,7 +35,7 @@
 			          <%@include file="include/product/search.jsp"%>			          
 			        </div>
 			        
-			        <div class="table-responsive" >
+			        <div class="table-responsive" ng-cloak>
 			          <table id="example1" class="table table-bordered table-hover table-striped">
 			            <thead>
 			              <tr>
@@ -58,7 +58,7 @@
 			                <th>Category</th>
 			              </tr>
 			            </thead>
-			            <tbody>
+			            <tbody ng-cloak>
 			              <tr ng-repeat="product in Products"> <!--  ng-repeat="camera in Cameras" -->
 			                <td>{{(bntClickedIndex * pageForm.limit) + $index + 1}}</td>
 			                <td>
@@ -79,7 +79,7 @@
 			          </table>
 						
 			        </div>
-			        <div ng-hide = "Pagination.length == 10">
+			        <div ng-hide = "Pagination.length == 10" ng-cloak>
 						   <nav role="navigation">
 								<ul class="cd-pagination no-space">
 									<li class="button"><a href="#" ng-click="getProductsByPagePrev()">Prev</a></li>
