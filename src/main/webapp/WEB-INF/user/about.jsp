@@ -30,6 +30,13 @@
 		  <!-- <source src="movie.ogg" type="video/ogg"> -->
 		  Your browser does not support the video tag.
 		</video> --%>
+		
+		<!-- <video  autoplay loop style="height:480px; width:100%;">
+		  <source src="https://drive.google.com/uc?export=download&id=0B4BsAbG4atWHQzVfLUU3UnhhZTA" type='video/webm'/>
+		  Your browser does not support the video tag.
+		</video>  -->
+		
+		
 		</div>
 	</div>
 	<%@include file="include/footer.jsp"%>
