@@ -114,7 +114,7 @@
 
 
 <%@include file="include/layout/script.jsp"%>
-<script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/ckeditor/ckeditor.js"></script>
+<%-- <script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/ckeditor/ckeditor.js"></script> --%>
 <!-- CK Editor -->
 <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
 <!-- <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script> -->

@@ -103,7 +103,7 @@
 		              </tr>
 		            </thead>
 		            <tbody>
-		              <tr role="row" class="odd" ng-repeat="Model in Models">
+		              <tr role="row" class="odd" ng-repeat="Model in Models" ng-cloak>
 		                <td>{{$index}}</td>
 		                <td>{{Model.model_name}}</td>
 		                <td>{{Model.description}}</td>

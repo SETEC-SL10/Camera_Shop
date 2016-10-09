@@ -98,7 +98,7 @@
 		              </tr>
 		            </thead>
 		            <tbody>
-		              <tr role="row" class="odd" ng-repeat="Brand in Brands">
+		              <tr role="row" class="odd" ng-repeat="Brand in Brands" ng-cloak>
 		                <td>{{$index}}</td>
 		                <td>{{Brand.brand_name}}</td>
 		                <td>{{Brand.description}}</td>
