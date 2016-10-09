@@ -112,7 +112,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	    			$scope.pageForm.conditionValue = "";
 					$scope.pageForm.columnName = "all";
 					$scope.pageForm.page = 0;
-					$scope.getAllCamera($scope.pageForm);
+					$scope.getAllProducts($scope.pageForm);
 					$scope.getPageProduct();
 		    	}
 		    }, function myError(response) {
@@ -138,7 +138,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	    			$scope.pageForm.conditionValue = "";
 					$scope.pageForm.columnName = "all";
 					$scope.pageForm.page = 0;
-					$scope.getAllCamera($scope.pageForm);
+					$scope.getAllProducts($scope.pageForm);
 					$scope.getPageProduct();
 		    	}
 		    }, function myError(response) {
@@ -161,7 +161,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	    			$scope.pageForm.conditionValue = "";
 					$scope.pageForm.columnName = "all";
 					$scope.pageForm.page = 0;
-					$scope.getAllCamera($scope.pageForm);
+					$scope.getAllProducts($scope.pageForm);
 					$scope.getPageProduct();
 		    	}
 		    }, function myError(response) {
