@@ -11,14 +11,14 @@
 	<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"> --%>
 	
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-app = "admin-App" ng-controller = "productController">
 
-	 <%@include file="include/product/modal-add-new-camera.jsp"%>
+	<%@include file="include/product/modal-add-new-camera.jsp"%>
     <%@include file="include/product/modal-view-product-detail.jsp"%>	
     <%@include file="include/product/modal-product-serial.jsp"%>	
     
 <!-- Site wrapper -->
-<div class="wrapper" ng-app = "admin-App" ng-controller = "productController">
+<div class="wrapper" >
 	<%@include file="include/layout/header-top.jsp"%>
   	<%@include file="include/layout/left-side-bar.jsp"%>
   	
