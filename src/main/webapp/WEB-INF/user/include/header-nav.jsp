@@ -4,7 +4,10 @@
     <style>
     	.navbar-collapse.collapse
     	{
-    		padding: 0px 46px;
+    		padding: 0px 235px;
+    		margin: 0 auto;
+    		clear: both;
+    		position: relative;
     	}
     </style>
     
@@ -29,7 +32,7 @@
 		
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	  
-	        <ul class="nav navbar-nav" style="float:left">
+	        <ul class="nav navbar-nav">
 			<li><a href="/">Home</a></li>
 		        
 		       

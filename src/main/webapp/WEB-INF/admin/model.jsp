@@ -6,7 +6,7 @@
 	<title>Insert title here</title>
 	<%@include file="include/layout/link.jsp"%>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-cloak>
 <!-- Site wrapper -->
 <div class="wrapper">
 	<%@include file="include/layout/header-top.jsp"%>

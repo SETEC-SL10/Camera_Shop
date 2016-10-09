@@ -14,7 +14,8 @@
      <div class="row">
        <div class="col-md-12">
          <div class="aa-contact-area">
-             <h2 style="Text-decoration:underline;">Warranty Registration</h2>
+             <h2>Warranty Registration</h2>
+             <hr>
             <div class="col-lg-12 col-md-8 col-sm-6 well">
             <!-- Billing Details -->
                     <div class="panel panel-default aa-checkout-billaddress">
