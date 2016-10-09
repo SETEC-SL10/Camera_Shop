@@ -12,8 +12,9 @@
 	   <div class="container">
 	     <div class="row">
 	       <div class="col-md-12">
-	         <div class="aa-contact-area#">
+	         <div class="aa-contact-area">
 	             <h2>Canon Authorised Service Centre</h2>
+	             <hr>
 	            <div class="col-lg-12 col-md-8 col-sm-6">
 	              <div class="col-md-7 col-sm-6" ><img src="${pageContext.request.contextPath}/resources/user/img/EOS6D3.png" alt="" style="width:500px;"></div>
 	              <div class="col-md-5 col-sm-6" well>

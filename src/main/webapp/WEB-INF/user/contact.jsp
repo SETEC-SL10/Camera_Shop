@@ -11,7 +11,7 @@
 <%@include file="include/header.jsp"%>
 
 
-<section id="aa-contact" style="background-color:#cccccc;">
+<!-- <section id="aa-contact" style="background-color:#cccccc;"> -->
    <div class="container">
      <div class="row">
        <div class="col-md-12">
@@ -79,7 +79,7 @@
        </div>
      </div>
    </div>
- </section>
+ <!-- </section> -->
 
 <!-- <div class="contact">
 	<div class="container">

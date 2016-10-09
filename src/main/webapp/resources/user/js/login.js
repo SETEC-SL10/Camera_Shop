@@ -62,7 +62,7 @@ app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieSt
 			    	$scope.customer = response.data.DATA;
 			    	$scope.setCookiesCustomer();
 //			    	alert($scope.customer.customer_last_name);
-			    	window.open('http://localhost:8888', "_parent");
+			    	window.open('/', "_parent");
 		    	}else{
 		    		swal("Login fail!", "Invalid Email or Password!!!", "error");
 		    	}

@@ -155,7 +155,7 @@ background: url(../images/grid_view.png)no-repeat;
 	width: 10%;
 }
 .cbp-vm-view-list .cbp-vm-details {
-	width: 50%;
+*	width: 50%;
 	padding: 0 60px;
 	overflow: hidden;
 	white-space: normal;

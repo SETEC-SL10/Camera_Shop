@@ -3225,10 +3225,15 @@ a.register-btn:hover
 }
 .aa-contact-address-right p{
 	padding:4px;
+	color: black;
 }
 .warrantyDrop{
 	min-width: 216px;
     left: 9px;
+}
+.aa-contact-area h2{
+	text-align: center;
+	padding-bottom: 20px;
 }
     
 	

@@ -13,6 +13,21 @@
 <!-- Start New Code here -->
 <link href="${pageContext.request.contextPath}/resources/user/css/component.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="${pageContext.request.contextPath}/resources/user/css/product.css" rel="stylesheet" type="text/css" media="all"/>
+
+<style>
+vm-title, .cbp-vm-view-list .cbp-vm-details, .cbp-vm-view-list .cbp-vm-price, .cbp-vm-view-list .cbp-vm-add {
+    display: inline-block;
+    vertical-align: top;
+}
+.cbp-vm-view-list .cbp-vm-add{
+	clear: both;
+	display: block
+}
+.cbp-vm-view-list .cbp-vm-add {
+    display: table-cell;
+}
+</style>
+
 </head>
 <body>
 
