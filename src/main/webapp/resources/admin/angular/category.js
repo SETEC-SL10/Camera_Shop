@@ -110,11 +110,11 @@ app.controller('categoryController', function($scope,$http,SharedService) {
 	};
 	$scope.Clear=function(){
 		$scope.btnModal = false;
-		$scope.brandTmp.category_id = 0;
-		$scope.brandTmp.category_name = null;
-		$scope.brandTmp.description = null;
-		$scope.brandTmp.category_accessory = false;
-		$scope.brandTmp.category_camera = false;
+//		$scope.categoryTmp.category_id = 0;
+		$scope.categoryTmp.category_name = null;
+		$scope.categoryTmp.description = null;
+		$scope.categoryTmp.category_accessory = false;
+		$scope.categoryTmp.category_camera = false;
 	};
 
 	$scope.updateClicked = function(index){

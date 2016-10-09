@@ -68,7 +68,7 @@
 		                            <label>ម៉ាករបស់គ្រឿងបន្លាស់</label>&nbsp;
 		                            <input type="checkbox" ng-model="categoryTmp.category_accessory"/><br/><br/>
 		                        </div>
-		                        <button type="submit" class="btn btn-primary" ng-click="insertCategories()" ng-hide="btnModal"data-dismiss="{{isInset}}"><span class="glyphicon glyphicon-floppy-save"></span> រក្សាទុក</button>
+		                        <button type="submit" class="btn btn-primary" ng-click="insertCategories()" ng-hide="btnModal"><span class="glyphicon glyphicon-floppy-save"></span> រក្សាទុក</button> <!-- data-dismiss="{{isInset}}" -->
 		
 		                        <button type="submit" class="btn btn-warning" ng-click="updateCategories()" ng-hide="!btnModal" data-dismiss="{{isInset}}"}><span class="glyphicon glyphicon-floppy-save"></span> កែរប្រែ</button>
 		
