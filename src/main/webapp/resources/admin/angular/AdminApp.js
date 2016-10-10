@@ -14,7 +14,7 @@ app.controller('appController', function($scope,$rootScope){
 });
 app.factory('SharedService', function() {
 	  return {
-		  apiAddress : 'http://172.20.10.4:9999/'
+		  apiAddress : 'http://172.20.10.2:9999/'
 	  };
 });
 app.directive('fileModel', ['$parse', function ($parse) {
@@ -32,6 +32,21 @@ app.directive('fileModel', ['$parse', function ($parse) {
        }
     };
  }]);
+
+/* START UPLOAD IMAGE */
+
+app.directive('myFilter', [function() {
+    return {
+        restrict: 'A',       
+        link: function(scope, element) {
+            // wait for the last item in the ng-repeat then call init
+            angular.element(document).ready(function() {
+                initJqueryFiler(['#CameraImage'], [scope.aa]);
+            });
+        }
+    };
+
+}]);
 
 
 /*app.directive('ckEditor', function() {

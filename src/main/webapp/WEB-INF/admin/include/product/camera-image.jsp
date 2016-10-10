@@ -1,12 +1,14 @@
 <%@ page pageEncoding="utf-8"%>	
 
-<style>
+
+
+<!-- <style>
     .thumb {
         height: 75px;
         border: 1px solid #000;
         margin: 10px 5px 0 0;
     }
-</style>
+</style> -->
 
 <div class="main" > <!-- ng-hide = "layoutImage" -->
     <div class="row">
@@ -38,26 +40,20 @@
                     <h4 class="modal-title">Add Image</h4>
                 </div>
                 <div class="modal-body">
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="files">Image</label>
-                            <input type="file" id="fileselected" name="files" file-model = "selectedFile" accept="image/*" />
-                            <output id="list"></output>
-                        </div>
-<!--                         <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control" id="description" required="required">
-                        </div> -->
+                    <form role="form">                        
                         <div class="form-group" ng-hide = "ImageTmp.PRO_TMP.ID.substring(1, 2) == 'O' ? true : false">
                             <label for="color">Color</label>
                             <select class="form-control" id="color" ng-model="ImageTmp.COLOR.color_id" ng-options="color.color_id as color.color_name for color in Colors" >
             				</select>
-            				
-<!--                             <select name="color" id="color" class="form-control">
-                                <option value="1">Red</option>
-                                <option value="2">Black</option>
-                            </select> -->
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="files">Image</label>
+                            <div id="content" my-filter>
+							    <input type="file" name="CameraImage" id="CameraImage" multiple="multiple">
+							</div> 
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary" ng-hide = "!btnModal" ng-click = "insertImage1()"><span
                                 class="glyphicon glyphicon-floppy-save"></span> Save
                         </button>
@@ -82,7 +78,6 @@
             <tr style="border-bottom:5px solid #1ab188;">
                 <th>No</th>
                 <th>Image</th>
-<!--                 <th>Description</th> -->
                 <th>Color</th>
                 <th>Action</th>
             </tr>
@@ -93,12 +88,8 @@
                 <td>
                     <img style="height:190px;width:190px" ng-src= "http://localhost:9999/{{Image.IMG_URL}}"> <!-- src="${pageContext.request.contextPath}/resources/admin/img/camera.jpg" alt="image" width="50px" height="50px" -->
                 </td>
-<!--                 <td>This is description</td> -->
                 <td>{{Image.COLOR.color_name}}</td>
                 <td>
-                    <!-- <button class="btn btn-success btn-no-radius btn-sm" data-toggle="modal" data-target="#insert-edit-camera-image">
-                        <span class="glyphicon glyphicon-edit"></span> Edit...
-                    </button> -->
                     <button class="btn btn-danger btn-no-radius btn-sm" ng-click = "deleteImage1(Image.ID)"><span class="glyphicon glyphicon-trash"></span>
                         Delete...
                     </button>
@@ -109,36 +100,4 @@
     </div>
 
 </div> 
-
-<script>
-    function handleFileSelect(evt) {
-        var files = evt.target.files; // FileList object
-
-        // Loop through the FileList and render image files as thumbnails.
-        for (var i = 0, f; f = files[i]; i++) {
-
-            // Only process image files.
-            if (!f.type.match('image.*')) {
-                continue;
-            }
-
-            var reader = new FileReader();
-
-            // Closure to capture the file information.
-            reader.onload = (function(theFile) {
-                return function(e) {
-                    // Render thumbnail.
-                    var span = document.createElement('span');
-                    span.innerHTML = ['<img class="thumb" src="', e.target.result,
-                        '" title="', escape(theFile.name), '"/>'].join('');
-                    document.getElementById('list').insertBefore(span, null);
-                };
-            })(f);
-
-            // Read in the image file as a data URL.
-            reader.readAsDataURL(f);
-        }
-    }
-
-    document.getElementById('fileselected').addEventListener('change', handleFileSelect, false);
-</script>
+    

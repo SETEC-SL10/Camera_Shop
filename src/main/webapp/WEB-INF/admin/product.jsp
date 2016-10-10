@@ -10,6 +10,13 @@
 	<%@include file="include/layout/link.jsp"%>
 	<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"> --%>
 	
+	<!-- START UPLOAD IMAGE -->
+	<link href="${pageContext.request.contextPath}/resources/plugins/jQuery.filer/css/jquery.filer.css" type="text/css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/resources/plugins/jQuery.filer/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/plugins/jQuery.filer/fancybox/source/jquery.fancybox.css?v=2.1.5">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/plugins/jQuery.filer/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5">
+	<!-- STOP UPLOAD IMAGE -->
+	
 </head>
 <body class="hold-transition skin-blue sidebar-mini" ng-app = "admin-App" ng-controller = "productController">
 
@@ -110,10 +117,8 @@
   <%@include file="include/layout/right-control-side-bar.jsp"%>
 </div>
 
-
-
-
 <%@include file="include/layout/script.jsp"%>
+
 <%-- <script src="${pageContext.request.contextPath}/resources/plugins/CKEditor/ckeditor/ckeditor.js"></script> --%>
 <!-- CK Editor -->
 <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
@@ -152,5 +157,18 @@
     //$(".textarea").wysihtml5();
   });
 </script> -->
+
+
+<!-- START UPLOAD IMAGE -->
+
+<!-- START UPLOAD IMAGE -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/jQuery.filer/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/jQuery.filer/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/jQuery.filer-1.3.0/js/jquery.filer.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/jQuery.filer/js/custom.js"></script>
+	
+
+<!-- STOP UPLOAD IMAGE -->
+
 </body>
 </html>
