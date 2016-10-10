@@ -5,27 +5,60 @@
 <head>
 <title>Home</title> 
 <%@include file="link/user-link.jsp"%>
+<style>
+	.register{
+		width: 600px;
+	}
+	</style>
 </head>
 <body>
 
 <%@include file="include/header.jsp"%>
 
 <div class="signin" ng-app="LoginRegisterApp" ng-controller="LoginRegisterController" ng-cloak>
-	<div class="container">
-		<div class="signin-main">
-			<h1>Register New Account</h1>
-			<h2>Informations</h2>
-			<form ng-submit="insertCustomer()"><!--   -->
-				<input type="text" placeholder="First Name" ng-model="customer.customer_first_name" required>
-				<input type="text"  placeholder="Last Name" ng-model="customer.customer_last_name" required>
-				<input type="number" placeholder="Phone" ng-model="customer.customer_phone"/>
-				<input type="text"  placeholder="Email" required="" ng-model="customer.customer_email"/>	<!-- class="no-margin" -->
-				<input type="text"  placeholder="Address" ng-model="customer.customer_address"/ required>
-				<input type="password"  placeholder="Password" required="" ng-model="customer.customer_password"/>
-				<input type="password"  placeholder="Confirm Password" required="" ng-model="Confirmpassword"/>
-				<input type="button" class="btn btn-primary btnRegister" value="Register" ng-click="insertCustomer()" ng-disabled="customer.customer_password != Confirmpassword" ><!--ng-click="insertCustomer()"  -->
-			</form>
-		</div>
+	<div class="container register">
+	 	<form ng-submit="insertCustomer()">
+	       	<div class="form-group">
+	             <label for="color">First Name</label>
+	             <input type="text" placeholder="First Name" ng-model="customer.customer_first_name" required class="form-control">
+        	</div>
+        	
+        	<div class="form-group">
+	             <label for="color">Last Name</label>
+	             <input type="text"  placeholder="Last Name" ng-model="customer.customer_last_name" required class="form-control">
+        	</div>
+        	
+        	<div class="form-group">
+	             <label for="color">Phone</label>
+	             <input type="number" placeholder="Phone" ng-model="customer.customer_phone" class="form-control"/ >
+        	</div>
+        	
+        	<div class="form-group">
+	             <label for="color">Email</label>
+	             <input type="text"  placeholder="Email" required="" ng-model="customer.customer_email" class="form-control"/>
+        	</div>
+        	
+        	<div class="form-group">
+	             <label for="color">Address</label>
+	             <input type="text"  placeholder="Address" ng-model="customer.customer_address" required class="form-control">
+        	</div>
+        	
+        	<div class="form-group">
+	             <label for="color">Password</label>
+	             <input type="password"  placeholder="Password" required="" ng-model="customer.customer_password" class="form-control"/>
+        	</div>
+        	
+        	<div class="form-group">
+	             <label for="color">Confirm Password</label>
+	             <input type="password"  placeholder="Confirm Password" required="" ng-model="Confirmpassword" class="form-control"/>
+        	</div>
+        	
+        	<div class="form-group">
+	             <input type="button" class="btn btn-primary btnRegister" value="Register" ng-click="insertCustomer()" ng-disabled="customer.customer_password != Confirmpassword" class="form-control">
+        	</div>
+	         
+	       
+	      </form>
 	</div>
 </div>
 

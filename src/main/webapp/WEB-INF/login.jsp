@@ -5,34 +5,35 @@
 <head>
 	<title>Home</title>
 	<%@include file="user/link/user-link.jsp"%>
+	
+	<style>
+	.login{
+		width: 500px;
+	}
+	</style>
 </head>
 <body ng-app="LoginRegisterApp" ng-controller="LoginRegisterController" ng-cloak>
 
 	<%@include file="user/include/header.jsp"%>
 	
-	 <div class="login">
-		<div class="container">
-			<div class="login-main">
-				  <h1>Login</h1>
-			  <div class="col-md-6 login-left">
-				<!-- <h2>Existing User</h2> -->
-				<form ng-submit="login()">
-					<input type="text" placeholder="Email" required="" ng-model="customer.customer_email">
-					<input type="password" placeholder="Password" required="" ng-model="customer.customer_password">
-					<a href="" class="register-btn" ng-click = "loginCustomer()">Login</a>
-					<a href="/register" class="register-btn">Register</a>			
-				</form>
-			  </div>
-			  <!-- <div class="col-md-6 login-right">
-			  	 <h3>New User</h3>
-			  	 <p>User can register to use our service for free.</p>
-			     <a href="/register" class="register-btn">Create an Account </a>
-			  </div> -->
-			  <div class="clearfix"> </div>
-			</div>
-		</div>
+	<div class="container login">
+	 	<form ng-submit="login()">
+         	<div class="form-group">
+	              <label for="color">Email</label>
+	              <input type="text" placeholder="Email" required="" ng-model="customer.customer_email" class="form-control">
+          	</div>
+          
+           <div class="form-group">
+	              <label for="color">Password</label>
+	              <input type="password" placeholder="Password" required="" ng-model="customer.customer_password" class="form-control">
+          	</div>
+          
+          <div class="form-group">
+              <a href=""  ng-click = "loginCustomer()" class="btn btn-primary">Login</a><!-- class="register-btn" -->
+              <a href="/register" class="btn btn-primary" >Register</a>	
+          </div>
+       </form>
 	</div>
-	
 	
 	<%@include file="user/include/footer.jsp"%>
 	<%@include file="user/script/user-script.jsp"%>
