@@ -10,7 +10,7 @@
         <img src="${pageContext.request.contextPath}/resources/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p>Hum Chivorn</p>
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
@@ -37,9 +37,9 @@
       
        <li class="treeview">
         <a href="#">
-          <i class="fa fa-share"></i> <span>Product</span>
+          <i class="fa fa-product-hunt fa-fw"></i> <span>Product</span>
           <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+             <span class="fa arrow"></span>
           </span>
         </a>
         <ul class="treeview-menu">
@@ -70,7 +70,7 @@
       
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-share"></i> <span>Import</span>
+          <i class="fa fa-cloud-download fa-fw"></i> <span>Import</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
@@ -99,148 +99,80 @@
             </ul>
           </li>
         </ul>
-      </li>
-      
-      <li>
-        <a href="/admin/staff">
-          <i class="fa fa-dashboard"></i> <span>Staff</span> 
-          <span class="pull-right-container">
-            <small class="label pull-right bg-green">60</small>
-          </span>         
-        </a>
-      </li>
-      
-       <li>
-        <a href="/admin/role">
-          <i class="fa fa-dashboard"></i> <span>User Role</span> 
-          <span class="pull-right-container">
-            <small class="label pull-right bg-orange">30</small>
-          </span>         
-        </a>
-      </li>
-      
-      <li>
-        <a href="/admin/customer">
-          <i class="fa fa-dashboard"></i> <span>Customer</span> 
-          <span class="pull-right-container">
-            <small class="label pull-right bg-red">20</small>
-          </span>         
-        </a>
-      </li>
-      
-      <li>
-        <a href="/admin/supplier">
-          <i class="fa fa-dashboard"></i> <span>Supplier</span> 
-          <span class="pull-right-container">
-            <small class="label pull-right bg-yellow">30</small>
-          </span>         
-        </a>
-      </li>
+      </li>            
       
        <li>
         <a href="/admin/color">
-          <i class="fa fa-dashboard"></i> <span>Color</span> 
+          <i class="fa fa-envira"></i> <span>Color</span> 
           <span class="pull-right-container">
-            <small class="label pull-right bg-blue">30</small>
+            <!-- <small class="label pull-right bg-blue">30</small> -->
           </span>         
         </a>
       </li>
       
        <li>
         <a href="/admin/category">
-          <i class="fa fa-dashboard"></i> <span>Category</span> 
+          <i class="fa fa-folder-open-o"></i> <span>Category</span> 
           <span class="pull-right-container">
-            <small class="label pull-right bg-black">30</small>
+            <!-- <small class="label pull-right bg-black">30</small> -->
           </span>         
         </a>
       </li>
       
        <li>
         <a href="/admin/model">
-          <i class="fa fa-dashboard"></i> <span>Model</span> 
+          <i class="fa fa-life-ring"></i> <span>Model</span> 
           <span class="pull-right-container">
-            <small class="label pull-right bg-gray">30</small>
+            <!-- <small class="label pull-right bg-gray">30</small> -->
           </span>         
         </a>
       </li>
       
        <li>
         <a href="/admin/brand">
-          <i class="fa fa-dashboard"></i> <span>Brand</span> 
+          <i class="fa fa-apple" aria-hidden="true"></i> <span>Brand</span> 
           <span class="pull-right-container">
-            <small class="label pull-right bg-blue">30</small>
+            <!-- <small class="label pull-right bg-blue">30</small> -->
           </span>         
         </a>
       </li>
       
+      <li>
+        <a href="/admin/staff">
+          <i class="fa fa-users	"></i> <span>Staff</span> 
+          <span class="pull-right-container">
+            <!-- <small class="label pull-right bg-green">60</small> -->
+          </span>         
+        </a>
+      </li>
       
+       <li>
+        <a href="/admin/role">
+          <i class="fa fa-eye-slash"></i> <span>User Role</span> 
+          <span class="pull-right-container">
+            <!-- <small class="label pull-right bg-orange">30</small> -->
+          </span>         
+        </a>
+      </li>
       
       <li>
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>POS</span>          
+        <a href="/admin/customer">
+          <i class="fa fa-user-md"></i> <span>Customer</span> 
+          <span class="pull-right-container">
+            <!-- <small class="label pull-right bg-red">20</small> -->
+          </span>         
         </a>
       </li>
       
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>One level</span>
+      <li>
+        <a href="/admin/supplier">
+          <i class="fa fa-car"></i> <span>Supplier</span> 
           <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
+            <!-- <small class="label pull-right bg-yellow">30</small> -->
+          </span>         
         </a>
-        <ul class="treeview-menu">
-          <li>
-          	<a href="#"><i class="fa fa-circle-o"></i> 
-          		VB
-	          	<span class="pull-right-container">
-	            	<small class="label pull-right bg-green">27</small>
-	            </span>
-          	</a>          	
-          </li>
-          <li>
-          	<a href="#"><i class="fa fa-circle-o"></i> 
-          		Java
-	          	<span class="pull-right-container">
-	            	<small class="label pull-right bg-green">69</small>
-	            </span>
-          	</a>          	
-          </li>
-        </ul>
       </li>
       
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-share"></i> <span>three level</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o text-red"></i> Level One</a></li>
-          <li>
-            <a href="#"><i class="fa fa-circle-o text-yellow"></i> Level One
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-              <li>
-                <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> Level One</a></li>
-        </ul>
-      </li>
     </ul>
   </section>
   <!-- /.sidebar -->

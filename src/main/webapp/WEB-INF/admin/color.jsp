@@ -22,20 +22,21 @@
 		    <!--Start action button-->
 		    <div class="row">
 		        <div class="col-lg-12">
-		            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-no-radius"><span class="glyphicon glyphicon-plus"></span> Create...
+		            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-no-radius">
+		            	<span class="glyphicon glyphicon-plus"></span> Add New
 		            </button>
 		        </div>
 		    </div>
-		    <hr>
+		    <br>
 		    <!--End action button-->
-		    <div class="pull-right">
+		   <!--  <div class="pull-right">
 		        <form class="form-inline" role="form">
 		            <div class="form-group">
 		                <label for="search" class="color-search">Search</label>
 		                <input type="text" class="form-control btn-no-radius border-0" id="search">
 		            </div>
 		        </form>
-		    </div>
+		    </div> -->
 		    <!-- Modal -->
 		    <div class="modal fade" id="myModal" role="dialog">
 		        <div class="modal-dialog modal-lg">
@@ -44,7 +45,7 @@
 		            <div class="modal-content">
 		                <div class="modal-header">
 		                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-		                    <h4 class="modal-title">Import camara</h4>
+		                    <h4 class="modal-title">Color</h4>
 		                </div>
 		                <div class="modal-body">
 		                    <form role="form">
@@ -73,34 +74,28 @@
 		    </div>
 		    <!--end model-->
 		    <div>
-		        <table class="table table-bordered">
+		        <table class="table table-bordered#">
 		            <thead>
-		            <tr style="border-bottom:5px solid #1ab188;">
-		                <th>
-		                    <form>
-		                        <label><input type="checkbox"></label>
-		                    </form>
-		                </th>
+		            <tr class="adminTableHeader">
+		               	<th>No</th>
 		                <th>Color Name</th>
 		                <th>Description</th>
 		                <th>Color Code</th>
-		                <th>Action</th>
+		                <th class="tableRowAction">Action</th>
 		            </tr>
 		            </thead>
 		            <tbody>
 		            <tr ng-repeat = "colorTmp in colorTmps" ng-cloak>
-		                <th>
-		                    <form>
-		                        <label><input type="checkbox"></label>
-		                    </form>
-		                </th>
+		                <td>{{$index+1}}</td>
 		                <td>{{colorTmp.color_name}}</td>
 		                <td>{{colorTmp.description}}</td>
 		                <td>{{colorTmp.color_code}}</td>
-		                <td>
-		                    <button class="btn btn-success btn-no-radius btn-sm" data-toggle="modal" data-target="#myModal" ng-click="updateClicked($index)"><span class="glyphicon glyphicon-edit"></span> Edit...
+		                <td class="tableRowAction">
+		                    <button class="btn btn-success btn-no-radius btn-sm" data-toggle="modal" data-target="#myModal" ng-click="updateClicked($index)">
+		                    	<span class="glyphicon glyphicon-edit"></span> Edit
 		                    </button>
-		                    <button class="btn btn-danger btn-no-radius btn-sm" ng-click = "deletClicked($index)"><span class="glyphicon glyphicon-trash"></span> Delete...
+		                    <button class="btn btn-danger btn-no-radius btn-sm" ng-click = "deletClicked($index)">
+		                    	<span class="glyphicon glyphicon-trash"></span> Delete
 		                    </button>
 		                </td>
 		            </tr>

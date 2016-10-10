@@ -35,13 +35,13 @@
 		    Product
 		  </h1>
 	  </section>
-	  <section class="content" ng-hide = "layoutProduct">
+	  <section class="content" ng-hide = "layoutProduct" >
 		
 		<!-- CONTENT BLOCK START HERE -->
 		    	<div class="row" >
 			      <div class="col-lg-12">
 			        <div class="row"> 
-			          <div class="col-sm-8">
+			          <div class="col-sm-8" ng-cloak>
 			            <button type="button" class="btn btn-info btn-md" ng-click = "addNewButtonClicked()">Add more Product</button> <!-- data-toggle="modal" data-target="#myModal" -->
 			          </div> 			          
 			          <%@include file="include/product/search.jsp"%>			          
@@ -55,16 +55,6 @@
 			                <th >Action</th>
 			                <th>Name</th>
 			                <th>Code</th>
-<%-- 							<c:choose>
-							    <c:when test="${productPage.equals('new-camera')}">
-			                		<th>Warranty</th>
-							    </c:when>
-							    <c:when test="${productPage.equals('used-camera')}">
-							    	<th>Warranty</th>
-							    </c:when>
-							    <c:otherwise>
-							    </c:otherwise>
-							</c:choose> --%>
 			                <th>Model</th>
 			                <th>Brand</th>
 			                <th>Category</th>
@@ -80,18 +70,17 @@
 			                  <button type="button" class="btn btn-primary" ng-click = "addSpecClicked(product.ID)" ng-hide = "product.ID.substring(0, 1) == 'C' ? false : true" data-tooltip title="Add Spec"><i class="fa fa-list-alt" aria-hidden="true"></i></button>
 			                  <button type="button" class="btn btn-primary" ng-click = "addImageClicked(product)" data-tooltip title="Add Image"><i class="fa fa-picture-o" aria-hidden="true"></i></button>          
 			                </td>
-			                <td>{{product.NAME}}</td>
-			                <td>{{product.CODE}}</td>
-			                <!-- <td>1 month</td> -->
-			                <td>{{product.MODEL.model_name}}</td>
-			                <td>{{product.BRAND.brand_name}}</td>
-			                <td>{{product.CATEGORY.category_name}}</td>
+			                <td>{{product.NAME | strLimit : 33}}</td>
+			                <td>{{product.CODE | strLimit : 20}}</td>
+			                <td>{{product.MODEL.model_name | strLimit : 20}}</td>
+			                <td>{{product.BRAND.brand_name | strLimit : 20}}</td>
+			                <td>{{product.CATEGORY.category_name | strLimit : 20}}</td>
 			              </tr>
 			            </tbody>
 			          </table>
 						
 			        </div>
-			        <div ng-hide = "Pagination.length == 10" ng-cloak>
+			        <div ng-hide = "Pagination.length == 10" ng-cloak class="main-pagination">
 						   <nav role="navigation">
 								<ul class="cd-pagination no-space">
 									<li class="button"><a href="#" ng-click="getProductsByPagePrev()">Prev</a></li>

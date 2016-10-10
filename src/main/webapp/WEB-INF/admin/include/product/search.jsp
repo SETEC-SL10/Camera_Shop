@@ -1,6 +1,6 @@
 <%@ page pageEncoding="utf-8"%>
 
-<div class="col-sm-4">
+<div class="col-sm-4" ng-cloak>
   <div class="input-group">
       <div class="input-group-btn search-panel">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
