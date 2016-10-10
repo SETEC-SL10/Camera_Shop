@@ -37,7 +37,7 @@
       
        <li class="treeview">
         <a href="#">
-          <i class="fa fa-product-hunt fa-fw"></i> <span>Product</span>
+          <i class="fa fa-product-hunt"></i> <span>Product</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
           </span>
@@ -70,7 +70,7 @@
       
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-cloud-download fa-fw"></i> <span>Import</span>
+          <i class="fa fa-cloud-download"></i> <span>Import</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
