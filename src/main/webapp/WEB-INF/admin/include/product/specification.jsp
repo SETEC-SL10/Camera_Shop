@@ -34,6 +34,12 @@
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" ng-model = "SpecTmp.specification_name" required="required">
+						    <select class="form-control" ng-model="SpecTmp.specification_name ">
+						      <option value="Resolution">Resolution</option>
+						      <option value="Megapixels Sensor size">Megapixels Sensor size</option>
+						      <option value="Kit Lens">Kit Lens</option>
+						      <option value="Viewfinder">Viewfinder</option>
+						    </select>
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
