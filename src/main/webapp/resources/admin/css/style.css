@@ -1,5 +1,6 @@
 @CHARSET "utf-8";
 
+
 body{
 	font-family:Khmer OS Battambang;
 }
@@ -23,3 +24,13 @@ body{
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
 }
+
+.main-footer{
+	    height: 50px;
+}
+
+
+/* .content-wrapper,.right-side{
+	min-height: 2000px !important;
+} */
+
