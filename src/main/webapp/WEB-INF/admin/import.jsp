@@ -13,6 +13,11 @@
   	<%@include file="include/layout/left-side-bar.jsp"%>
   	
 	<div class="content-wrapper">
+		 <section class="content-header">
+			  <h1>
+			    Import
+			  </h1>
+		  </section>
 		<div ng-show="showImportList">
 			<%@include file="include/import/import-view.jsp"%>
 		</div>

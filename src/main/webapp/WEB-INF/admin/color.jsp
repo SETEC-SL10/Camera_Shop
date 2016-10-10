@@ -15,7 +15,9 @@
   	
 	<div class="content-wrapper">
 	  <section class="content-header">
-		  
+		  <h1>
+		    Color
+		  </h1>
 	  </section>
 	  <section class="content">
 	  	<div class=" main" ng-app="admin-App" ng-controller="colorAppController">

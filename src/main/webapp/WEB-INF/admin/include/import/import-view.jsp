@@ -21,11 +21,13 @@
 <div class="container">
     <div class="row">
     	<div class="col-md-12">
-    		<div class="panel panel-default">
-    			<div class="panel-heading">
-    				<!-- <h3 class="panel-title"><strong>Import</strong></h3>` -->
+	    	<button class="btn btn-primary" ng-click="showImportPro()"><span><i class="fa fa-plus" aria-hidden="true"></i> </span>Add New</button>
+	    	<br><br>
+    		<div class="panel panel-default">    		
+    			<!-- <div class="panel-heading">
+    				<h3 class="panel-title"><strong>Import</strong></h3>`
     				<button class="btn btn-primary" ng-click="showImportPro()"><span><i class="fa fa-plus" aria-hidden="true"></i> </span>Add New</button>
-    			</div>
+    			</div> -->
     			<div class="panel-body">
     				<div class="table-responsive">
     					<table class="table table-condensed">
