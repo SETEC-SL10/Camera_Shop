@@ -567,7 +567,7 @@ app.controller('productController', function($scope,$http,SharedService){
 		
 		//$scope.insertImage0({"ID": -1,"PRO_ID": $scope.ImageTmp.PRO_TMP.ID,"COLOR": $scope.ImageTmp.COLOR,"IMG_URL": null,"STATUS": true});
 		var fd = new FormData();
-		alert($scope.selectedFile.length);
+	//	alert($scope.selectedFile.length);
 		fd.append('PRO_ID', image.PRO_ID);
 		fd.append('COLOR_ID', image.COLOR.color_id);
 		for (var i = 0; i < $scope.selectedFile.length; i++) {

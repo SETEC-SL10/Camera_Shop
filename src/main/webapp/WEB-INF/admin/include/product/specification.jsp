@@ -39,7 +39,18 @@
 						      <option value="Megapixels Sensor size">Megapixels Sensor size</option>
 						      <option value="Kit Lens">Kit Lens</option>
 						      <option value="Viewfinder">Viewfinder</option>
-						      <option value="Viewfinder">Viewfinder</option>
+						      <option value="ISO">ISO</option>
+						      <option value="Extended">Extended ISO</option>
+						      <option value="Shutter">Shutter</option>
+						      <option value="Dimensions">Dimensions</option>
+						      <option value="Weight">Weight</option>
+						      <option value="includes batteries Availability">includes batteries Availability</option>
+						      <option value="Manufacturer">Manufacturer</option>
+						      <option value="Sensor size">Sensor size</option>
+						      <option value="Aperture">Aperture</option>
+						      <!-- <option value="Viewfinder">Manufacturer</option>
+						      <option value="Viewfinder">Manufacturer</option>
+						      <option value="Viewfinder">Manufacturer</option> -->
 						    </select>
                         </div>
                         <div class="form-group">

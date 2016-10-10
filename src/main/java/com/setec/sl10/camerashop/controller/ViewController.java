@@ -96,6 +96,11 @@ public class ViewController {
 		return "user/about";
 	}
 	
+	@RequestMapping(value="/reciept",method=RequestMethod.GET)
+	public String reciept(){
+		return "user/reciept";
+	}
+	
 	
 	
 }
