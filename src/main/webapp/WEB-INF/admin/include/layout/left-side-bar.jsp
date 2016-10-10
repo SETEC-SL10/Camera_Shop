@@ -50,10 +50,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="/admin/product/new-camera"><i class="fa fa-circle-o"></i>New Camera</a></li>
-             <!--  <li><a href="/admin/product/new-camera-spec"><i class="fa fa-circle-o"></i>New Camera Specification</a></li> -->              
-              <li><a href="/admin/product/used-camera"><i class="fa fa-circle-o"></i>Used Camera</a></li>
-             <!--  <li><a href="/admin/product/used-camera-spec"><i class="fa fa-circle-o"></i>Used Camera Specification</a></li> -->              
+              <li><a href="/admin/product/new-camera"><i class="fa fa-circle-o"></i>New Camera</a></li>             
+              <li><a href="/admin/product/used-camera"><i class="fa fa-circle-o"></i>Used Camera</a></li>          
             </ul>
           </li>
           <li>
@@ -65,6 +63,39 @@
             <ul class="treeview-menu">
               <li><a href="/admin/product/new-accessory"><i class="fa fa-circle-o"></i>New Accessory</a></li>
               <li><a href="/admin/product/used-accessory"><i class="fa fa-circle-o"></i>Used Accessory</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-share"></i> <span>Import</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <a href="#"><i class="fa fa-circle-o text-yellow"></i> Camera
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="/admin/import/new-camera"><i class="fa fa-circle-o"></i>New Camera</a></li>             
+              <li><a href="/admin/import/used-camera"><i class="fa fa-circle-o"></i>Used Camera</a></li>             
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-circle-o text-yellow"></i> Accessory
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="/admin/import/new-accessory"><i class="fa fa-circle-o"></i>New Accessory</a></li>
+              <li><a href="/admin/import/used-accessory"><i class="fa fa-circle-o"></i>Used Accessory</a></li>
             </ul>
           </li>
         </ul>

@@ -22,6 +22,12 @@ public class AdminController {
 		return "admin/product";
 	}
 	
+	@RequestMapping(value={"/admin/import/{type}"},method=RequestMethod.GET)
+	public String Import(@PathVariable("type") String type,ModelMap map){
+		map.put("productPage", type);
+		return "admin/import";
+	}
+	
 	@RequestMapping(value={"/admin/staff"},method=RequestMethod.GET)
 	public String staff(){
 		return "admin/staff";
