@@ -39,7 +39,7 @@
         <a href="#">
           <i class="fa fa-product-hunt fa-fw"></i> <span>Product</span>
           <span class="pull-right-container">
-             <span class="fa arrow"></span>
+              <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
