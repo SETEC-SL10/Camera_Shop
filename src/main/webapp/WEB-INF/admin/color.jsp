@@ -63,8 +63,8 @@
 		                            <label for="colorCode">Color code</label>
 		        					<input type="text" id="hue-demo" class="form-control demo" data-control="hue" value="#ff6161" ng-model="colorTmp.color_code" required="required">
 		                        </div>
-		                        <button type="submit" class="btn btn-primary" ng-click="insertColor()"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
-		                        <button type="submit" class="btn btn-primary" ng-click="updateColor()"><span class="glyphicon glyphicon-floppy-save"></span> Update</button>
+		                        <button type="submit" class="btn btn-primary" ng-click="insertColor()" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+		                        <button type="submit" class="btn btn-primary" ng-click="updateColor()" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-save"></span> Update</button>
 		                        <button type="button" class="btn btn-danger pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-off"></span> Close</button>
 		                    </form>
 		                </div>

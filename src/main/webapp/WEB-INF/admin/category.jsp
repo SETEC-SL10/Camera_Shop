@@ -57,8 +57,10 @@
 		                            <label>Available for Accessory</label>&nbsp;
 		                            <input type="checkbox" ng-model="categoryTmp.category_accessory"/><br/><br/>
 		                        </div>
-		                        <button type="submit" class="btn btn-primary" ng-click="insertCategories()" ng-hide="btnModal"><span class="glyphicon glyphicon-floppy-save"></span> Save</button> <!-- data-dismiss="{{isInset}}" -->		
-		                        <button type="submit" class="btn btn-warning" ng-click="updateCategories()" ng-hide="!btnModal" data-dismiss="{{isInset}}"}><span class="glyphicon glyphicon-floppy-save"></span> Update</button>				                       
+		                        <button type="submit" class="btn btn-primary" ng-click="insertCategories()" ng-hide="btnModal" data-dismiss="modal">
+		                        	<span class="glyphicon glyphicon-floppy-save"></span> Save</button> <!-- data-dismiss="{{isInset}}" -->		
+		                        <button type="submit" class="btn btn-warning" ng-click="updateCategories()" ng-hide="!btnModal" data-dismiss="{{isInset}}"} data-dismiss="modal">
+		                        	<span class="glyphicon glyphicon-floppy-save"></span> Update</button>				                       
 		                    </form>
 		                </div>
 		                <div class="modal-footer">

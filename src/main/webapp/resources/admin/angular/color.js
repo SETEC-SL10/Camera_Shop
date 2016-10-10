@@ -82,7 +82,7 @@ app.controller('colorAppController',function($scope,$http,SharedService){
 		    	if(response.data.Message !== "Success delete Color"){
 					swal("Error Request Data", response.data.Message, "error");
 				}else{
-					swal("Error Request Data", response.data.Message, "success");
+					swal("Success Request Data", response.data.Message, "success");
 					$scope.colorTmps = response.data.DATA;
 		//Refresh Data on page
 					$scope.getColorByID();
