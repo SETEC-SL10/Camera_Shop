@@ -96,6 +96,7 @@
             <input  maxlength="100" type="text" class="form-control" placeholder="Username or Email"  />
             <br>
             
+            
             <label class="control-label">Email</label>
             <input  maxlength="100" type="email" class="form-control" placeholder="Username or Email"  />
             <br>

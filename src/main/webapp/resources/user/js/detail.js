@@ -3,8 +3,8 @@
 *
 * Description
 */
-var app = angular.module('DetailApp', ['ngCookies']);
-app.controller('DetailController', function($scope,$http,$window,$cookies,$cookieStore){
+//var app = angular.module('DetailApp', ['ngCookies']);SharedService.apiAddress
+app.controller('DetailController', function($scope,$http,$window,$cookies,$cookieStore,SharedService){
 	$scope.productTmp = {
 						  "product_id": $window.productID,
 						  "product_name": null,
@@ -66,7 +66,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 
 	$scope.getProductDetail = function(){
 		$http({
-				url : "http://localhost:9999/api/products/product-form/ProductFormDetail",
+				url : SharedService.apiAddress+"api/products/product-form/ProductFormDetail",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -88,7 +88,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 	
 	$scope.getProductRelated = function(){
 		$http({
-				url : "http://localhost:9999/api/products/product-form/ProductFormRelated",
+				url : SharedService.apiAddress+"api/products/product-form/ProductFormRelated",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -137,7 +137,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 	$scope.addToWishlist = function(){
 		$scope.getCustomer();
 		$http({
-				url : "http://localhost:9999/api/front_end/wishlist",
+				url : SharedService.apiAddress+"api/front_end/wishlist",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -148,7 +148,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 		    		swal("Request Data!", response.data.Message, "error");
 		    	}else{
 //		    		swal("Request Data!", response.data.Message, "success");
-		    		window.open('http://localhost:8888/wishlist', "_parent");//location.href = "http://localhost:8888/wishlist";
+		    		window.open('/wishlist', "_parent");//location.href = "http://localhost:8888/wishlist";
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -159,7 +159,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 //		console.log();
 		$scope.getCustomer();
 		$http({
-				url : "http://localhost:9999/api/front_end/cart",
+				url : SharedService.apiAddress+"api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -170,7 +170,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 		    		swal("Request Data!", response.data.Message, "success");
 		    	}else{
 //		    		swal("Request Data!", response.data.Message, "success");
-		    		window.open('http://localhost:8888/cart', "_parent");
+		    		window.open('/cart', "_parent");
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -180,7 +180,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 	$scope.addProductRelatedToWishlist = function(index){
 		$scope.getCustomer();
 		$http({
-				url : "http://localhost:9999/api/front_end/wishlist",
+				url : SharedService.apiAddress+"api/front_end/wishlist",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -191,7 +191,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 		    		swal("Request Data!", response.data.Message, "error");
 		    	}else{
 //		    		swal("Request Data!", response.data.Message, "success");
-		    		window.open('http://localhost:8888/wishlist', "_parent");//location.href = "http://localhost:8888/wishlist";
+		    		window.open('/wishlist', "_parent");//location.href = "http://localhost:8888/wishlist";
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -202,7 +202,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 //		console.log();
 		$scope.getCustomer();
 		$http({
-				url : "http://localhost:9999/api/front_end/cart",
+				url : SharedService.apiAddress+"api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -213,7 +213,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 		    		swal("Request Data!", response.data.Message, "success");
 		    	}else{
 //		    		swal("Request Data!", response.data.Message, "success");
-		    		window.open('http://localhost:8888/cart', "_parent");
+		    		window.open('/cart', "_parent");
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -223,7 +223,7 @@ app.controller('DetailController', function($scope,$http,$window,$cookies,$cooki
 	$scope.getCustomer = function(){
 		$scope.customer = $cookieStore.get('C0504');
 		if( $scope.customer == null){
-			window.open('http://localhost:8888/login', "_parent");
+			window.open('/login', "_parent");
 		}
 	};
 

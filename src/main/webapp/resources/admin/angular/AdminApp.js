@@ -14,7 +14,8 @@ app.controller('appController', function($scope,$rootScope){
 });
 app.factory('SharedService', function() {
 	  return {
-		  apiAddress : 'http://192.168.178.35:9999/'
+		  apiAddress : 'http://172.20.10.11:9999/',
+		  uiAddress : 'http://172.20.10.11:9999/'
 	  };
 });
 app.directive('fileModel', ['$parse', function ($parse) {

@@ -3,12 +3,12 @@
 *
 * Description
 */
-var cartApp = angular.module('cartApp', ['ngCookies']);
-cartApp.controller('cartController', function($scope,$http,$cookies,$cookieStore){	
+//var cartApp = angular.module('cartApp', ['ngCookies']);SharedService.apiAddress
+app.controller('cartController', function($scope,$http,$cookies,$cookieStore,SharedService){	
 	$scope.getCart = function(){
 		$scope.grandTotal = 0;
 		$http({
-				url : "http://localhost:9999/api/front_end/cart/"+$scope.customer.customer_id,
+				url : SharedService.apiAddress+"api/front_end/cart/"+$scope.customer.customer_id,
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -27,7 +27,7 @@ cartApp.controller('cartController', function($scope,$http,$cookies,$cookieStore
 	
 /*	$scope.addToCart = function(product){
 		$http({
-				url : "http://localhost:9999/api/front_end/cart",
+				url : SharedService.apiAddress+"api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -86,7 +86,7 @@ cartApp.controller('cartController', function($scope,$http,$cookies,$cookieStore
 			$scope.getCart();
 		}else{
 			$http({
-					url : "http://localhost:9999/api/front_end/cart",
+					url : SharedService.apiAddress+"api/front_end/cart",
 			        method : "PUT",
 			        headers:{
 			        	"accept": "application/json; charset=utf-8"
