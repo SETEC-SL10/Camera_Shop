@@ -23,7 +23,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	$scope.pageForm = {
 						  columnName: "all",
 						  conditionValue: "",
-						  limit: 2,
+						  limit: 20,
 						  page: 0
 						};
 
