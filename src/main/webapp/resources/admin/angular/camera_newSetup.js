@@ -568,9 +568,11 @@ app.controller('productController', function($scope,$http,SharedService){
 		//$scope.insertImage0({"ID": -1,"PRO_ID": $scope.ImageTmp.PRO_TMP.ID,"COLOR": $scope.ImageTmp.COLOR,"IMG_URL": null,"STATUS": true});
 		var fd = new FormData();
 		alert($scope.selectedFile.length);
-		fd.append('file', $scope.selectedFile);
 		fd.append('PRO_ID', image.PRO_ID);
 		fd.append('COLOR_ID', image.COLOR.color_id);
+		for (var i = 0; i < $scope.selectedFile.length; i++) {
+			fd.append('file', $scope.selectedFile[i]);
+		}
 		//console.log(angular.toJson(image));
 		$http.post(SharedService.apiAddress + 'api/products/newCamera/newCameraImage', fd, {
             transformRequest: angular.identity,
@@ -581,7 +583,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	    	}else{
 	    		swal("SUCCESS!", "Success Insert Image!!!!", "success");
 	    		$scope.getAllImages();
-	    		$("#fileselected").val("");
+	    		$scope.clearTextImage();
 	    	}
 		}).
 		error(function(datas, status, headers, config) {
@@ -651,7 +653,9 @@ app.controller('productController', function($scope,$http,SharedService){
 	};
 	
 	$scope.clearTextImage = function(){
+		$("#list").html("");
 		$("#fileselected").val("");
+		
 	};
 	
 	$scope.addNewImageButtonClicked = function(){

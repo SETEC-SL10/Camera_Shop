@@ -2,13 +2,16 @@
 
 
 
-<!-- <style>
+ <style>
     .thumb {
         height: 75px;
         border: 1px solid #000;
         margin: 10px 5px 0 0;
     }
-</style> -->
+    .RecordCameraImage img{
+    	height: 100px;
+    }
+</style>
 
 <div class="main" > <!-- ng-hide = "layoutImage" -->
     <div class="row">
@@ -49,9 +52,11 @@
                         
                         <div class="form-group">
                             <label for="files">Image</label>
-                            <div id="content" my-filter>
-							    <input type="file" name="CameraImage" id="CameraImage" multiple="multiple">
-							</div> 
+                            <input type="file" id="fileselected" name="files" file-model = "selectedFile" accept="image/*" multiple/>
+                            <output id="list"></output>
+                            <!-- <div id="content" my-filter>
+							    <input type="file" id="CameraImage" name="files" file-model = "selectedFile" accept="image/*" multiple="multiple">
+							</div>  -->
                         </div>
                         
                         <button type="submit" class="btn btn-primary" ng-hide = "!btnModal" ng-click = "insertImage1()"><span
@@ -83,10 +88,10 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="Image in Images">
+            <tr ng-repeat="Image in Images" class="RecordCameraImage">
                 <td>{{$index}}</td>
                 <td>
-                    <img style="height:190px;width:190px" ng-src= "http://localhost:9999/{{Image.IMG_URL}}"> <!-- src="${pageContext.request.contextPath}/resources/admin/img/camera.jpg" alt="image" width="50px" height="50px" -->
+                    <img ng-src= "http://localhost:9999/{{Image.IMG_URL}}"> <!-- src="${pageContext.request.contextPath}/resources/admin/img/camera.jpg" alt="image" width="50px" height="50px" -->
                 </td>
                 <td>{{Image.COLOR.color_name}}</td>
                 <td>
@@ -100,4 +105,30 @@
     </div>
 
 </div> 
+<script>
+    function handleFileSelect(evt) {
+        var files = evt.target.files; // FileList object
+        // Loop through the FileList and render image files as thumbnails.
+        for (var i = 0, f; f = files[i]; i++) {
+            // Only process image files.
+            if (!f.type.match('image.*')) {
+                continue;
+            }
+            var reader = new FileReader();
+            // Closure to capture the file information.
+            reader.onload = (function(theFile) {
+                return function(e) {
+                    // Render thumbnail.
+                    var span = document.createElement('span');
+                    span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                        '" title="', escape(theFile.name), '"/>'].join('');
+                    document.getElementById('list').insertBefore(span, null);
+                };
+            })(f);
+            // Read in the image file as a data URL.
+            reader.readAsDataURL(f);
+        }
+    }
+    document.getElementById('fileselected').addEventListener('change', handleFileSelect, false);
+</script>
     
