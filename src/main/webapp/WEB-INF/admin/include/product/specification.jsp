@@ -39,6 +39,7 @@
 						      <option value="Megapixels Sensor size">Megapixels Sensor size</option>
 						      <option value="Kit Lens">Kit Lens</option>
 						      <option value="Viewfinder">Viewfinder</option>
+						      <option value="Viewfinder">Viewfinder</option>
 						    </select>
                         </div>
                         <div class="form-group">
