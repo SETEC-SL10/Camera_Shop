@@ -48,7 +48,7 @@
 
 <div class="container site-logo">
 	<a href="/">
-		<img src="${pageContext.request.contextPath}/resources/user/img/logo-top.png" style="width: 128px;float: left;"/>               
+		<img src="${pageContext.request.contextPath}/resources/user/img/logoSLCamTen.png" style="width: 128px;float: left;"/>               
 	    <p style="padding-top: 40px;" class="site-name">SL Cam Ten<strong> Shop</strong>	
 	    </p>
 	    <span class="site-slog">The Best Shop Camera</span>
