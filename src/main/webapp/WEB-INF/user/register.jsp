@@ -5,11 +5,6 @@
 <head>
 <title>Home</title> 
 <%@include file="link/user-link.jsp"%>
-<style>
-	.register{
-		width: 600px;
-	}
-	</style>
 </head>
 <body>
 
