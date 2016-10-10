@@ -6,20 +6,50 @@
 	<title>Insert title here</title>
 	<%@include file="include/layout/link.jsp"%>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-app = "admin-App"  ng-controller = "importController">
 <!-- Site wrapper -->
 <div class="wrapper">
 	<%@include file="include/layout/header-top.jsp"%>
   	<%@include file="include/layout/left-side-bar.jsp"%>
   	
 	<div class="content-wrapper">
-	  
+		<div ng-show="showImportList">
+			<%@include file="include/import/import-view.jsp"%>
+		</div>
+	  	
+	  	
+	  	<div ng-show="showImportNewProduct">
+	  		<%@include file="include/import/new-import-product.jsp"%>
+	  	</div>
+	  	
+	  	<div ng-show = "showSelectProduct">
+	  		<%@include file="include/import/get-product.jsp"%>
+	  	</div>
+	  	
 	</div>
 
   <%@include file="include/layout/footer.jsp"%>
   <%@include file="include/layout/right-control-side-bar.jsp"%>
 </div>
 <%@include file="include/layout/script.jsp"%>
-<script src="${pageContext.request.contextPath}/resources/admin/angular/category.js"></script>
+<script src="${pageContext.request.contextPath}/resources/admin/angular/import.js"></script>
+<c:choose>
+    <c:when test="${productPage.equals('new-camera')}">
+    	<script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('used-camera')}">
+    	<script src="${pageContext.request.contextPath}/resources/admin/angular/camera_oldSetup.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('new-accessory')}">
+       <script src="${pageContext.request.contextPath}/resources/admin/angular/accessory_newSetup.js"></script>
+    </c:when>
+    <c:when test="${productPage.equals('used-accessory')}">
+        <script src="${pageContext.request.contextPath}/resources/admin/angular/accessory_oldSetup.js"></script>
+    </c:when>
+    <c:otherwise>
+        
+    </c:otherwise>
+</c:choose>
+
 </body>
 </html>

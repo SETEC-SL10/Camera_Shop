@@ -35,15 +35,6 @@
     		</div>
     		<hr>
     		<div class="row">
-<!--     			<div class="col-xs-6">
-    				<address>
-    				<strong>Billed To:</strong><br>
-    					Som Oun Kim<br>
-    					1234 Main<br>
-    					Address: Phnom Penh<br>
-    					Springfield, ST 54321
-    				</address>
-    			</div> text-right -->
     			<div class="col-xs-12 ">
     				<address>
         			<strong>Shipped To:</strong><br>
@@ -54,21 +45,6 @@
     				</address>
     			</div>
     		</div>
-<!--     		<div class="row">
-    			<div class="col-xs-6">
-    				<address>
-    					<strong>Payment Method:</strong><br>
-    					Visa ending **** 4242<br>
-    					jsmith@email.com
-    				</address>
-    			</div>
-    			<div class="col-xs-12 text-right">
-    				<address>
-    					<strong>Order Date:</strong><br>
-    					March 7, 2014<br><br>
-    				</address>
-    			</div>
-    		</div> -->
     	</div>
     </div>
     
