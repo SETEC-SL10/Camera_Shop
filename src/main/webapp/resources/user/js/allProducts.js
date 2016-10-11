@@ -45,7 +45,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllProduct = function(){
 		$http({
-				url : SharedService.apiAddress+"api/products/product-form/ProductForms",
+				url : SharedService.apiAddress+"/api/products/product-form/ProductForms",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -79,7 +79,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		$scope.pageForm.conditionValue = name;
 		$scope.pageForm.page = 0;
 		$http({
-				url : SharedService.apiAddress+"api/products/product-form/ProductForms",
+				url : SharedService.apiAddress+"/api/products/product-form/ProductForms",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -101,7 +101,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllCategory = function(){
 		$http({
-				url : SharedService.apiAddress+"api/products/Category",
+				url : SharedService.apiAddress+"/api/products/Category",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -120,7 +120,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllBrand = function(){
 		$http({
-				url : SharedService.apiAddress+"api/products/Brand",
+				url : SharedService.apiAddress+"/api/products/Brand",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -139,7 +139,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllModel = function(){
 		$http({
-				url : SharedService.apiAddress+"api/products/Model",
+				url : SharedService.apiAddress+"/api/products/Model",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -158,7 +158,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllColor = function(){
 		$http({
-				url : SharedService.apiAddress+"api/products/Color",
+				url : SharedService.apiAddress+"/api/products/Color",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -177,7 +177,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getPageProduct = function(){
 		$http({
-				url : SharedService.apiAddress+"api/products/product-form/ProductForm/page",
+				url : SharedService.apiAddress+"/api/products/product-form/ProductForm/page",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -197,7 +197,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 	$scope.addToWishlist = function(index){
 		$scope.getCustomer();
 		$http({
-				url : SharedService.apiAddress+"api/front_end/wishlist",
+				url : SharedService.apiAddress+"/api/front_end/wishlist",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -208,7 +208,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		    		swal("Request Data!", response.data.Message, "error");
 		    	}else{
 //		    		swal("Request Data!", response.data.Message, "success");
-		    		window.open(SharedService.uiAddress+'wishlist', "_parent");//location.href = "http://localhost:8888/wishlist";
+		    		window.open(SharedService.uiAddress+'/wishlist', "_parent");//location.href = "http://localhost:8888/wishlist";
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -219,7 +219,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 //		console.log();
 		$scope.getCustomer();
 		$http({
-				url : SharedService.apiAddress+"api/front_end/cart",
+				url : SharedService.apiAddress+"/api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -230,7 +230,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		    		swal("Request Data!", response.data.Message, "success");
 		    	}else{
 //		    		swal("Request Data!", response.data.Message, "success");
-		    		window.open(SharedService.uiAddress+'cart', "_parent");
+		    		window.open(SharedService.uiAddress+'/cart', "_parent");
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -251,7 +251,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		$scope.bntClickedIndex = page;
 		$scope.pageForm.page = page;
 		$http({
-			url : SharedService.apiAddress+"api/products/product-form/ProductForms",
+			url : SharedService.apiAddress+"/api/products/product-form/ProductForms",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
@@ -291,7 +291,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		$scope.pageForm.columnName = $scope.btnFilter.id;
 		$scope.pageForm.page = 0;
 		$http({
-			url : SharedService.apiAddress+"api/products/product-form/ProductForms",
+			url : SharedService.apiAddress+"/api/products/product-form/ProductForms",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"

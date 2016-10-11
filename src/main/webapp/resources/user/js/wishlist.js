@@ -31,7 +31,7 @@ app.controller('wishlistController', function($scope,$http,$cookies,$cookieStore
 
 	$scope.getWishlist = function(){
 		$http({
-				url : SharedService.apiAddress+"api/front_end/wishlist/all",
+				url : SharedService.apiAddress+"/api/front_end/wishlist/all",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -54,7 +54,7 @@ app.controller('wishlistController', function($scope,$http,$cookies,$cookieStore
 	$scope.addToCart = function(product){
 		$scope.getCustomerAddToCart();
 		$http({
-				url : SharedService.apiAddress+"api/front_end/cart",
+				url : SharedService.apiAddress+"/api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -73,7 +73,7 @@ app.controller('wishlistController', function($scope,$http,$cookies,$cookieStore
 	
 	$scope.getPageWishlist = function(){
 		$http({
-				url : SharedService.apiAddress+"api/front_end/wishlist/page",
+				url : SharedService.apiAddress+"/api/front_end/wishlist/page",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -92,7 +92,7 @@ app.controller('wishlistController', function($scope,$http,$cookies,$cookieStore
 	
 	$scope.countAllWishlist = function(){
 		$http({
-				url : SharedService.apiAddress+"api/front_end/wishlist/count",
+				url : SharedService.apiAddress+"/api/front_end/wishlist/count",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -115,7 +115,7 @@ app.controller('wishlistController', function($scope,$http,$cookies,$cookieStore
 		$scope.bntClickedIndex = page;
 		$scope.pageForm.page = page;
 		$http({
-			url : SharedService.apiAddress+"api/front_end/wishlist/all",
+			url : SharedService.apiAddress+"/api/front_end/wishlist/all",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
@@ -156,7 +156,7 @@ app.controller('wishlistController', function($scope,$http,$cookies,$cookieStore
 			 	if (isConfirm) {  
 					$http({
 						method:'DELETE',
-						url:SharedService.apiAddress+'api/front_end/wishlist/'+$scope.wishlists[ind].wishlist_id,
+						url:SharedService.apiAddress+'/api/front_end/wishlist/'+$scope.wishlists[ind].wishlist_id,
 						}).then(function successCallback(response){
 							if(response.data.Message != "Success Delete Wishlist"){
 								swal("Error delete", "Error delete this record!!!!", "error");
@@ -182,7 +182,7 @@ app.controller('wishlistController', function($scope,$http,$cookies,$cookieStore
 	$scope.getCustomerAddToCart = function(){
 		$scope.customer = $cookieStore.get('C0504');
 		if( $scope.customer == null){
-			window.open('/login', "_parent");
+			window.open(SharedService.uiAddress + '/login', "_parent");
 		}
 	};
 	

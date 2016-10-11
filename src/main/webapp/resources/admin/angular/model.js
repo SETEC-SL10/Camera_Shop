@@ -19,10 +19,10 @@ app.controller('modelController', function($scope,$http,SharedService) {
 
 	// function for call brand and repeate in selection
 	$scope.getBrands = function(){
-		// var res = transaction($http,{url:"http://localhost:9999/api/products/Brand",method:"GET",data:null});
+		// var res = transaction($http,{url:"http://localhost:9999//api/products/Brand",method:"GET",data:null});
 		// $scope.Brands = res.data.DATA;
 		$http({
-				url : SharedService.apiAddress + "api/products/Brand",
+				url : SharedService.apiAddress + "/api/products/Brand",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -46,10 +46,10 @@ app.controller('modelController', function($scope,$http,SharedService) {
 	$scope.getBrands();
 
 	$scope.getproModel = function(){
-		// var res = transaction($http,{url:"http://localhost:9999/api/products/Brand",method:"GET",data:null});
+		// var res = transaction($http,{url:"http://localhost:9999//api/products/Brand",method:"GET",data:null});
 		// $scope.Brands = res.data.DATA;
 		$http({
-				url : SharedService.apiAddress + "api/products/Model",
+				url : SharedService.apiAddress + "/api/products/Model",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -71,7 +71,7 @@ app.controller('modelController', function($scope,$http,SharedService) {
 
 	$scope.insertproModel = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/Model",
+				url : SharedService.apiAddress + "/api/products/Model",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -95,7 +95,7 @@ app.controller('modelController', function($scope,$http,SharedService) {
 
 	$scope.updateproModel = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/Model",
+				url : SharedService.apiAddress + "/api/products/Model",
 		        method : "PUT",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -119,7 +119,7 @@ app.controller('modelController', function($scope,$http,SharedService) {
 
 	$scope.deleteproModel = function(id){
 		$http({
-				url : SharedService.apiAddress + "api/products/Model/"+id,
+				url : SharedService.apiAddress + "/api/products/Model/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"

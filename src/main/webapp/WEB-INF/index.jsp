@@ -40,7 +40,7 @@ vm-title, .cbp-vm-view-list .cbp-vm-details, .cbp-vm-view-list .cbp-vm-price, .c
 <%@include file="user/include/header-nav.jsp"%>
 
 
-<div class="product" ng-app="ProductApp" ng-controller="ProductController" ng-cloak>
+<div class="product" ng-app="front-App" ng-controller="ProductController" ng-cloak>
 	<div class="container">
 		<%@include file="user/include/search.jsp"%>
 		<div class="product-main">
@@ -107,7 +107,7 @@ vm-title, .cbp-vm-view-list .cbp-vm-details, .cbp-vm-view-list .cbp-vm-price, .c
 												<div class="inner_content clearfix">
 													<div class="product_image">
 														
-														<img ng-src="http://localhost:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/>
+														<img ng-src="http://www.slcamten.com:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/>
 														<div class="mask">
 															<div class="info">View Detail</div>
 														</div>

@@ -1,13 +1,12 @@
 <%@ page pageEncoding="utf-8"%>
 
-
 <script src="${pageContext.request.contextPath}/resources/plugins/jQuery/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/sweetalert/js/sweetalert-dev.js"></script>    
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/sweetalert/js/sweetalert.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/plugins/angular/angular.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/plugins/angular/angular-cookies.min.js"></script>
-
+<script src="${pageContext.request.contextPath}/resources/user/angular/App.js"></script>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/move-top.js"></script>

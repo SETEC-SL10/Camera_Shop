@@ -24,7 +24,7 @@
 }
 </style>
 </head>
-<body  ng-app="cartApp" ng-controller="cartController">
+<body  ng-app="front-App" ng-controller="cartController">
 
 
 <div class="container">

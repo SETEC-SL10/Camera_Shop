@@ -3,9 +3,9 @@
 *
 * Description
 */
-var app = angular.module('ProductApp', ['ngCookies']);
+//var app = angular.module('ProductApp', ['ngCookies']);
 
-app.controller('ProductController', function($scope,$rootScope,$http,$window,$cookies,$cookieStore){
+app.controller('ProductController', function($scope,$rootScope,$http,$window,$cookies,$cookieStore,SharedService){
 	/*$rootScope.productID = $window.productID;
 	$rootScope.colorID = $window.colorID;
 	$rootScope.serial = $window.serial;
@@ -45,7 +45,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllProduct = function(){
 		$http({
-				url : "http://localhost:9999/api/products/product-form/newCameraForm",
+				url : SharedService.apiAddress + "/api/products/product-form/newCameraForm",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -79,7 +79,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		$scope.pageForm.conditionValue = name;
 		$scope.pageForm.page = 0;
 		$http({
-				url : "http://localhost:9999/api/products/product-form/newCameraForm",
+				url : SharedService.apiAddress + "/api/products/product-form/newCameraForm",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -101,7 +101,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllCategory = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Category/1",
+				url : SharedService.apiAddress + "/api/products/Category/1",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -120,7 +120,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllBrand = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Brand/1",
+				url : SharedService.apiAddress + "/api/products/Brand/1",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -139,7 +139,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllModel = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Model/1",
+				url : SharedService.apiAddress + "/api/products/Model/1",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -158,7 +158,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getAllColor = function(){
 		$http({
-				url : "http://localhost:9999/api/products/Color",
+				url : SharedService.apiAddress + "/api/products/Color",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -177,7 +177,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 
 	$scope.getPageProduct = function(){
 		$http({
-				url : "http://localhost:9999/api/products/product-form/newCameraForm/page",
+				url : SharedService.apiAddress + "/api/products/product-form/newCameraForm/page",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -197,7 +197,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 	$scope.addToWishlist = function(index){
 		$scope.getCustomer();
 		$http({
-				url : "http://localhost:9999/api/front_end/wishlist",
+				url : SharedService.apiAddress + "/api/front_end/wishlist",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -208,7 +208,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		    		swal("Request Data!", response.data.Message, "error");
 		    	}else{
 //		    		swal("Request Data!", response.data.Message, "success");
-		    		window.open('http://localhost:8888/wishlist', "_parent");//location.href = "http://localhost:8888/wishlist";
+		    		window.open(SharedService.uiAddress + '/wishlist', "_parent");//location.href = "http://localhost:8888/wishlist";
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -219,7 +219,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 //		console.log();
 		$scope.getCustomer();
 		$http({
-				url : "http://localhost:9999/api/front_end/cart",
+				url : SharedService.apiAddress + "/api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -230,7 +230,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		    		swal("Request Data!", response.data.Message, "success");
 		    	}else{
 //		    		swal("Request Data!", response.data.Message, "success");
-		    		window.open('http://localhost:8888/cart', "_parent");
+		    		window.open(SharedService.uiAddress + '/cart', "_parent");
 		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
@@ -251,7 +251,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		$scope.bntClickedIndex = page;
 		$scope.pageForm.page = page;
 		$http({
-			url : "http://localhost:9999/api/products/product-form/newCameraForm",
+			url : SharedService.apiAddress + "/api/products/product-form/newCameraForm",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
@@ -291,7 +291,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 		$scope.pageForm.columnName = $scope.btnFilter.id;
 		$scope.pageForm.page = 0;
 		$http({
-			url : "http://localhost:9999/api/products/product-form/newCameraForm",
+			url : SharedService.apiAddress + "/api/products/product-form/newCameraForm",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
@@ -314,7 +314,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 	$scope.getCustomer = function(){
 		$scope.customer = $cookieStore.get('C0504');
 		if( $scope.customer == null){
-			window.open('http://localhost:8888/login', "_parent");
+			window.open(SharedService.uiAddress +'/login', "_parent");
 		}
 	};
 	

@@ -1,5 +1,5 @@
 
-var app = angular.module('front-App', []);
+var app = angular.module('front-App',['ngCookies']);
 
 app.controller('UserCtrl',['$scope', function($scope,SharedService){	
 	$scope.search=[
@@ -35,8 +35,8 @@ app.filter('strLimit', ['$filter', function($filter) {
 
 app.factory('SharedService', function() {
 	  return {
-		  apiAddress : 'http://www.slcamten.com:9999/',
-		  uiAddress : 'http://www.slcamten.com/'
+		  apiAddress : 'http://www.slcamten.com:9999',
+		  uiAddress : 'http://www.slcamten.com'
 	  };
 });
 

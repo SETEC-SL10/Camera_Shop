@@ -12,7 +12,7 @@
 	}
 	</style>
 </head>
-<body ng-app="LoginRegisterApp" ng-controller="LoginRegisterController" ng-cloak>
+<body ng-app="front-App" ng-controller="LoginRegisterController" ng-cloak>
 
 	<%@include file="user/include/header.jsp"%>
 	

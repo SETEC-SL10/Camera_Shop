@@ -12,7 +12,7 @@ app.controller('colorAppController',function($scope,$http,SharedService){
 	//console.log($scope.colorTmp);
 	$scope.getColorByID = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/Color",
+				url : SharedService.apiAddress + "/api/products/Color",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -29,7 +29,7 @@ app.controller('colorAppController',function($scope,$http,SharedService){
 
 	$scope.insertColor = function (){
 	$http({
-			url : SharedService.apiAddress + "api/products/Color",
+			url : SharedService.apiAddress + "/api/products/Color",
 			method : "POST",
 			headers:{
 				"accept": "application/json; charset=utf-8"
@@ -48,7 +48,7 @@ app.controller('colorAppController',function($scope,$http,SharedService){
 	/*start update*/
 	$scope.updateColor = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/Color",
+				url : SharedService.apiAddress + "/api/products/Color",
 		        method : "PUT",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -73,7 +73,7 @@ app.controller('colorAppController',function($scope,$http,SharedService){
 	$scope.deleteColor = function(id){
 	//	alert(id);
 		$http({
-				url : SharedService.apiAddress + "api/products/Color/"+id,
+				url : SharedService.apiAddress + "/api/products/Color/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"

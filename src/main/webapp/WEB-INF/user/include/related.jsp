@@ -9,7 +9,7 @@
 		<li > <!-- ng-repeat="Product in ProductRelateds" -->
 			<a href="/detail?p={{Product.product_id}}&c={{Product.color.color_id}}&s={{Product.serial}}">
 				<img class="img-responsive women" src="${pageContext.request.contextPath}/resources/user/img/p2.jpg" alt="">
-				<!-- <img ng-src="http://localhost:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/> -->
+				<!-- <img ng-src="http://www.slcamten.com:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/> -->
 			</a>
 			<div class="hide-in">
 				<p>Premium Denim Women's Hidden</p>
@@ -25,7 +25,7 @@
 							<div class="product_image">
 								
 								<img src="${pageContext.request.contextPath}/resources/user/img/p2.jpg" class="img-responsive" alt=""/>
-								<!-- <img ng-src="http://localhost:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/> -->
+								<!-- <img ng-src="http://www.slcamten.com:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/> -->
 								<!-- <div class="mask">
 									<div class="info">View Detail</div>
 								</div> -->
@@ -56,7 +56,7 @@
 							<div class="product_image">
 								
 								<%-- <img src="${pageContext.request.contextPath}/resources/user/img/p2.jpg" class="img-responsive" alt=""/> 
-								<img ng-src="http://localhost:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/>
+								<img ng-src="http://www.slcamten.com:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/>
 								<!-- <div class="mask">
 									<div class="info">View Detail</div>
 								</div> -->

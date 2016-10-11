@@ -6,7 +6,7 @@
 	<title>Home</title>
 	<%@include file="link/user-link.jsp"%>
 </head>
-<body ng-app="wishlistApp" ng-controller="wishlistController">
+<body ng-app="front-App" ng-controller="wishlistController">
 
 <%@include file="include/header.jsp"%>
 
@@ -29,7 +29,7 @@
 					<div class="close1" ng-click = "deleteWishlist($index)"> </div>
 					<li class="ring-in" style="width:100px;">
 						<a class="cbp-vm-image" href="/detail?p={{wishlist.product.product_id}}&c={{wishlist.product.color.color_id}}&s={{wishlist.product.serial}}">
-							<img ng-src="http://localhost:9999/{{wishlist.product.images[0].image_url}}" class="img-responsive" style="width:80px;hieght:80px" alt="">
+							<img ng-src="http://www.slcamten.com:9999/{{wishlist.product.images[0].image_url}}" class="img-responsive" style="width:80px;hieght:80px" alt="">
 						</a>
 					</li>
 					<li style="width:450px;">

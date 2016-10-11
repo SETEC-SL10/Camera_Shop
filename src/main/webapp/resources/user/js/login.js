@@ -1,6 +1,6 @@
 
-var app = angular.module('LoginRegisterApp',['ngCookies']);
-app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieStore',function($scope,$http,$cookies,$cookieStore){
+//var app = angular.module('LoginRegisterApp',['ngCookies']);
+app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieStore',function($scope,$http,$cookies,$cookieStore,SharedService){
 	
 	
 	$scope.customer = 	{
@@ -51,7 +51,7 @@ app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieSt
 	  
 	$scope.loginCustomer = function(){
 		$http({
-				url : "http://localhost:9999/api/user/CustomerFrontEnd/login",
+				url : SharedService.apiAddress + "/api/user/CustomerFrontEnd/login",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -62,7 +62,7 @@ app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieSt
 			    	$scope.customer = response.data.DATA;
 			    	$scope.setCookiesCustomer();
 //			    	alert($scope.customer.customer_last_name);
-			    	window.open('/', "_parent");
+			    	window.open(SharedService.uiAddress , "_parent");
 		    	}else{
 		    		swal("Login fail!", "Invalid Email or Password!!!", "error");
 		    	}

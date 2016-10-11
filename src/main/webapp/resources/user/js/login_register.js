@@ -1,6 +1,6 @@
 
-var app = angular.module('LoginRegisterApp',['ngCookies']);
-app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieStore',function($scope,$http,$cookies,$cookieStore){
+//var app = angular.module('LoginRegisterApp',['ngCookies']);
+app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieStore',function($scope,$http,$cookies,$cookieStore,SharedService){
 	
 	
 	$scope.customer = 	{
@@ -21,11 +21,11 @@ app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieSt
 		$scope.customer = $cookieStore.get('C0504');
 		console.log($scope.customer);	
 	};
-	  
+	  //SharedService.apiAddress+
 	$scope.insertCustomer = function(){	
 		$scope.phone="0"+$scope.phone;
 		$http({
-				url : "http://localhost:9999/api/user/CustomerFrontEnd",
+				url : SharedService.apiAddress + '/api/user/CustomerFrontEnd',
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -36,7 +36,7 @@ app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieSt
 		    	swal("Request Data!", response.data.Message, "success");
 		    	$scope.customer = response.data.DATA;
 		    	$scope.setCookiesCustomer();
-		    	window.open('http://localhost:8888', "_parent");
+		    	window.open(SharedService.uiAddress, "_parent");
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
 		});

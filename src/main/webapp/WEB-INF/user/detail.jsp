@@ -22,7 +22,7 @@
 
 <%@include file="include/header.jsp"%>
 
-<div class="content" ng-app="DetailApp" ng-controller="DetailController" ng-cloak>
+<div class="content" ng-app="front-App" ng-controller="DetailController" ng-cloak>
 	<div class="container">
 		<div class="single">
 			<div class="col-md-12">
@@ -30,8 +30,8 @@
 					<div class="grid images_3_of_2">
 						<ul id="etalage">
 							<li ng-repeat="Image in ProductDetailsTmp.product.images" on-finish-render="ngRepeatFinished">
-								<img ng-src="http://localhost:9999/{{Image.image_url}}" class="etalage_thumb_image img-responsive"/>
-								<img ng-src="http://localhost:9999/{{Image.image_url}}" class="etalage_source_image img-responsive"/>
+								<img ng-src="http://www.slcamten.com:9999/{{Image.image_url}}" class="etalage_thumb_image img-responsive"/>
+								<img ng-src="http://www.slcamten.com:9999/{{Image.image_url}}" class="etalage_source_image img-responsive"/>
 							</li>
 						</ul>
 						 <div class="clearfix"> </div>		
@@ -129,7 +129,7 @@
 										<div class="view view-first">
 											<div class="inner_content clearfix">
 												<div class="product_image">												
-													<img ng-src="http://localhost:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/>
+													<img ng-src="http://www.slcamten.com:9999/{{Product.images[0].image_url}}" class="img-responsive" alt=""/>
 													<div class="mask">
 														<div class="info">View Detail</div>
 													</div>

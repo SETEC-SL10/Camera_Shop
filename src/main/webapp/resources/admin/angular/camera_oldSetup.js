@@ -31,7 +31,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	$scope.getAllBrand = function(){
 		//alert(SharedService.apiAddress);
 		$http({
-				url : SharedService.apiAddress + "api/products/Brand/1", //"http://localhost:9999/api/products/Brand/1
+				url : SharedService.apiAddress + "/api/products/Brand/1", //"http://localhost:9999//api/products/Brand/1
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -53,7 +53,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	// this function use for request Model
 	$scope.getAllModel = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/Model/1",
+				url : SharedService.apiAddress + "/api/products/Model/1",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -75,7 +75,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	// this function use for request Category
 	$scope.getAllCategory = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/Category/1",
+				url : SharedService.apiAddress + "/api/products/Category/1",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -97,7 +97,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	// insert product
 	$scope.insertProduct = function(product){
 		$http({
-				url : SharedService.apiAddress + "api/products/oldCamera",
+				url : SharedService.apiAddress + "/api/products/oldCamera",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -123,7 +123,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	// update product
 	$scope.updateProduct = function(product){
 		$http({
-				url : SharedService.apiAddress + "api/products/oldCamera",
+				url : SharedService.apiAddress + "/api/products/oldCamera",
 		        method : "PUT",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -148,7 +148,7 @@ app.controller('productController', function($scope,$http,SharedService){
 
 	$scope.deleteProduct = function(id){
 		$http({
-				url : SharedService.apiAddress + "api/products/oldCamera/"+id,
+				url : SharedService.apiAddress + "/api/products/oldCamera/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -219,7 +219,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	$scope.getAllProducts = function(page){
 		//console.log(page);
 		$http({
-				url : SharedService.apiAddress +  "api/products/oldCamera/all",
+				url : SharedService.apiAddress +  "/api/products/oldCamera/all",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -240,7 +240,7 @@ app.controller('productController', function($scope,$http,SharedService){
 		$scope.bntClickedIndex = page;
 		$scope.pageForm.page = page;
 		$http({
-			url : SharedService.apiAddress + "api/products/oldCamera/all",
+			url : SharedService.apiAddress + "/api/products/oldCamera/all",
 	        method : "POST",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
@@ -259,7 +259,7 @@ app.controller('productController', function($scope,$http,SharedService){
 
 	$scope.getPageProduct = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/oldCamera/page",
+				url : SharedService.apiAddress + "/api/products/oldCamera/page",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -416,7 +416,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	
 	$scope.getAllSpecs = function(){
 		$http({
-				url : SharedService.apiAddress +  "api/products/pro_d/Specification/"+$scope.SpecProID,
+				url : SharedService.apiAddress +  "/api/products/pro_d/Specification/"+$scope.SpecProID,
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -439,7 +439,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	// insert Spec
 	$scope.insertSpec0 = function(spec){
 		$http({
-				url : SharedService.apiAddress +  "api/products/Specification",
+				url : SharedService.apiAddress +  "/api/products/Specification",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -461,7 +461,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	// update Spec
 	$scope.updateSpec0 = function(spec){
 		$http({
-			url : SharedService.apiAddress + "api/products/Specification",
+			url : SharedService.apiAddress + "/api/products/Specification",
 	        method : "PUT",
 	        headers:{
 	        	"accept": "application/json; charset=utf-8"
@@ -482,7 +482,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	// delet Spec
 	$scope.deleteSpec0 = function(id){
 		$http({
-				url : SharedService.apiAddress + "api/products/Specification/"+id,
+				url : SharedService.apiAddress + "/api/products/Specification/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -558,7 +558,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	
 	$scope.getAllImages = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/oldCamera/oldCameraImage/Camera/"+$scope.ImageTmp.PRO_SN,
+				url : SharedService.apiAddress + "/api/products/oldCamera/oldCameraImage/Camera/"+$scope.ImageTmp.PRO_SN,
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -582,7 +582,7 @@ app.controller('productController', function($scope,$http,SharedService){
 		fd.append('PRO_SN', image.PRO_SN);
 		fd.append('COLOR_ID', image.COLOR.color_id);
 		//console.log(angular.toJson(image));
-		$http.post(SharedService.apiAddress + 'api/products/oldCamera/oldCameraImage', fd, {
+		$http.post(SharedService.apiAddress + '/api/products/oldCamera/oldCameraImage', fd, {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined }
         }).success(function(datas, status, headers, config) {
@@ -604,7 +604,7 @@ app.controller('productController', function($scope,$http,SharedService){
 		var fd = new FormData();
 		fd.append('file', $scope.selectedFile);
 		fd.append('data', angular.toJson(image));
-		$http.put(SharedService.apiAddress + 'api/products/oldCamera/oldCameraImage', fd, {
+		$http.put(SharedService.apiAddress + '/api/products/oldCamera/oldCameraImage', fd, {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined }
         }).success(function(datas, status, headers, config) {
@@ -622,7 +622,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	// delet Image
 	$scope.deleteImage0 = function(id){
 		$http({
-				url : SharedService.apiAddress + "api/products/oldCamera/oldCameraImage/"+id,
+				url : SharedService.apiAddress + "/api/products/oldCamera/oldCameraImage/"+id,
 		        method : "DELETE",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -689,7 +689,7 @@ app.controller('productController', function($scope,$http,SharedService){
 	
 	$scope.getAllColor = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/Color",
+				url : SharedService.apiAddress + "/api/products/Color",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"

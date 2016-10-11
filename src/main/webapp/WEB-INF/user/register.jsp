@@ -15,7 +15,7 @@
 
 <%@include file="include/header.jsp"%>
 
-<div class="signin" ng-app="LoginRegisterApp" ng-controller="LoginRegisterController" ng-cloak>
+<div class="signin" ng-app="front-App" ng-controller="LoginRegisterController" ng-cloak>
 	<div class="container register">
 	 	<form ng-submit="insertCustomer()">
 	       	<div class="form-group">

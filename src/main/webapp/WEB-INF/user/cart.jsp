@@ -6,7 +6,7 @@
 <title>Home</title>
 <%@include file="link/user-link.jsp"%>
 </head>
-<body ng-app="cartApp" ng-controller="cartController">
+<body ng-app="front-App" ng-controller="cartController">
 
 <%@include file="include/header.jsp"%>
 
@@ -30,7 +30,7 @@
 							<div class="close1" ng-click = "deleteCart($index)"> </div>
 							<li class="ring-in" style="width:100px;">
 								<a class="cbp-vm-image" href="/detail?p={{Cart.product.product_id}}&c={{Cart.product.color.color_id}}&s={{Cart.product.serial}}">
-									<img ng-src="http://localhost:9999/{{Cart.product.images[0].image_url}}" class="img-responsive" style="width:80px;hieght:80px" alt="">
+									<img ng-src="http://www.slcamten.com:9999/{{Cart.product.images[0].image_url}}" class="img-responsive" style="width:80px;hieght:80px" alt="">
 								</a>
 							</li>
 							<li style="width:400px;">

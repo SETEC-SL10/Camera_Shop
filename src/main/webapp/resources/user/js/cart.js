@@ -8,7 +8,7 @@ app.controller('cartController', function($scope,$http,$cookies,$cookieStore,Sha
 	$scope.getCart = function(){
 		$scope.grandTotal = 0;
 		$http({
-				url : SharedService.apiAddress+"api/front_end/cart/"+$scope.customer.customer_id,
+				url : SharedService.apiAddress+"/api/front_end/cart/"+$scope.customer.customer_id,
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -27,7 +27,7 @@ app.controller('cartController', function($scope,$http,$cookies,$cookieStore,Sha
 	
 /*	$scope.addToCart = function(product){
 		$http({
-				url : SharedService.apiAddress+"api/front_end/cart",
+				url : SharedService.apiAddress+"/api/front_end/cart",
 		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -86,7 +86,7 @@ app.controller('cartController', function($scope,$http,$cookies,$cookieStore,Sha
 			$scope.getCart();
 		}else{
 			$http({
-					url : SharedService.apiAddress+"api/front_end/cart",
+					url : SharedService.apiAddress+"/api/front_end/cart",
 			        method : "PUT",
 			        headers:{
 			        	"accept": "application/json; charset=utf-8"

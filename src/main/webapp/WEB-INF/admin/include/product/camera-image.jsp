@@ -91,7 +91,7 @@
             <tr ng-repeat="Image in Images" class="RecordCameraImage">
                 <td>{{$index}}</td>
                 <td>
-                    <img ng-src= "http://localhost:9999/{{Image.IMG_URL}}"> <!-- src="${pageContext.request.contextPath}/resources/admin/img/camera.jpg" alt="image" width="50px" height="50px" -->
+                    <img ng-src= "http://www.slcamten.com:9999/{{Image.IMG_URL}}"> <!-- src="${pageContext.request.contextPath}/resources/admin/img/camera.jpg" alt="image" width="50px" height="50px" -->
                 </td>
                 <td>{{Image.COLOR.color_name}}</td>
                 <td>

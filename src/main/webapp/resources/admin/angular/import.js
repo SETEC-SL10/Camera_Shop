@@ -26,7 +26,7 @@ app.controller('importController', function($scope,$http,SharedService) {
 	
 	$scope.getAllColor = function(){
 		$http({
-				url : SharedService.apiAddress + "api/products/Color",
+				url : SharedService.apiAddress + "/api/products/Color",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
@@ -59,10 +59,10 @@ app.controller('importController', function($scope,$http,SharedService) {
 				    };
 
 	$scope.getBrands = function(){
-		// var res = transaction($http,{url:"http://localhost:9999/api/products/Brand",method:"GET",data:null});
+		// var res = transaction($http,{url:"http://localhost:9999//api/products/Brand",method:"GET",data:null});
 		// $scope.Brands = res.data.DATA;
 		$http({
-				url : SharedService.apiAddress + "api/products/Brand",
+				url : SharedService.apiAddress + "/api/products/Brand",
 		        method : "GET",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
