@@ -5,12 +5,6 @@
 <head>
 	<title>Home</title>
 	<%@include file="user/link/user-link.jsp"%>
-	
-	<style>
-	.login{
-		width: 500px;
-	}
-	</style>
 </head>
 <body ng-app="front-App" ng-controller="LoginRegisterController" ng-cloak>
 

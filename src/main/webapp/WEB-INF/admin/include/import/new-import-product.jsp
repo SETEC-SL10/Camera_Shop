@@ -2,12 +2,13 @@
 
 <style>
 .importProduct{
+	*margin-top: 10px;
 	width: 50%;
 	background-color: white;
-	padding: 20px ;
+	padding: 20px;
 }
 </style>
-
+<br>
 <div class="container importProduct">
 	 <form >
 	 	<button class="btn btn-primary" ng-click="showGetPro()"><i class="fa fa-get-pocket" aria-hidden="true"></i> Select Product</button>

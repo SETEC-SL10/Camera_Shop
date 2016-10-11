@@ -40,7 +40,7 @@
           </table>
 			
         </div>
-        <div ng-hide = "Pagination.length == 10" ><!--ng-cloak  -->
+        <div ng-hide = "Pagination.length == 10" class="main-pagination"><!--ng-cloak  -->
 			   <nav role="navigation">
 					<ul class="cd-pagination no-space">
 						<li class="button"><a href="#" ng-click="getProductsByPagePrev()">Prev</a></li>

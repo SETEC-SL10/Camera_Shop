@@ -20,15 +20,11 @@
 	  </section>
 	  <section class="content">
 	  	<div class="main" ng-app="admin-App" ng-controller="modelController">
-		    <div class="row">
-		        <div class="col-lg-12">
-		            <h1 class="page-header">Models<span class="glyphicon glyphicon-camera pull-right"></span></h1>
-		        </div>
-		    </div><!--/.row-->
 		    <!--Start action button-->
 		    <div class="row">
 		        <div class="col-lg-12">
-		            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-no-radius" ng-click="Clear()"><span class="glyphicon glyphicon-plus"></span> បញ្ចូល...
+		            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-no-radius" ng-click="Clear()">
+		            <span class="glyphicon glyphicon-plus"></span> Add New
 		            </button>
 		        </div>
 		    </div>
@@ -50,13 +46,13 @@
 		            <div class="modal-content">
 		                <div class="modal-header">
 		                    <button type="button" class="close" data-dismiss="modal" ng-click="modalShow()" >&times;</button>
-		                    <h3 class="modal-title" style="font-weight:bold; color:#30a5ff; text-decoration:underline;">បញ្ចូលទិន្ន័យ</h3>
+		                    <h3 class="modal-title">Model</h3>
 		                </div>
 		                <div class="modal-body">
 		                    <form role="form" style="font-size:18px;">
 		                        <div class="form-group">
-		                            <label for="txtName">ឈ្មោះផលិតផល</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		                            <select ng-model="modelTmp.brand_id" ng-options="Brand.brand_id as Brand.brand_name for Brand in Brands">
+		                            <label for="txtName">Brand</label> <br>
+		                            <select ng-model="modelTmp.brand_id" ng-options="Brand.brand_id as Brand.brand_name for Brand in Brands" class="form-control">
 		                            </select>
 		                        </div>
 		                        <div class="form-group">
@@ -64,20 +60,20 @@
 		                            <input type="text" class="form-control" id="txtName" ng-model="modelTmp.model_name">
 								</div>
 		                        <div class="form-group">
-		                            <label for="description">ការពិព័ត៏នាអំពីផលិតផល</label>
+		                            <label for="description">Description</label>
 		                            <textarea class="form-control"​id="description" ng-model="modelTmp.description"></textarea>
 		                        </div>
 		                        <div class="form-inline" style="margin-left: 22px;">
-		                            <label>ម៉ាករបស់កាមេរ៉ា</label>&nbsp;
+		                            <label>Available for Camera</label>&nbsp;
 		                            <input type="checkbox" ng-model="modelTmp.model_camera"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		                            <label>ម៉ាករបស់គ្រឿងបន្លាស់</label>&nbsp;
+		                            <label>Available for Accessory</label>&nbsp;
 		                            <input type="checkbox" ng-model="modelTmp.model_accessory"/><br/><br/>
 		                        </div>
-		                        <button type="submit" class="btn btn-primary" ng-click="insertproModel()" ng-hide="btnModal" data-dismiss="{{isInset}}"><span class="glyphicon glyphicon-floppy-save"></span> រក្សាទុក</button>
+		                        <button type="submit" class="btn btn-primary" ng-click="insertproModel()" ng-hide="btnModal" data-dismiss="{{isInset}}">
+		                        	<span class="glyphicon glyphicon-floppy-save"></span> Save</button>
 		
-		                        <button type="submit" class="btn btn-warning" ng-click="updateproModel()" ng-hide="!btnModal" data-dismiss="{{isInset}}"><span class="glyphicon glyphicon-floppy-save"></span> កែរប្រែ</button>
-		
-		                        <button type="button" class="btn btn-primary pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-off"></span> ចាកចេញ</button>
+		                        <button type="submit" class="btn btn-warning" ng-click="updateproModel()" ng-hide="!btnModal" data-dismiss="{{isInset}}">
+		                        	<span class="glyphicon glyphicon-floppy-save"></span> Update</button>
 		                    </form>
 		                </div>
 		                <div class="modal-footer">
@@ -93,29 +89,29 @@
 		          <table id="datatable-example" class="table table-bordered table-striped table-hover table-sm">
 		            <thead>
 		              <tr>
-		                <th>Modele_ID</th>
-		                <th>Model_Name</th>
+		                <th>No</th>
+		                <th>Name</th>
 		                <th>Description</th>
-		                <th>Modele_Camera</th>
-		                <th>Modele_Accessory</th>
-		                <th>Action</th>
+		                <th>Camera</th>
+		                <th>Accessory</th>
+		                <th class="tableRowAction">Action</th>
 		                
 		              </tr>
 		            </thead>
 		            <tbody>
 		              <tr role="row" class="odd" ng-repeat="Model in Models" ng-cloak>
-		                <td>{{$index}}</td>
+		                <td>{{$index+1}}</td>
 		                <td>{{Model.model_name}}</td>
 		                <td>{{Model.description}}</td>
 		                <td>{{(Model.model_camera == true ) ? 'Yes':'No'}}</td>
 		                <td>{{(Model.model_accessory == true ) ? 'Yes':'No'}}</td>
-		                <td>
-		                  <button class="btn btn-success btn-no-radius btn-sm" data-toggle="modal" data-target="#myModal" ng-click="updateClicked($index)"><span class="glyphicon glyphicon-edit"></span> កែប្រែ...
+		                <td class="tableRowAction">
+		                  <button class="btn btn-success btn-no-radius btn-sm" data-toggle="modal" data-target="#myModal" ng-click="updateClicked($index)">
+		                  	<span class="glyphicon glyphicon-edit"></span> Edit
 		                    </button>
-		                    <button class="btn btn-danger btn-no-radius btn-sm" ng-click="deletClicked($index)"><span class="glyphicon glyphicon-trash"></span> លប់...
+		                    <button class="btn btn-danger btn-no-radius btn-sm" ng-click="deletClicked($index)">
+		                    	<span class="glyphicon glyphicon-trash"></span> Delete
 		                    </button>
-		
-		                  </button>
 		                </td>
 		              </tr>
 		            </tbody>

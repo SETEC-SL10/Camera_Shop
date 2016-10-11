@@ -1,29 +1,4 @@
 
-//var app = angular.module('BrandApp', []);
-
-// function transaction($http,request){
-// 	var res;
-// 	$http({
-// 			url : request.url,
-// 	        method : request.method,
-// 	        headers:{
-// 	        	"accept": "application/json; charset=utf-8"
-// 	        },
-// 	        data:request.date
-// 	    }).then(function mySucces(response) {
-// 	    	res = response;
-// 	    	alert("Hello");
-// 	    	console.log(res);
-// 	    	//return response;
-// 	    }, function myError(response) {
-// 	    	alert("Hello");
-// 	    	res = response;
-// 	        //return response;
-// 	});
-// 	return res;
-// };
-
-
 app.controller('BrandController', function($scope,$http,SharedService) {
 	$scope.btnModal = false;
 
@@ -143,7 +118,7 @@ app.controller('BrandController', function($scope,$http,SharedService) {
 	$scope.updateClicked = function(index){
 		$scope.btnModal = true;
 		$scope.brandTmp = angular.copy($scope.Brands[index]);
-		console.log(object);
+		//console.log(object);
 	};
 
 	$scope.deletClicked = function(index){
@@ -154,7 +129,7 @@ app.controller('BrandController', function($scope,$http,SharedService) {
 		
 	};
 	$scope.modalShow = function(){
-		alert("OK");
+		//alert("OK");
 		$scope.btnModal = false;
 	};
 		//$scope.insertBrands();

@@ -120,7 +120,7 @@ app.controller('categoryController', function($scope,$http,SharedService) {
 	$scope.updateClicked = function(index){
 		$scope.btnModal = true;
 		$scope.categoryTmp = angular.copy($scope.categories[index]);
-		console.log(object);
+	//	console.log(object);
 	};
 
 	$scope.deletClicked = function(index){
@@ -131,7 +131,7 @@ app.controller('categoryController', function($scope,$http,SharedService) {
 		
 	};
 	$scope.modalShow = function(){
-		alert("OK");
+		//alert("OK");
 		$scope.btnModal = false;
 	};
  });
