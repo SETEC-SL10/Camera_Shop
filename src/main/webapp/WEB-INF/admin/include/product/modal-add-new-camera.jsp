@@ -29,27 +29,28 @@
           </div> -->
           <div class="form-group">
             <label for="description">Description:</label>
+            
             <!-- We not use this but need to add it -->
-            <form >
-                  <textarea id="Description"  ck-editor ng-model="ProductTmp.DESCRIPTION" placeholder="Description" name="Description"></textarea>
-            </form>
+          <!--   <form > -->
+                  <textarea id="Description"  ck-editor ng-model="ProductTmp.DESCRIPTION" placeholder="Description" name="Description" class="form-control"></textarea>
+           <!--  </form> -->
             
             <!-- We use this -->
             <!-- <form>
-              <textarea class="textarea form-control" ng-model="ProductTmp.DESCRIPTION" placeholder="Description"></textarea> 
+              <textarea class="textarea form-control" ng-model="ProductTmp.DESCRIPTION" placeholder="Description" class="form-control"></textarea> 
             </form> -->
           </div>
           <div class="form-group">
             <label for="detail">Detail:</label>
             <!-- We not use this but need to add it -->
             <form >
-                  <textarea id="Detail" name="Detail" ng-model = "ProductTmp.DETAIL" placeholder="Detail"></textarea>
+                  <textarea id="Detail" name="Detail" ng-model = "ProductTmp.DETAIL" placeholder="Detail" class="form-control"></textarea>
             </form>
             <!--  -->
             
             <!-- We use this -->
             <!-- <form>
-              <textarea class="textarea form-control" ng-model = "ProductTmp.DETAIL" placeholder="Detail"></textarea>
+              <textarea class="textarea form-control" ng-model = "ProductTmp.DETAIL" placeholder="Detail" class="form-control"></textarea>
             </form> -->
           </div>
           <div class="form-group">

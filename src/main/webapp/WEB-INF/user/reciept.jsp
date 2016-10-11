@@ -23,6 +23,7 @@
     border-top: 2px solid;
 }
 </style>
+
 </head>
 <body  ng-app="front-App" ng-controller="cartController">
 
@@ -41,7 +42,7 @@
     					Som Oun Kim<br>
     					Address: Phnom Penh<br><br><br>
     					<strong>Order Date:</strong><br>
-    					March 7, 2014<br><br>
+    					 {{todayDate | date}} <br><br>
     				</address>
     			</div>
     		</div>
@@ -59,6 +60,7 @@
     					<table class="table table-condensed">
     						<thead>
                                 <tr>
+                                	<td><strong>No</strong></td>
         							<td><strong>Item</strong></td>
         							<td class="text-center"><strong>Price</strong></td>
         							<td class="text-center"><strong>Color</strong></td>
@@ -70,15 +72,17 @@
     						<tbody>
     							<!-- foreach ($order->lineItems as $line) or some such thing here -->
     							<tr ng-repeat = "Cart in Carts" ng-init = "calculateGrandTotal(Cart.product.sell_price * Cart.product_qty)">
-    								<td class="text-center">{{Cart.product.product_name}}</td>
-    								<td class="text-center">{{Cart.product.colore}}</td>
-    								<td class="text-center">{{Cart.product.product_id.substring(1, 2) == "O" ? "USED":"NEW"}}}</td>
+    								<td><strong>{{$index+1}}</strong></td>
+    								<td class="text-center#">{{Cart.product.product_name}}</td>
     								<td class="text-center">{{Cart.product.sell_price | currency}}</td>
+    								<td class="text-center">{{Cart.product.color.color_name}}</td>
+    								<td class="text-center">{{Cart.product.product_id.substring(1, 2) == "O" ? "USED":"NEW"}}</td>
     								<td class="text-center">{{Cart.product_qty}}</td>
     								<td class="text-right">{{Cart.product.sell_price * Cart.product_qty | currency}}</td>
     							</tr>
                                
     							<tr>
+    								<td class="thick-line"></td>
     								<td class="thick-line"></td>
     								<td class="thick-line"></td>
     								<td class="thick-line"></td>

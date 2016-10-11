@@ -73,7 +73,7 @@
 		    <div>
 		        <!-- table respondsive -->
 		        <div class="table-responsive">
-		          <table id="datatable-example" class="table table-striped table-hover table-sm">
+		          <table id="datatable-example" class="table table-striped table-sm">
 		            <thead>
 		              <tr>
 		                <th>No</th>
