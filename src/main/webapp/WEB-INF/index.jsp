@@ -29,7 +29,7 @@ vm-title, .cbp-vm-view-list .cbp-vm-details, .cbp-vm-view-list .cbp-vm-price, .c
 </style>
 
 </head>
-<body>
+<body ng-app="front-App" ng-controller="ProductController" >
 
 <%@include file="user/include/header-top.jsp"%>
 <c:choose>
@@ -40,7 +40,7 @@ vm-title, .cbp-vm-view-list .cbp-vm-details, .cbp-vm-view-list .cbp-vm-price, .c
 <%@include file="user/include/header-nav.jsp"%>
 
 
-<div class="product" ng-app="front-App" ng-controller="ProductController" ng-cloak>
+<div class="product" >
 	<div class="container">
 		<%@include file="user/include/search.jsp"%>
 		<div class="product-main">

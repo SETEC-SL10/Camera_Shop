@@ -43,12 +43,13 @@
 			        <div class="row"> 
 			          <div class="col-sm-8" ng-cloak>
 			            <button type="button" class="btn btn-info btn-md" ng-click = "addNewButtonClicked()">Add more Product</button> <!-- data-toggle="modal" data-target="#myModal" -->
+			          	<br><br>
 			          </div> 			          
 			          <%@include file="include/product/search.jsp"%>			          
 			        </div>
 			        
 			        <div class="table-responsive" ng-cloak>
-			          <table id="example1" class="table table-bordered table-hover table-striped">
+			          <table id="example1" class="table table-bordered table-striped">
 			            <thead>
 			              <tr>
 			                <th >No</th>

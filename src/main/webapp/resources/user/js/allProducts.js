@@ -312,6 +312,7 @@ app.controller('ProductController', function($scope,$rootScope,$http,$window,$co
 	};
 	
 	$scope.getCustomer = function(){
+		//
 		$scope.customer = $cookieStore.get('C0504');
 		if( $scope.customer == null){
 			window.open('/login', "_parent");

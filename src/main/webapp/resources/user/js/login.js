@@ -1,6 +1,6 @@
 
 //var app = angular.module('LoginRegisterApp',['ngCookies']);
-app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieStore',function($scope,$http,$cookies,$cookieStore,SharedService){
+app.controller('LoginRegisterController',['$scope','$http','$cookies','$cookieStore','SharedService',function($scope,$http,$cookies,$cookieStore,SharedService){
 	
 	
 	$scope.customer = 	{
