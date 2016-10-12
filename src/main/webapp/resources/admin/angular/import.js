@@ -44,45 +44,120 @@ app.controller('importController', function($scope,$http,SharedService) {
 	
 	$scope.getAllColor();
 	
-	
+	$scope.numPagination = 0;
+	$scope.Pagination = [];
+	$scope.bntClickedIndex = 0;
 
-	/*$scope.modelTmp = {
+	$scope.searchFilters = [
+							/*{ id : "all", value : "All Camera"},*/
+							{ id : "name", value : "Camera Name"},
+							{ id : "code", value : "Camera Code"},
+							{ id : "category", value : "Category Name"},
+							{ id : "brand", value : "Brand Name"},
+							{ id : "model", value : "Model Name"}
+						   ];
 
-				     "model_id": 0,
-				     "model_name": "Nikon",
-				     "description": "Nikon Models",
-				     "model_camera": false,
-				     "model_accessory": true,
-				     "model_status": true,
-				     "brand_id": 4
-				    
-				    };
+	$scope.btnFilter = $scope.searchFilters[0];
+	$scope.conditionValue = "";
+	$scope.pageForm = {
+						  columnName: "all",
+						  conditionValue: "",
+						  limit: 20,
+						  page: 0
+						};
 
-	$scope.getBrands = function(){
-		// var res = transaction($http,{url:"http://localhost:9999//api/products/Brand",method:"GET",data:null});
-		// $scope.Brands = res.data.DATA;
+	$scope.getAllProducts = function(page){
+		//console.log(page);
 		$http({
-				url : SharedService.apiAddress + "/api/products/Brand",
-		        method : "GET",
+				url : SharedService.apiAddress +  "/api/products/oldCamera/all",
+		        method : "POST",
 		        headers:{
 		        	"accept": "application/json; charset=utf-8"
-		        }
+		        },
+		        data:page
 		    }).then(function mySucces(response) {
-		    	if(response.data.Message !== "Record Found"){
-					swal("Error Request Data", response.data.Message, "error");
-				}else{
-					$scope.Brands = response.data.DATA;
-					if($scope.Brands != null){
-						$scope.modelTmp.brand_id = $scope.Brands[0].brand_id;
-						//alert($scope.modelTmp.brand_id);
-					}
-				}
+		    	if(response.data.Message != "Record found"){
+		    		swal("Request Data!", response.data.Message, "error");
+		    	}else{
+		    		$scope.Products = response.data.DATA;
+		    	}
 		    }, function myError(response) {
 		        swal("Error Connection!", "Try to check your network connection", "error");
-		});	
-	};*/
+		});
+	};
 
-	
-	
+	$scope.getProductsByPage = function(page){
+		$scope.bntClickedIndex = page;
+		$scope.pageForm.page = page;
+		$http({
+			url : SharedService.apiAddress + "/api/products/oldCamera/all",
+	        method : "POST",
+	        headers:{
+	        	"accept": "application/json; charset=utf-8"
+	        },
+	        data:$scope.pageForm
+	    }).then(function mySucces(response) {
+	    	if(response.data.Message != "Record found"){
+	    		swal("Request Data!", response.data.Message, "error");
+	    	}else{
+	    		$scope.Products = response.data.DATA;
+	    	}
+	    }, function myError(response) {
+	        swal("Error Connection!", "Try to check your network connection", "error");
+	    });
+	};
 
+	$scope.getPageProduct = function(){
+		$http({
+				url : SharedService.apiAddress + "/api/products/oldCamera/page",
+		        method : "POST",
+		        headers:{
+		        	"accept": "application/json; charset=utf-8"
+		        },
+		        data:$scope.pageForm
+		    }).then(function mySucces(response) {
+	    		$scope.numPagination = 0;
+	    		$scope.Pagination = [];
+	    		$scope.bntClickedIndex = 0;
+		    	$scope.generatePagination(response.data);
+		    }, function myError(response) {
+		        swal("Error Connection!", "Try to check your network connection", "error");
+		});
+	};
+
+	$scope.generatePagination = function (numPage){
+		for (var i = 1; i <= numPage; i++) {
+			$scope.Pagination[i - 1] = i;
+		}
+	};
+	
+	$scope.getProductsByPagePrev = function(){
+		if($scope.bntClickedIndex > 0){
+			$scope.getProductsByPage($scope.bntClickedIndex - 1);
+		}
+	};
+	
+	$scope.getProductsByPageNext = function(){
+		if($scope.bntClickedIndex < $scope.Pagination.length - 1){
+			$scope.getProductsByPage($scope.bntClickedIndex + 1);
+		}
+	};
+
+	$scope.searchFilterClicked = function(index){
+		$scope.btnFilter = $scope.searchFilters[index];
+	};
+
+	$scope.searchCamera = function(){
+		$scope.pageForm.conditionValue = $scope.conditionValue;
+		$scope.pageForm.columnName = $scope.btnFilter.id;
+		$scope.pageForm.page = 0;
+		$scope.numPagination = 0;
+		$scope.Pagination = [];
+		$scope.bntClickedIndex = 0;
+		$scope.getAllProducts($scope.pageForm);
+		$scope.getPageProduct();
+	};
+	
+	$scope.getAllProducts($scope.pageForm);
+	$scope.getPageProduct();
 });

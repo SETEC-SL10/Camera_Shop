@@ -38,7 +38,7 @@
 </div>
 <%@include file="include/layout/script.jsp"%>
 <script src="${pageContext.request.contextPath}/resources/admin/angular/import.js"></script>
-<c:choose>
+<%-- <c:choose>
     <c:when test="${productPage.equals('new-camera')}">
     	<script src="${pageContext.request.contextPath}/resources/admin/angular/camera_newSetup.js"></script>
     </c:when>
@@ -54,7 +54,7 @@
     <c:otherwise>
         
     </c:otherwise>
-</c:choose>
+</c:choose> --%>
 
 </body>
 </html>

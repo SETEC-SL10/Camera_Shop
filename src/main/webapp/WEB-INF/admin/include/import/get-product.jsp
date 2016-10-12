@@ -1,6 +1,6 @@
 <%@ page pageEncoding="utf-8"%>
 
-<section class="content" ng-controller = "productController">
+<section class="content"> <!--  ng-controller = "productController" -->
    	<div class="row" >
       <div class="col-lg-12">
         <div class="row"> 

@@ -3,7 +3,7 @@
 *
 * Description
 */
-//var cartApp = angular.module('cartApp', ['ngCookies']);SharedService.apiAddress
+//var cartApp = angular.module('cartApp', ['ngCookies']);//SharedService.apiAddress
 app.controller('cartController', function($scope,$http,$cookies,$cookieStore,SharedService){	
 	$scope.getCart = function(){
 		$scope.grandTotal = 0;

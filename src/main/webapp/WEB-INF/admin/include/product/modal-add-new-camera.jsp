@@ -31,7 +31,7 @@
             <label for="description">Description:</label>
             <!-- We not use this but need to add it -->
             <form >
-                  <textarea id="Description"  ck-editor ng-model="ProductTmp.DESCRIPTION" placeholder="Description" name="Description"></textarea>
+                  <textarea id="Description"  class="form-control" ck-editor ng-model="ProductTmp.DESCRIPTION" placeholder="Description" name="Description"></textarea>
             </form>
             
             <!-- We use this -->
@@ -43,7 +43,7 @@
             <label for="detail">Detail:</label>
             <!-- We not use this but need to add it -->
             <form >
-                  <textarea id="Detail" name="Detail" ng-model = "ProductTmp.DETAIL" placeholder="Detail"></textarea>
+                  <textarea id="Detail" name="Detail" class="form-control" ng-model = "ProductTmp.DETAIL" placeholder="Detail"></textarea>
             </form>
             <!--  -->
             
