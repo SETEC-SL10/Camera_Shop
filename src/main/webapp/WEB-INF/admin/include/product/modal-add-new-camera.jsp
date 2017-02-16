@@ -31,9 +31,12 @@
             <label for="description">Description:</label>
             
             <!-- We not use this but need to add it -->
-          <!--   <form > -->
+            <form >
+                  <textarea id="Description"  class="form-control" ck-editor ng-model="ProductTmp.DESCRIPTION" placeholder="Description" name="Description"></textarea>
+            </form>
+          <!--   <form >
                   <textarea id="Description"  ck-editor ng-model="ProductTmp.DESCRIPTION" placeholder="Description" name="Description" class="form-control"></textarea>
-           <!--  </form> -->
+             </form> -->
             
             <!-- We use this -->
             <!-- <form>
