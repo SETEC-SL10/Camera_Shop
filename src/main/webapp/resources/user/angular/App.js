@@ -77,8 +77,8 @@ app.filter('strLimit', ['$filter', function($filter) {
 
 app.factory('SharedService', function() {
 	  return {
-		  apiAddress : 'http://www.slcamten.com:9999',
-		  uiAddress : 'http://www.slcamten.com'
+		  apiAddress : 'http://localhost:9999',
+		  uiAddress : 'http://localhost'
 	  };
 });
 

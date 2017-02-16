@@ -14,8 +14,8 @@ app.controller('appController', function($scope,$rootScope){
 });
 app.factory('SharedService', function() {
 	  return {
-		  apiAddress : 'http://www.slcamten.com:9999',
-		  uiAddress : 'http://www.slcamten.com'
+		  apiAddress : 'http://localhost:9999',
+		  uiAddress : 'http://localhost'
 	  };
 });
 app.directive('fileModel', ['$parse', function ($parse) {
